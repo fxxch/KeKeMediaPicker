@@ -12,45 +12,60 @@
 
 @interface KKMediaPickerAuthorization ()
 
+@property (nonatomic , copy) KKMediaPickerAuthorizationFinishedBlock completeBlock;
+
 @end
 
 @implementation KKMediaPickerAuthorization
 
-+ (BOOL)isAlbumAuthorized{
++ (KKMediaPickerAuthorization *)defaultManager{
+    static KKMediaPickerAuthorization *KKMediaPickerAuthorization_default = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        KKMediaPickerAuthorization_default = [[self alloc] init];
+    });
+    return KKMediaPickerAuthorization_default;
+}
+
+- (void)isAlbumAuthorized:(KKMediaPickerAuthorizationFinishedBlock)block{
     
     if (@available(iOS 14, *)) {
         PHAuthorizationStatus author = [PHPhotoLibrary authorizationStatusForAccessLevel:PHAccessLevelReadWrite];
-        
         if (author == PHAuthorizationStatusNotDetermined) {
-            __block BOOL accessGranted = NO;
-            dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+            self.completeBlock = block;
+            __weak   typeof(self) weakself = self;
             [PHPhotoLibrary requestAuthorizationForAccessLevel:PHAccessLevelReadWrite handler:^(PHAuthorizationStatus status) {
                 if (status==PHAuthorizationStatusAuthorized) {
-                    accessGranted = YES;
+                    if (weakself.completeBlock) {
+                        weakself.completeBlock(YES);
+                        weakself.completeBlock = nil;
+                    }
                 } else if (status==PHAuthorizationStatusLimited) {
-                    accessGranted = YES;
+                    if (weakself.completeBlock) {
+                        weakself.completeBlock(YES);
+                        weakself.completeBlock = nil;
+                    }
                 }
                 else{
-                    accessGranted = NO;
+                    if (weakself.completeBlock) {
+                        weakself.completeBlock(NO);
+                        weakself.completeBlock = nil;
+                    }
                 }
-                dispatch_semaphore_signal(sema);
             }];
-            dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-            return accessGranted;
         }
         else if (author == PHAuthorizationStatusAuthorized) {
-            return YES;
+            block(YES);
         }
         else if (author == PHAuthorizationStatusLimited) {
-            return YES;
+            block(YES);
         }
         else {
-            return NO;
+            block(NO);
         }
     }
     else {
         PHAuthorizationStatus author = [PHPhotoLibrary authorizationStatus];
-        
         if (author == PHAuthorizationStatusNotDetermined) {
             __block BOOL accessGranted = NO;
             dispatch_semaphore_t sema = dispatch_semaphore_create(0);
@@ -64,13 +79,13 @@
                 dispatch_semaphore_signal(sema);
             }];
             dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-            return accessGranted;
+            block(YES);
         }
         else if (author == PHAuthorizationStatusAuthorized) {
-            return YES;
+            block(YES);
         }
         else {
-            return NO;
+            block(NO);
         }
     }
 }

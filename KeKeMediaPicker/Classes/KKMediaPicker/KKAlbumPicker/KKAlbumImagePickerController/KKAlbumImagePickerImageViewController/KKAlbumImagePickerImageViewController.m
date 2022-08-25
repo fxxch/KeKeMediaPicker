@@ -81,25 +81,73 @@ KKAlbumImagePickerNavTitleBarDelegate>
     [self initWaitingView];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumManagerLoadSourceFinished:) name:NotificationName_KKAlbumManagerLoadSourceFinished object:nil];
     
-    if ([KKMediaPickerAuthorization isAlbumAuthorized]) {
-        // 为了防止界面卡住，可以异步执行
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            KKAssetMediaType type = [KKAlbumImagePickerManager defaultManager].mediaType;
-            NSArray *array = [KKAlbumManager loadDirectory_WithMediaType:type];
+    
+    [KKMediaPickerAuthorization.defaultManager isAlbumAuthorized:^(BOOL isAuthorized) {
+    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (isAuthorized) {
+                // 为了防止界面卡住，可以异步执行
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    
+                    KKAssetMediaType type = [KKAlbumImagePickerManager defaultManager].mediaType;
+                    NSArray *array = [KKAlbumManager loadDirectory_WithMediaType:type];
 
-            //回到主线程
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [NSNotificationCenter.defaultCenter postNotificationName:NotificationName_KKAlbumManagerLoadSourceFinished object:array];
-                
-            });
+                    //回到主线程
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        [NSNotificationCenter.defaultCenter postNotificationName:NotificationName_KKAlbumManagerLoadSourceFinished object:array];
+                        
+                    });
+                    
+                });
+            }
+            else{
+                [NSNotificationCenter.defaultCenter postNotificationName:NotificationName_KKAlbumManagerLoadSourceFinished object:nil];
+            }
+        });
+        
+    }];
+}
+
+- (void)loadImagesLimited{
+    // 为了防止界面卡住，可以异步执行
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        //用户选择Limited模式，限制App访问有限的相册资源
+        NSMutableArray<UIImage *> *images = [NSMutableArray array];
+        //获取可访问的图片配置选项
+        PHFetchOptions *option = [[PHFetchOptions alloc] init];
+        //根据图片的创建时间升序排序返回
+        option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
+        //获取类型为image的资源
+        PHFetchResult *result = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:option];
+        //遍历出每个PHAsset资源对象
+        [result enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            PHAsset *asset = (PHAsset *)obj;
+            //将PHAsset解析为image的配置选项
+            PHImageRequestOptions *requestOptions = [[PHImageRequestOptions alloc] init];
+            //图像缩放模式
+            requestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
+            //图片质量
+            requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+            //PHImageManager解析图片
+            [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeDefault options:requestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                NSLog(@"图片 %@",result);
+                //在这里可以自定义一个显示可访问相册资源的viewController.
+                [images addObject:result];
+            }];
+        }];
+        
+        
+        //回到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+//            [NSNotificationCenter.defaultCenter postNotificationName:NotificationName_KKAlbumManagerLoadSourceFinished object:array];
             
         });
 
-    } else {
-        [NSNotificationCenter.defaultCenter postNotificationName:NotificationName_KKAlbumManagerLoadSourceFinished object:nil];
-    }
+        
+    });
 }
 
 - (void)initUI{

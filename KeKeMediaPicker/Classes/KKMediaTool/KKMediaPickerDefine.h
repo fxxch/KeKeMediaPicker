@@ -84,6 +84,8 @@
 #define KKMediaPicker_Authorized_AddressBook  @"没有权限访问您的通讯录"
 //@"没有权限访问您的手机相册"
 #define KKMediaPicker_Authorized_Album        @"没有权限访问您的手机相册"
+#define KKMediaPicker_AuthorizedLimited_Album @"部分照片"
+#define KKMediaPicker_AuthorizedLimited_Album_AlertMessage @"您只开启了部分照片访问权限，要访问更多照片，请前往设置，去开启“允许访问所有照片”"
 //@"没有权限访问您的手机相机"
 #define KKMediaPicker_Authorized_Camera       @"没有权限访问您的手机相机"
 //@"没有权限访问您的地理位置"

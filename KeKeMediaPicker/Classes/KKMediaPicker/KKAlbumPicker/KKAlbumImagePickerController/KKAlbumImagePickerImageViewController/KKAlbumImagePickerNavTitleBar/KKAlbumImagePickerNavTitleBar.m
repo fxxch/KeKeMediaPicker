@@ -11,6 +11,7 @@
 #import "NSString+KKMediaPicker.h"
 #import "KKMediaPickerDefine.h"
 #import "KKMediaPickerAuthorization.h"
+#import "UIWindow+KKMediaPicker.h"
 
 @implementation KKAlbumImagePickerNavTitleBar
 
@@ -64,21 +65,31 @@
     [self.backgroundView addSubview:self.arrowButton];
     self.arrowButton.userInteractionEnabled = NO;
     self.hidden = YES;
+        
+    [self checkAlbumLimited];
 }
 
 - (void)backgroundViewClicked{
     if ([KKMediaPickerAuthorization isAlbumAuthorizedLimited]) {
-        return;
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:KKMediaPicker_AuthorizedLimited_Album_AlertMessage message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:KKMediaPicker_Common_Cancel style:UIAlertActionStyleDefault handler:nil]];
+        [alertController addAction:[UIAlertAction actionWithTitle:KKMediaPicker_Authorized_Go style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            [[UIApplication sharedApplication] openURL:url options:[NSDictionary dictionary] completionHandler:nil];
+        }]];
+        [[UIWindow kkmp_viewControllerOfView:self] presentViewController:alertController animated:true completion:nil];
     }
-    if (self.isOpen) {
-        [self close];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImagePickerNavTitleBar_Open:)]) {
-            [self.delegate KKAlbumImagePickerNavTitleBar_Open:NO];
-        }
-    } else {
-        [self open];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImagePickerNavTitleBar_Open:)]) {
-            [self.delegate KKAlbumImagePickerNavTitleBar_Open:YES];
+    else{
+        if (self.isOpen) {
+            [self close];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImagePickerNavTitleBar_Open:)]) {
+                [self.delegate KKAlbumImagePickerNavTitleBar_Open:NO];
+            }
+        } else {
+            [self open];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImagePickerNavTitleBar_Open:)]) {
+                [self.delegate KKAlbumImagePickerNavTitleBar_Open:YES];
+            }
         }
     }
 }
@@ -122,6 +133,8 @@
         self.backgroundView.userInteractionEnabled = NO;
         self.hidden = YES;
     }
+    
+    [self checkAlbumLimited];
 }
 
 - (void)reloadWithDirectoryModal:(KKAlbumDirectoryModal*)aModal{
@@ -134,5 +147,22 @@
     self.titleLabel.text = title;
     self.arrowButton.frame = CGRectMake(CGRectGetMaxX(self.titleLabel.frame), (self.backgroundView.frame.size.height-20)/2.0, 20, 20);
 }
+
+- (void)checkAlbumLimited{
+    
+    if ([KKMediaPickerAuthorization isAlbumAuthorizedLimited]) {
+        self.hidden = NO;
+
+        NSString *title = KKMediaPicker_AuthorizedLimited_Album;
+        CGSize size = [title kkmp_sizeWithFont:[UIFont systemFontOfSize:17] maxWidth:1000];
+        CGFloat width = 10 + size.width + 10 + 20 + 5;
+        
+        self.backgroundView.frame = CGRectMake((self.frame.size.width-width)/2.0, (self.frame.size.height-44)+(44-30)/2.0, width, 30);
+        self.titleLabel.frame = CGRectMake(0, 0, 10 + size.width + 10, self.backgroundView.frame.size.height);
+        self.titleLabel.text = title;
+        self.arrowButton.frame = CGRectMake(CGRectGetMaxX(self.titleLabel.frame), (self.backgroundView.frame.size.height-20)/2.0, 20, 20);
+    }
+}
+
 
 @end
