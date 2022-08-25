@@ -2,17 +2,17 @@ git add .
 git commit -a -m "更新"
 git push -u origin main
 
-git tag 0.0.1
+git tag 1.0
 git push --tags
 git push origin main
 
 
 pod lib  lint --verbose --use-libraries --allow-warnings
-pod spec lint  KeKeRequest.podspec --verbose --use-libraries --allow-warnings
-pod trunk push KeKeRequest.podspec --verbose --use-libraries --allow-warnings
+pod spec lint  KeKeMediaPicker.podspec --verbose --use-libraries --allow-warnings
+pod trunk push KeKeMediaPicker.podspec --verbose --use-libraries --allow-warnings
 
 pod repo update
-pod search KeKeRequest
+pod search KeKeMediaPicker
 
 
 pod install --repo-update
@@ -21,5 +21,5 @@ pod install
 Q: You need to run `pod trunk register` to register a session first.
 A: pod trunk register 349230334@qq.com 'liubo' --description='LiuBo MacbookPro'
 
-Q: 如果pod search KeKeRequest 找不到最新版本的库
+Q: 如果pod search KeKeMediaPicker 找不到最新版本的库
 A: 就用  pod repo update  更新一下本地报告
