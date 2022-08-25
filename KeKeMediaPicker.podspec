@@ -101,7 +101,8 @@ Pod::Spec.new do |s|
 
     s.source_files  = "KeKeMediaPicker/Classes/**/*.{h,m,c}"
     # s.public_header_files = "KeKeMediaPicker/Classes/**/*.h",
-    s.public_header_files = "KeKeMediaPicker/Classes/**/KKMediaPickerDefine.h",
+    s.public_header_files = "KeKeMediaPicker/Classes/**/KKMediaPicker.h",
+                            "KeKeMediaPicker/Classes/**/KKMediaPickerDefine.h",
                             "KeKeMediaPicker/Classes/**/KKAlbumDirectoryModal.h",
                             "KeKeMediaPicker/Classes/**/KKAlbumAssetModal.h",
                             "KeKeMediaPicker/Classes/**/KKAlbumManager.h",
