@@ -51,6 +51,9 @@
     [self.editButton addTarget:self action:@selector(editButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.editButton];
     self.editButton.hidden = YES;
+    // TODO:暂时关闭编辑功能
+    self.editButton.enabled = NO;
+    self.editButton.alpha = 0;
 
     self.originButton = [[UIButton alloc] initWithFrame:CGRectMake((UIWindow.kkmp_screenWidth-90)/2.0, 10, 90, 30)];
     [self.originButton setImage:[KKAlbumManager themeImageForName:@"UnSelected"] forState:UIControlStateNormal];

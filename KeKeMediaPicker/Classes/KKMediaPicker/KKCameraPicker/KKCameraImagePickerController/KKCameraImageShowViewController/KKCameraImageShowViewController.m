@@ -253,8 +253,7 @@ KKCameraImageShowToolBarDelegate>
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     //导航栏底部线清除
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    // TODO:暂时隐藏
-//    [self setStatusBarHidden:YES statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
+    [self kkmp_setStatusBarHidden:YES statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
 }
 
 @end

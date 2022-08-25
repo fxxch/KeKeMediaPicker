@@ -70,7 +70,7 @@
     [self kkmp_setStatusBarHidden:hidden statusBarStyle:UIApplication.sharedApplication.statusBarStyle withAnimation:UIStatusBarAnimationNone];
 }
 
-- (void)setStatusBarHidden:(BOOL)hidden withAnimation:(UIStatusBarAnimation)animation{
+- (void)kkmp_setStatusBarHidden:(BOOL)hidden withAnimation:(UIStatusBarAnimation)animation{
     [self kkmp_setStatusBarHidden:hidden statusBarStyle:UIApplication.sharedApplication.statusBarStyle withAnimation:animation];
 }
 

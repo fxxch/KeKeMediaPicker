@@ -1,5 +1,5 @@
 //
-//  CircleView.h
+//  KKCircle.h
 //  YKL
 //
 //  Created by Apple on 15/12/7.
@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XLCircleProgress : UIView
-//百分比
+@interface KKCircle : UIView
+
+-(instancetype)initWithFrame:(CGRect)frame lineWidth:(float)lineWidth;
+
 @property (assign,nonatomic) float progress;
 
-- (void)needShowText:(BOOL)show;
+@property (assign,nonatomic) CGFloat lineWidth;
 
 @end

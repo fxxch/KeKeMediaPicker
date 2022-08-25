@@ -11,7 +11,7 @@
 #import "KKCameraCaptureTopBar.h"
 #import "KKCameraHelper.h"
 #import "KKCameraWaitingView.h"
-#import "XLCircleProgress.h"
+#import "KKCircleProgress.h"
 #import "KKCameraCaptureShowViewController.h"
 #import "KKCameraCaptureDataModal.h"
 #import "KKMediaPickerWatingView.h"
@@ -65,7 +65,7 @@ KKCameraCaptureShowDelegate>
 @property (nonatomic, strong)UIView *recordButton;
 @property(nonatomic,assign)BOOL recordButtonIsBig;
 @property(nonatomic,assign)BOOL recordTimeTooShort;//录像时间太短，取视频第一帧为图片
-@property (nonatomic, strong)XLCircleProgress *recordCircle;
+@property (nonatomic, strong)KKCircleProgress *recordCircle;
 
 // 聚焦的View
 @property (nonatomic, strong)UIView *focusView;
@@ -207,7 +207,7 @@ KKCameraCaptureShowDelegate>
 }
 
 - (void)initRecordButton{
-    self.recordCircle = [[XLCircleProgress alloc] initWithFrame:CGRectMake((UIWindow.kkmp_screenWidth-90)/2.0, UIWindow.kkmp_screenHeight-UIWindow.kkmp_safeAreaBottomHeight-90-30, 90, 90)];
+    self.recordCircle = [[KKCircleProgress alloc] initWithFrame:CGRectMake((UIWindow.kkmp_screenWidth-90)/2.0, UIWindow.kkmp_screenHeight-UIWindow.kkmp_safeAreaBottomHeight-90-30, 90, 90)];
     self.recordCircle.backgroundColor = [UIColor colorWithRed:0.86f green:0.85f blue:0.84f alpha:1.00f];
     self.recordCircle.userInteractionEnabled = YES;
     [self.view addSubview:self.recordCircle];
@@ -746,8 +746,7 @@ KKCameraCaptureShowDelegate>
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    // TODO:暂时隐藏
-//    [self setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
+    [self kkmp_setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
 
     [self setUpCameraLayer];
 

@@ -18,32 +18,17 @@
 @end
 
 
-
-
-
-
-
 @interface KKCameraImagePickerController : KKMediaPickerBaseNavigationController
 
-/* 拍摄的照片最大数量 */
-@property (nonatomic,assign)NSInteger numberOfPhotosNeedSelected;
-
-/* 是否需要编辑，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效） */
-@property (nonatomic,assign)BOOL editEnable;
-
-/* 图片的裁剪大小，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效） */
-@property (nonatomic,assign)CGSize cropSize;
-
-/* 拍摄的图片的大小（KB），如果过大会自动压缩 */
-@property (nonatomic,assign)NSInteger imageFileMaxSize;
-
-/* KKCameraImagePickerDelegate */
-@property(nonatomic,weak)id<KKCameraImagePickerDelegate> delegate;
-
-/* 初始化 */
+/// 初始化
+/// @param aDelegate 代理
+/// @param aNumberOfPhotosNeedSelected 拍摄的照片最大数量
+/// @param aCropEnable 是否需要裁剪，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效）
+/// @param aCropSize 图片的裁剪大小，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效）
+/// @param aImageFileMaxSize 拍摄的图片的大小（KB），如果过大会自动压缩
 - (instancetype)initWithDelegate:(id<KKCameraImagePickerDelegate>)aDelegate
       numberOfPhotosNeedSelected:(NSInteger)aNumberOfPhotosNeedSelected
-                      editEnable:(BOOL)aEditEnable
+                      cropEnable:(BOOL)aCropEnable
                         cropSize:(CGSize)aCropSize
                 imageFileMaxSize:(NSInteger)aImageFileMaxSize;
 

@@ -6,11 +6,11 @@
 //  Copyright © 2015年 Apple. All rights reserved.
 //
 
-#import "XLCircle.h"
+#import "KKCircle.h"
 
 static CGFloat endPointMargin = 1.0f;
 
-@interface XLCircle ()
+@interface KKCircle ()
 {
     CAShapeLayer* _trackLayer;
     CAShapeLayer* _progressLayer;
@@ -18,7 +18,7 @@ static CGFloat endPointMargin = 1.0f;
 }
 @end
 
-@implementation XLCircle
+@implementation KKCircle
 
 
 -(instancetype)initWithFrame:(CGRect)frame lineWidth:(float)lineWidth

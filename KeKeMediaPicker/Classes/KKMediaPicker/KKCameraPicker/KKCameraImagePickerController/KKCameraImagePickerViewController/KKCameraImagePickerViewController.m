@@ -73,7 +73,7 @@ AVCapturePhotoCaptureDelegate>
 
 - (instancetype)initWithDelegate:(id<KKCameraImagePickerDelegate>)aDelegate
       numberOfPhotosNeedSelected:(NSInteger)aNumberOfPhotosNeedSelected
-                      editEnable:(BOOL)aEditEnable
+                      cropEnable:(BOOL)aCropEnable
                         cropSize:(CGSize)aCropSize
                 imageFileMaxSize:(NSInteger)aImageFileMaxSize
 {
@@ -81,7 +81,7 @@ AVCapturePhotoCaptureDelegate>
     if (self) {
         self.delegate = aDelegate;
         self.numberOfPhotosNeedSelected = aNumberOfPhotosNeedSelected;
-        self.editEnable = aEditEnable;
+        self.cropEnable = aCropEnable;
         self.cropSize = aCropSize;
         self.imageFileMaxSize = aImageFileMaxSize;
         
@@ -320,7 +320,7 @@ AVCapturePhotoCaptureDelegate>
 - (void)shutterCameraFinished:(UIImage*)aImage{
     
     if (self.numberOfPhotosNeedSelected==1) {
-        if (self.editEnable) {
+        if (self.cropEnable) {
             KKImageCropperViewController *cropImageViewController = [[KKImageCropperViewController alloc] initWithImage:aImage cropSize:self.cropSize];
             [self.navigationController pushViewController:cropImageViewController animated:YES];
             __weak   typeof(self) weakself = self;
@@ -594,8 +594,7 @@ AVCapturePhotoCaptureDelegate>
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self setUpCameraLayer];
 
-    // TODO:暂时隐藏
-//    [self setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
+    [self kkmp_setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
 }
 
 @end

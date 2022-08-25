@@ -541,8 +541,8 @@
     [self bottomButtonsAnimated];
 
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    // TODO:暂时隐藏
-//    [self setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
+
+    [self kkmp_setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

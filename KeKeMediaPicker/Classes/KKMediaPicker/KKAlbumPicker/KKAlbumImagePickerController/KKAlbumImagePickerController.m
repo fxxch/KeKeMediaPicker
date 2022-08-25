@@ -38,7 +38,7 @@
         [KKAlbumImagePickerManager defaultManager].mediaType = aMediaType;
         [KKAlbumImagePickerManager defaultManager].delegate = aDelegate;
         [[KKAlbumImagePickerManager defaultManager] clearAllObjects];
-
+        self.modalPresentationStyle = UIModalPresentationFullScreen;
     }
     return self;
 }

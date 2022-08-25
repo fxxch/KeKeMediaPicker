@@ -11,6 +11,7 @@
 #import "KKAlbumAssetModalPreviewView.h"
 #import "NSBundle+KKMediaPicker.h"
 #import "UIWindow+KKMediaPicker.h"
+#import "KKMediaPickerBaseViewController.h"
 
 @interface KKAlbumAssetModalPreviewView ()
 <UICollectionViewDataSource,
@@ -304,15 +305,14 @@ KKAlbumAssetModalPreviewItemDelegate>
 #pragma mark == StatusBar
 #pragma mark ==================================================
 - (void)hideStatusBar{
-    // TODO:暂时隐藏
-//    UIViewController *controller = [[UIWindow currentKeyWindow] currentTopViewController];
-//    if ([controller isKindOfClass:[KKViewController class]]) {
-//        KKViewController *kkcontroller = (KKViewController*)controller;
-//        [kkcontroller setStatusBarHidden:YES
-//                          statusBarStyle:self.nowStatusBarStyle
-//                           withAnimation:UIStatusBarAnimationFade];
-//    }
-//    else{
+    UIViewController *controller = [[UIWindow kkmp_currentKeyWindow] kkmp_currentTopViewController];
+    if ([controller isKindOfClass:[KKMediaPickerBaseViewController class]]) {
+        KKMediaPickerBaseViewController *kkcontroller = (KKMediaPickerBaseViewController*)controller;
+        [kkcontroller kkmp_setStatusBarHidden:YES
+                          statusBarStyle:self.nowStatusBarStyle
+                           withAnimation:UIStatusBarAnimationFade];
+    }
+    else{
         /*========== 20171122 刘波 新增代码 屏蔽此文件的deprecated-declarations类型的编译警告 开始*/
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -322,18 +322,18 @@ KKAlbumAssetModalPreviewItemDelegate>
 #pragma clang diagnostic pop
         /*========== 20171122 刘波 新增代码 屏蔽此文件的deprecated-declarations类型的编译警告 结束*/
 
-//    }
+    }
 }
 
 - (void)showStatusBar{
-//    UIViewController *controller = [[UIWindow currentKeyWindow] currentTopViewController];
-//    if ([controller isKindOfClass:[KKViewController class]]) {
-//        KKViewController *kkcontroller = (KKViewController*)controller;
-//        [kkcontroller setStatusBarHidden:NO
-//                          statusBarStyle:self.nowStatusBarStyle
-//                           withAnimation:UIStatusBarAnimationFade];
-//    }
-//    else{
+    UIViewController *controller = [[UIWindow kkmp_currentKeyWindow] kkmp_currentTopViewController];
+    if ([controller isKindOfClass:[KKMediaPickerBaseViewController class]]) {
+        KKMediaPickerBaseViewController *kkcontroller = (KKMediaPickerBaseViewController*)controller;
+        [kkcontroller kkmp_setStatusBarHidden:NO
+                          statusBarStyle:self.nowStatusBarStyle
+                           withAnimation:UIStatusBarAnimationFade];
+    }
+    else{
         /*========== 20171122 刘波 新增代码 屏蔽此文件的deprecated-declarations类型的编译警告 开始*/
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -343,7 +343,7 @@ KKAlbumAssetModalPreviewItemDelegate>
 #pragma clang diagnostic pop
         /*========== 20171122 刘波 新增代码 屏蔽此文件的deprecated-declarations类型的编译警告 结束*/
 
-//    }
+    }
 }
 
 

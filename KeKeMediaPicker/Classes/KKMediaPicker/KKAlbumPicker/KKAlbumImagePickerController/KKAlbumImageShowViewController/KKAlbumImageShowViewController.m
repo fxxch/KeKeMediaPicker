@@ -41,7 +41,7 @@ KKAlbumImageShowCollectionBarDelegate>
 /* 初始化 */
 - (instancetype)initWithArray:(NSArray*)aImageArray
                   selectIndex:(NSInteger)aIndex{
-self = [super init];
+    self = [super init];
     if (self) {
         self.inIndex = aIndex;
         self.dataSource = [[NSMutableArray alloc] init];
@@ -177,7 +177,7 @@ self = [super init];
 - (void)KKAlbumImageShowCollectionBar_SelectModal:(KKAlbumAssetModal*)aModal{
     
     NSInteger index = [self.dataSource indexOfObject:aModal];
-    [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    [self.mainCollectionView setContentOffset:CGPointMake(UIWindow.kkmp_screenWidth*index, 0) animated:YES];
     self.topBar.titleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)(index+1),(long)self.dataSource.count];
     [self.collectionBar selectModal:aModal];
     [self.topBar setSelect:YES item:aModal];
@@ -343,10 +343,29 @@ self = [super init];
     else{
         [self.topBar setSelect:NO item:modalT];
     }
+    
+    [[KKAlbumImagePickerManager defaultManager] deselectAssetModal:modalT];
+    [self.dataSource removeObject:modalT];
+    if ([self.dataSource count]==0) {
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
+    
+    if (index<[self.dataSource count]) {
+        [self.mainCollectionView reloadData];
+        [self.mainCollectionView setContentOffset:CGPointMake(UIWindow.kkmp_screenWidth*index, 0)];
+        self.topBar.titleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)(index+1),(long)self.dataSource.count];
+    }
+    else{
+        [self.mainCollectionView reloadData];
+        [self.mainCollectionView setContentOffset:CGPointMake(UIWindow.kkmp_screenWidth*([self.dataSource count]-1), 0)];
+        self.topBar.titleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)([self.dataSource count]),(long)self.dataSource.count];
+    }
+    [self scrollViewDidEndDecelerating:self.mainCollectionView];
 }
 
 - (void)Notification_KKAlbumManagerDataSourceChanged:(NSNotification*)notice{
-
+    
 }
 
 
@@ -364,8 +383,7 @@ self = [super init];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     //导航栏底部线清除
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    // TODO:暂时隐藏
-//    [self setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationNone];
+    [self kkmp_setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationNone];
 }
 
 

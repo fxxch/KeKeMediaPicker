@@ -7,12 +7,13 @@
 //
 
 #import "HomeViewController.h"
-#import "KKCameraImagePickerController.h"
 #import "KKAlbumImagePickerController.h"
+#import "KKCameraImagePickerController.h"
+#import "KKCameraCapturePickerController.h"
 #import "KKMediaPickerDefine.h"
 #import "UIWindow+KKMediaPicker.h"
 
-@interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate,KKCameraImagePickerDelegate,KKAlbumImagePickerDelegate>
+@interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate,KKCameraImagePickerDelegate,KKAlbumImagePickerDelegate,KKCameraCapturePickerDelegate>
 
 @property (nonatomic , strong) UITableView *table;
 @property (nonatomic , strong) NSMutableArray *dataSource;
@@ -26,8 +27,9 @@
     self.title = @"KKRequestDemo";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    CGFloat width = (UIWindow.kkmp_screenWidth - 80)/3.0;
     UIButton *buttonAlbum = [UIButton buttonWithType:UIButtonTypeSystem];
-    buttonAlbum.frame = CGRectMake(20, 20+UIWindow.kkmp_statusBarAndNavBarHeight, (UIWindow.kkmp_screenWidth-60)/2.0, 50);
+    buttonAlbum.frame = CGRectMake(20, 20+UIWindow.kkmp_statusBarAndNavBarHeight, width, 50);
     [buttonAlbum setTitle:@"相册" forState:UIControlStateNormal];
     [buttonAlbum setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     buttonAlbum.backgroundColor = [UIColor systemBlueColor];
@@ -35,12 +37,20 @@
     [buttonAlbum addTarget:self action:@selector(buttonAlbumClicked) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *buttonCamera = [UIButton buttonWithType:UIButtonTypeSystem];
-    buttonCamera.frame = CGRectMake(CGRectGetMaxX(buttonAlbum.frame)+10, 20+UIWindow.kkmp_statusBarAndNavBarHeight, (UIWindow.kkmp_screenWidth-60)/2.0, 50);
+    buttonCamera.frame = CGRectMake(CGRectGetMaxX(buttonAlbum.frame)+10, 20+UIWindow.kkmp_statusBarAndNavBarHeight, width, 50);
     [buttonCamera setTitle:@"相机" forState:UIControlStateNormal];
     [buttonCamera setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     buttonCamera.backgroundColor = [UIColor systemRedColor];
     [self.view addSubview:buttonCamera];
     [buttonCamera addTarget:self action:@selector(buttonCameraClicked) forControlEvents:UIControlEventTouchUpInside];
+
+    UIButton *buttonAll = [UIButton buttonWithType:UIButtonTypeSystem];
+    buttonAll.frame = CGRectMake(CGRectGetMaxX(buttonCamera.frame)+10, 20+UIWindow.kkmp_statusBarAndNavBarHeight, width, 50);
+    [buttonAll setTitle:@"拍摄" forState:UIControlStateNormal];
+    [buttonAll setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    buttonAll.backgroundColor = [UIColor systemRedColor];
+    [self.view addSubview:buttonAll];
+    [buttonAll addTarget:self action:@selector(buttonAllClicked) forControlEvents:UIControlEventTouchUpInside];
 
     self.dataSource = [[NSMutableArray alloc] init];
     
@@ -72,7 +82,6 @@
 - (void)buttonAlbumClicked{
     CGSize cropSize = CGSizeMake(UIWindow.kkmp_screenWidth-40, UIWindow.kkmp_screenWidth-40);
     KKAlbumImagePickerController *viewController = [[KKAlbumImagePickerController alloc] initWithDelegate:self numberOfPhotosNeedSelected:9 cropEnable:NO cropSize:cropSize assetMediaType:KKAssetMediaType_All];
-    viewController.modalPresentationStyle = UIModalPresentationFullScreen;
     [self.navigationController presentViewController:viewController animated:YES completion:^{
             
     }];
@@ -80,12 +89,19 @@
 
 - (void)buttonCameraClicked{
     CGSize cropSize = CGSizeMake(UIWindow.kkmp_screenWidth-40, UIWindow.kkmp_screenWidth-40);
-    KKCameraImagePickerController *viewController = [[KKCameraImagePickerController alloc] initWithDelegate:self numberOfPhotosNeedSelected:3 editEnable:YES cropSize:cropSize imageFileMaxSize:300];
-    viewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    KKCameraImagePickerController *viewController = [[KKCameraImagePickerController alloc] initWithDelegate:self numberOfPhotosNeedSelected:1 cropEnable:YES cropSize:cropSize imageFileMaxSize:300];
     [self.navigationController presentViewController:viewController animated:YES completion:^{
             
     }];
 }
+
+- (void)buttonAllClicked{
+    KKCameraCapturePickerController *viewController = [[KKCameraCapturePickerController alloc] initWithDelegate:self];
+    [self.navigationController presentViewController:viewController animated:YES completion:^{
+            
+    }];
+}
+
 
 
 #pragma mark ==================================================
@@ -130,6 +146,21 @@
     }
     
     [self.table reloadData];
+}
+
+#pragma mark ==================================================
+#pragma mark == KKCameraCaptureViewControllerDelegate
+#pragma mark ==================================================
+/// 完成拍摄
+/// @param aFileFullPath 拍摄保存的文件路径
+/// @param aFileName 拍摄保存的文件的文件名
+/// @param aExtention 拍摄保存的文件的扩展名（png、mp4、mov）
+/// @param aTimeDuration 如果是拍摄的视频，这个是视频的时长
+- (void)KKCameraCapturePicker_FinishedWithFilaFullPath:(NSString*)aFileFullPath
+                                              fileName:(NSString*)aFileName
+                                         fileExtention:(NSString*)aExtention
+                                          timeDuration:(NSString*)aTimeDuration{
+    
 }
 
 

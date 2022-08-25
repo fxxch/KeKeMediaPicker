@@ -88,6 +88,7 @@
     }
     else{
         UIImage *image = [KKAlbumManager themeImageForName:@"UnSelected"];
+        [self.selectedButton setBackgroundColor:[UIColor clearColor]];
         [self.selectedButton setBackgroundImage:image forState:UIControlStateNormal];
         [self.selectedButton setTitle:@"" forState:UIControlStateNormal];
     }

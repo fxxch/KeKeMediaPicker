@@ -79,8 +79,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    // TODO:暂时隐藏
-//    [self setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
+    [self kkmp_setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
 //    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
 //    delegate.onlySupportPortrait = NO;
 }
@@ -357,8 +356,7 @@
     self.isBarHidden = hidden;
     CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
     if (self.isBarHidden) {
-        // TODO:暂时隐藏
-//        [self setStatusBarHidden:YES statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
+        [self kkmp_setStatusBarHidden:YES statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
         [UIView animateWithDuration:duration animations:^{
             self.toolBarView.alpha = 0;
         } completion:^(BOOL finished) {
@@ -366,8 +364,7 @@
         }];
     } else {
         self.myTimerCount = HiddenPlayerBarTimerMax;
-        // TODO:暂时隐藏
-//        [self setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
+        [self kkmp_setStatusBarHidden:NO statusBarStyle:UIStatusBarStyleLightContent withAnimation:UIStatusBarAnimationFade];
 
         [UIView animateWithDuration:duration animations:^{
             self.toolBarView.alpha = 1.0;

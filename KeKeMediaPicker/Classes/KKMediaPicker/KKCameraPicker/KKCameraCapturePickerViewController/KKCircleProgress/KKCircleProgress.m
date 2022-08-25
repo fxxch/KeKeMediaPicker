@@ -6,12 +6,12 @@
 //  Copyright © 2015年 Apple. All rights reserved.
 //
 
-#import "XLCircleProgress.h"
-#import "XLCircle.h"
+#import "KKCircleProgress.h"
+#import "KKCircle.h"
 
-@implementation XLCircleProgress
+@implementation KKCircleProgress
 {
-    XLCircle* _circle;
+    KKCircle* _circle;
     UILabel *_percentLabel;
 }
 
@@ -36,7 +36,7 @@
     [self addSubview:_percentLabel];
     
     //lineWidth   _circle = [[XLCircle alloc] initWithFrame:self.bounds lineWidth:lineWidth];
-    _circle = [[XLCircle alloc] initWithFrame:self.bounds lineWidth:5.0f];
+    _circle = [[KKCircle alloc] initWithFrame:self.bounds lineWidth:5.0f];
     [self addSubview:_circle];
 }
 

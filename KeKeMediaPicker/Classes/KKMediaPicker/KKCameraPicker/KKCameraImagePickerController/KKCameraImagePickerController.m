@@ -11,6 +11,21 @@
 
 @interface KKCameraImagePickerController ()
 
+/* 拍摄的照片最大数量 */
+@property (nonatomic,assign)NSInteger numberOfPhotosNeedSelected;
+
+/* 是否需要裁剪，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效） */
+@property (nonatomic,assign)BOOL cropEnable;
+
+/* 图片的裁剪大小，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效） */
+@property (nonatomic,assign)CGSize cropSize;
+
+/* 拍摄的图片的大小（KB），如果过大会自动压缩 */
+@property (nonatomic,assign)NSInteger imageFileMaxSize;
+
+/* KKCameraImagePickerDelegate */
+@property(nonatomic,weak)id<KKCameraImagePickerDelegate> delegate;
+
 @end
 
 @implementation KKCameraImagePickerController
@@ -33,18 +48,18 @@
 /* 初始化 */
 - (instancetype)initWithDelegate:(id<KKCameraImagePickerDelegate>)aDelegate
       numberOfPhotosNeedSelected:(NSInteger)aNumberOfPhotosNeedSelected
-                      editEnable:(BOOL)aEditEnable
+                      cropEnable:(BOOL)aCropEnable
                         cropSize:(CGSize)aCropSize
                 imageFileMaxSize:(NSInteger)aImageFileMaxSize{
     self = [super init];
     if (self) {
         self.delegate = aDelegate;
         self.numberOfPhotosNeedSelected = aNumberOfPhotosNeedSelected;
-        self.editEnable = aEditEnable;
+        self.cropEnable = aCropEnable;
         self.cropSize = aCropSize;
         self.imageFileMaxSize = aImageFileMaxSize;
-        
-        KKCameraImagePickerViewController *vc = [[KKCameraImagePickerViewController alloc] initWithDelegate:self.delegate numberOfPhotosNeedSelected:self.numberOfPhotosNeedSelected editEnable:self.editEnable cropSize:self.cropSize imageFileMaxSize:self.imageFileMaxSize];
+        self.modalPresentationStyle = UIModalPresentationFullScreen;
+        KKCameraImagePickerViewController *vc = [[KKCameraImagePickerViewController alloc] initWithDelegate:self.delegate numberOfPhotosNeedSelected:self.numberOfPhotosNeedSelected cropEnable:self.cropEnable cropSize:self.cropSize imageFileMaxSize:self.imageFileMaxSize];
         [self pushViewController:vc animated:NO];
     }
     return self;

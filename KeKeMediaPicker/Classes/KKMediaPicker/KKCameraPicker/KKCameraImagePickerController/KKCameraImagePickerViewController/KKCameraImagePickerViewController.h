@@ -18,8 +18,8 @@
 /* 拍摄的照片最大数量 */
 @property (nonatomic,assign)NSInteger numberOfPhotosNeedSelected;
 
-/* 是否需要编辑，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效） */
-@property (nonatomic,assign)BOOL editEnable;
+/* 是否需要裁剪，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效） */
+@property (nonatomic,assign)BOOL cropEnable;
 
 /* 图片的裁剪大小，仅在拍摄数量为1的时候有效（即numberOfPhotosNeedSelected为1的时候有效） */
 @property (nonatomic,assign)CGSize cropSize;
@@ -33,7 +33,7 @@
 /* 初始化 */
 - (instancetype)initWithDelegate:(id<KKCameraImagePickerDelegate>)aDelegate
       numberOfPhotosNeedSelected:(NSInteger)aNumberOfPhotosNeedSelected
-                      editEnable:(BOOL)aEditEnable
+                      cropEnable:(BOOL)aCropEnable
                         cropSize:(CGSize)aCropSize
                 imageFileMaxSize:(NSInteger)aImageFileMaxSize;
 
