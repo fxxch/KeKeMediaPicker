@@ -1,0 +1,1940 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		110D864928B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 110D864728B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h */; };
+		110D864A28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */; };
+		110D864B28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */; };
+		110D864C28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */; };
+		114F7A7D28B60A90003DB692 /* UIImage+KKMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 114F7A7B28B60A90003DB692 /* UIImage+KKMediaPicker.h */; };
+		114F7A7E28B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */; };
+		114F7A7F28B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */; };
+		114F7A8028B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */; };
+		1166A07528AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11669FFE28AA252500C2EC7A /* KKCameraImageShowViewController.m */; };
+		1166A07628AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11669FFE28AA252500C2EC7A /* KKCameraImageShowViewController.m */; };
+		1166A07728AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11669FFE28AA252500C2EC7A /* KKCameraImageShowViewController.m */; };
+		1166A07828AA252500C2EC7A /* KKCameraImageShowItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A00028AA252500C2EC7A /* KKCameraImageShowItemView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A07928AA252500C2EC7A /* KKCameraImageShowItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00128AA252500C2EC7A /* KKCameraImageShowItemView.m */; };
+		1166A07A28AA252500C2EC7A /* KKCameraImageShowItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00128AA252500C2EC7A /* KKCameraImageShowItemView.m */; };
+		1166A07B28AA252500C2EC7A /* KKCameraImageShowItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00128AA252500C2EC7A /* KKCameraImageShowItemView.m */; };
+		1166A07C28AA252500C2EC7A /* KKCameraImageShowViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A00228AA252500C2EC7A /* KKCameraImageShowViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A07D28AA252500C2EC7A /* KKCameraImageShowToolBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A00428AA252500C2EC7A /* KKCameraImageShowToolBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A07E28AA252500C2EC7A /* KKCameraImageShowToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00528AA252500C2EC7A /* KKCameraImageShowToolBar.m */; };
+		1166A07F28AA252500C2EC7A /* KKCameraImageShowToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00528AA252500C2EC7A /* KKCameraImageShowToolBar.m */; };
+		1166A08028AA252500C2EC7A /* KKCameraImageShowToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00528AA252500C2EC7A /* KKCameraImageShowToolBar.m */; };
+		1166A08128AA252500C2EC7A /* KKCameraImageShowNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00728AA252500C2EC7A /* KKCameraImageShowNavBar.m */; };
+		1166A08228AA252500C2EC7A /* KKCameraImageShowNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00728AA252500C2EC7A /* KKCameraImageShowNavBar.m */; };
+		1166A08328AA252500C2EC7A /* KKCameraImageShowNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00728AA252500C2EC7A /* KKCameraImageShowNavBar.m */; };
+		1166A08428AA252500C2EC7A /* KKCameraImageShowNavBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A00828AA252500C2EC7A /* KKCameraImageShowNavBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A08528AA252500C2EC7A /* KKCameraImageTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00A28AA252500C2EC7A /* KKCameraImageTopBar.m */; };
+		1166A08628AA252500C2EC7A /* KKCameraImageTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00A28AA252500C2EC7A /* KKCameraImageTopBar.m */; };
+		1166A08728AA252500C2EC7A /* KKCameraImageTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00A28AA252500C2EC7A /* KKCameraImageTopBar.m */; };
+		1166A08828AA252500C2EC7A /* KKCameraImageTopBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A00B28AA252500C2EC7A /* KKCameraImageTopBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A08928AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00C28AA252500C2EC7A /* KKCameraImagePickerController.m */; };
+		1166A08A28AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00C28AA252500C2EC7A /* KKCameraImagePickerController.m */; };
+		1166A08B28AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00C28AA252500C2EC7A /* KKCameraImagePickerController.m */; };
+		1166A08C28AA252500C2EC7A /* KKCameraImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00E28AA252500C2EC7A /* KKCameraImagePickerViewController.m */; };
+		1166A08D28AA252500C2EC7A /* KKCameraImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00E28AA252500C2EC7A /* KKCameraImagePickerViewController.m */; };
+		1166A08E28AA252500C2EC7A /* KKCameraImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A00E28AA252500C2EC7A /* KKCameraImagePickerViewController.m */; };
+		1166A08F28AA252500C2EC7A /* KKCameraWaitingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A01028AA252500C2EC7A /* KKCameraWaitingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A09028AA252500C2EC7A /* KKCameraWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01128AA252500C2EC7A /* KKCameraWaitingView.m */; };
+		1166A09128AA252500C2EC7A /* KKCameraWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01128AA252500C2EC7A /* KKCameraWaitingView.m */; };
+		1166A09228AA252500C2EC7A /* KKCameraWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01128AA252500C2EC7A /* KKCameraWaitingView.m */; };
+		1166A09328AA252500C2EC7A /* KKCameraImagePickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A01228AA252500C2EC7A /* KKCameraImagePickerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A09428AA252500C2EC7A /* KKCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01428AA252500C2EC7A /* KKCameraHelper.m */; };
+		1166A09528AA252500C2EC7A /* KKCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01428AA252500C2EC7A /* KKCameraHelper.m */; };
+		1166A09628AA252500C2EC7A /* KKCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01428AA252500C2EC7A /* KKCameraHelper.m */; };
+		1166A09728AA252500C2EC7A /* KKCameraHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A01528AA252500C2EC7A /* KKCameraHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A09828AA252500C2EC7A /* KKCameraImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A01628AA252500C2EC7A /* KKCameraImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A09928AA252500C2EC7A /* KKCameraImageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01828AA252500C2EC7A /* KKCameraImageToolBar.m */; };
+		1166A09A28AA252500C2EC7A /* KKCameraImageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01828AA252500C2EC7A /* KKCameraImageToolBar.m */; };
+		1166A09B28AA252500C2EC7A /* KKCameraImageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01828AA252500C2EC7A /* KKCameraImageToolBar.m */; };
+		1166A09C28AA252500C2EC7A /* KKCameraImageToolBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A01928AA252500C2EC7A /* KKCameraImageToolBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A09D28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01C28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m */; };
+		1166A09E28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01C28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m */; };
+		1166A09F28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01C28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m */; };
+		1166A0A028AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A01E28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0A128AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01F28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m */; };
+		1166A0A228AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01F28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m */; };
+		1166A0A328AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A01F28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m */; };
+		1166A0A428AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A02128AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0A528AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02228AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m */; };
+		1166A0A628AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02228AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m */; };
+		1166A0A728AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02228AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m */; };
+		1166A0A828AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A02328AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0A928AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02528AA252500C2EC7A /* AlbumImageCollectionViewCell.m */; };
+		1166A0AA28AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02528AA252500C2EC7A /* AlbumImageCollectionViewCell.m */; };
+		1166A0AB28AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02528AA252500C2EC7A /* AlbumImageCollectionViewCell.m */; };
+		1166A0AC28AA252500C2EC7A /* AlbumImageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A02628AA252500C2EC7A /* AlbumImageCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0AD28AA252500C2EC7A /* KKAlbumImageToolBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A02828AA252500C2EC7A /* KKAlbumImageToolBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0AE28AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */; };
+		1166A0AF28AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */; };
+		1166A0B028AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */; };
+		1166A0B128AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02A28AA252500C2EC7A /* KKAlbumImagePickerController.m */; };
+		1166A0B228AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02A28AA252500C2EC7A /* KKAlbumImagePickerController.m */; };
+		1166A0B328AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02A28AA252500C2EC7A /* KKAlbumImagePickerController.m */; };
+		1166A0B428AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02C28AA252500C2EC7A /* KKAlbumImagePickerManager.m */; };
+		1166A0B528AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02C28AA252500C2EC7A /* KKAlbumImagePickerManager.m */; };
+		1166A0B628AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02C28AA252500C2EC7A /* KKAlbumImagePickerManager.m */; };
+		1166A0B728AA252500C2EC7A /* KKAlbumImagePickerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A02D28AA252500C2EC7A /* KKAlbumImagePickerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0B828AA252500C2EC7A /* KKAlbumImageShowToolBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A03028AA252500C2EC7A /* KKAlbumImageShowToolBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0B928AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */; };
+		1166A0BA28AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */; };
+		1166A0BB28AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */; };
+		1166A0BC28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */; };
+		1166A0BD28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */; };
+		1166A0BE28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */; };
+		1166A0BF28AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A03528AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0C028AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03628AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m */; };
+		1166A0C128AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03628AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m */; };
+		1166A0C228AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03628AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m */; };
+		1166A0C328AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03728AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m */; };
+		1166A0C428AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03728AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m */; };
+		1166A0C528AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03728AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m */; };
+		1166A0C628AA252500C2EC7A /* KKAlbumImageShowCollectionBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A03828AA252500C2EC7A /* KKAlbumImageShowCollectionBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0C728AA252500C2EC7A /* KKAlbumImageShowItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03A28AA252500C2EC7A /* KKAlbumImageShowItemView.m */; };
+		1166A0C828AA252500C2EC7A /* KKAlbumImageShowItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03A28AA252500C2EC7A /* KKAlbumImageShowItemView.m */; };
+		1166A0C928AA252500C2EC7A /* KKAlbumImageShowItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03A28AA252500C2EC7A /* KKAlbumImageShowItemView.m */; };
+		1166A0CA28AA252500C2EC7A /* KKAlbumImageShowItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A03B28AA252500C2EC7A /* KKAlbumImageShowItemView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0CB28AA252500C2EC7A /* KKAlbumImageShowViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A03C28AA252500C2EC7A /* KKAlbumImageShowViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0CC28AA252500C2EC7A /* KKAlbumImageShowNavBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A03E28AA252500C2EC7A /* KKAlbumImageShowNavBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0CD28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03F28AA252500C2EC7A /* KKAlbumImageShowNavBar.m */; };
+		1166A0CE28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03F28AA252500C2EC7A /* KKAlbumImageShowNavBar.m */; };
+		1166A0CF28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03F28AA252500C2EC7A /* KKAlbumImageShowNavBar.m */; };
+		1166A0D028AA252500C2EC7A /* KKAlbumImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A04028AA252500C2EC7A /* KKAlbumImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0D128AA252500C2EC7A /* KKImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04228AA252500C2EC7A /* KKImageCropperViewController.m */; };
+		1166A0D228AA252500C2EC7A /* KKImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04228AA252500C2EC7A /* KKImageCropperViewController.m */; };
+		1166A0D328AA252500C2EC7A /* KKImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04228AA252500C2EC7A /* KKImageCropperViewController.m */; };
+		1166A0D428AA252500C2EC7A /* KKImageCropperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04428AA252500C2EC7A /* KKImageCropperView.m */; };
+		1166A0D528AA252500C2EC7A /* KKImageCropperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04428AA252500C2EC7A /* KKImageCropperView.m */; };
+		1166A0D628AA252500C2EC7A /* KKImageCropperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04428AA252500C2EC7A /* KKImageCropperView.m */; };
+		1166A0D728AA252500C2EC7A /* KKImageCropperView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A04528AA252500C2EC7A /* KKImageCropperView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0D828AA252500C2EC7A /* KKImageCropperViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A04628AA252500C2EC7A /* KKImageCropperViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0D928AA252500C2EC7A /* KKAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04828AA252500C2EC7A /* KKAlbumManager.m */; };
+		1166A0DA28AA252500C2EC7A /* KKAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04828AA252500C2EC7A /* KKAlbumManager.m */; };
+		1166A0DB28AA252500C2EC7A /* KKAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04828AA252500C2EC7A /* KKAlbumManager.m */; };
+		1166A0DC28AA252500C2EC7A /* KKAlbumAssetModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04A28AA252500C2EC7A /* KKAlbumAssetModal.m */; };
+		1166A0DD28AA252500C2EC7A /* KKAlbumAssetModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04A28AA252500C2EC7A /* KKAlbumAssetModal.m */; };
+		1166A0DE28AA252500C2EC7A /* KKAlbumAssetModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04A28AA252500C2EC7A /* KKAlbumAssetModal.m */; };
+		1166A0DF28AA252500C2EC7A /* KKAlbumAssetModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A04B28AA252500C2EC7A /* KKAlbumAssetModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0E028AA252500C2EC7A /* KKAlbumManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A04C28AA252500C2EC7A /* KKAlbumManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0E128AA252500C2EC7A /* KKAlbumDirectoryModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04E28AA252500C2EC7A /* KKAlbumDirectoryModal.m */; };
+		1166A0E228AA252500C2EC7A /* KKAlbumDirectoryModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04E28AA252500C2EC7A /* KKAlbumDirectoryModal.m */; };
+		1166A0E328AA252500C2EC7A /* KKAlbumDirectoryModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A04E28AA252500C2EC7A /* KKAlbumDirectoryModal.m */; };
+		1166A0E428AA252500C2EC7A /* KKAlbumDirectoryModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A04F28AA252500C2EC7A /* KKAlbumDirectoryModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0E528AA252500C2EC7A /* KKAlbumManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1166A05028AA252500C2EC7A /* KKAlbumManager.bundle */; };
+		1166A0E628AA252500C2EC7A /* KKAlbumManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1166A05028AA252500C2EC7A /* KKAlbumManager.bundle */; };
+		1166A0E728AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05228AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m */; };
+		1166A0E828AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05228AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m */; };
+		1166A0E928AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05228AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m */; };
+		1166A0EA28AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05528AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m */; };
+		1166A0EB28AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05528AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m */; };
+		1166A0EC28AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05528AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m */; };
+		1166A0ED28AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A05628AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0EE28AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05728AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m */; };
+		1166A0EF28AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05728AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m */; };
+		1166A0F028AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05728AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m */; };
+		1166A0F128AA252500C2EC7A /* KKAlbumAssetModalPreviewView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A05828AA252500C2EC7A /* KKAlbumAssetModalPreviewView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0F228AA252500C2EC7A /* KKAlbumAssetModalPreviewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A05928AA252500C2EC7A /* KKAlbumAssetModalPreviewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0F328AA252500C2EC7A /* KKCameraCaptureTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05C28AA252500C2EC7A /* KKCameraCaptureTopBar.m */; };
+		1166A0F428AA252500C2EC7A /* KKCameraCaptureTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05C28AA252500C2EC7A /* KKCameraCaptureTopBar.m */; };
+		1166A0F528AA252500C2EC7A /* KKCameraCaptureTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A05C28AA252500C2EC7A /* KKCameraCaptureTopBar.m */; };
+		1166A0F628AA252500C2EC7A /* KKCameraCaptureTopBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A05D28AA252500C2EC7A /* KKCameraCaptureTopBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0F728AA252500C2EC7A /* KKCameraCaptureDataModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A05F28AA252500C2EC7A /* KKCameraCaptureDataModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0F828AA252500C2EC7A /* KKCameraCaptureDataModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06028AA252500C2EC7A /* KKCameraCaptureDataModal.m */; };
+		1166A0F928AA252500C2EC7A /* KKCameraCaptureDataModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06028AA252500C2EC7A /* KKCameraCaptureDataModal.m */; };
+		1166A0FA28AA252500C2EC7A /* KKCameraCaptureDataModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06028AA252500C2EC7A /* KKCameraCaptureDataModal.m */; };
+		1166A0FB28AA252500C2EC7A /* KKCameraCaptureViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A06128AA252500C2EC7A /* KKCameraCaptureViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0FC28AA252500C2EC7A /* KKCameraCapture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1166A06228AA252500C2EC7A /* KKCameraCapture.bundle */; };
+		1166A0FD28AA252500C2EC7A /* KKCameraCapture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1166A06228AA252500C2EC7A /* KKCameraCapture.bundle */; };
+		1166A0FE28AA252500C2EC7A /* XLCircleProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A06428AA252500C2EC7A /* XLCircleProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A0FF28AA252500C2EC7A /* XLCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06528AA252500C2EC7A /* XLCircle.m */; };
+		1166A10028AA252500C2EC7A /* XLCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06528AA252500C2EC7A /* XLCircle.m */; };
+		1166A10128AA252500C2EC7A /* XLCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06528AA252500C2EC7A /* XLCircle.m */; };
+		1166A10228AA252500C2EC7A /* XLCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06628AA252500C2EC7A /* XLCircleProgress.m */; };
+		1166A10328AA252500C2EC7A /* XLCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06628AA252500C2EC7A /* XLCircleProgress.m */; };
+		1166A10428AA252500C2EC7A /* XLCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06628AA252500C2EC7A /* XLCircleProgress.m */; };
+		1166A10528AA252500C2EC7A /* XLCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A06728AA252500C2EC7A /* XLCircle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A10628AA252500C2EC7A /* KKCameraCaptureShowViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A06928AA252500C2EC7A /* KKCameraCaptureShowViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A10728AA252500C2EC7A /* KKCameraCaptureShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06A28AA252500C2EC7A /* KKCameraCaptureShowViewController.m */; };
+		1166A10828AA252500C2EC7A /* KKCameraCaptureShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06A28AA252500C2EC7A /* KKCameraCaptureShowViewController.m */; };
+		1166A10928AA252500C2EC7A /* KKCameraCaptureShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06A28AA252500C2EC7A /* KKCameraCaptureShowViewController.m */; };
+		1166A10A28AA252500C2EC7A /* KKCameraCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06B28AA252500C2EC7A /* KKCameraCaptureViewController.m */; };
+		1166A10B28AA252500C2EC7A /* KKCameraCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06B28AA252500C2EC7A /* KKCameraCaptureViewController.m */; };
+		1166A10C28AA252500C2EC7A /* KKCameraCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06B28AA252500C2EC7A /* KKCameraCaptureViewController.m */; };
+		1166A10D28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06E28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m */; };
+		1166A10E28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06E28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m */; };
+		1166A10F28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A06E28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m */; };
+		1166A11028AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A06F28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A11128AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A07028AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A11228AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A07228AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m */; };
+		1166A11328AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A07228AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m */; };
+		1166A11428AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A07228AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m */; };
+		1166A11528AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A07328AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1166A11628AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A07428AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m */; };
+		1166A11728AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A07428AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m */; };
+		1166A11828AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A07428AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m */; };
+		1166A11C28AA2A0200C2EC7A /* KKCameraImageShowItemView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A00028AA252500C2EC7A /* KKCameraImageShowItemView.h */; };
+		1166A11D28AA2A0200C2EC7A /* KKCameraImageShowViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A00228AA252500C2EC7A /* KKCameraImageShowViewController.h */; };
+		1166A11E28AA2A0200C2EC7A /* KKCameraImageShowToolBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A00428AA252500C2EC7A /* KKCameraImageShowToolBar.h */; };
+		1166A11F28AA2A0200C2EC7A /* KKCameraImageShowNavBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A00828AA252500C2EC7A /* KKCameraImageShowNavBar.h */; };
+		1166A12028AA2A0200C2EC7A /* KKCameraImageTopBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A00B28AA252500C2EC7A /* KKCameraImageTopBar.h */; };
+		1166A12128AA2A0200C2EC7A /* KKCameraWaitingView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A01028AA252500C2EC7A /* KKCameraWaitingView.h */; };
+		1166A12228AA2A0200C2EC7A /* KKCameraImagePickerViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A01228AA252500C2EC7A /* KKCameraImagePickerViewController.h */; };
+		1166A12328AA2A0200C2EC7A /* KKCameraHelper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A01528AA252500C2EC7A /* KKCameraHelper.h */; };
+		1166A12428AA2A0200C2EC7A /* KKCameraImagePickerController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A01628AA252500C2EC7A /* KKCameraImagePickerController.h */; };
+		1166A12528AA2A0200C2EC7A /* KKCameraImageToolBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A01928AA252500C2EC7A /* KKCameraImageToolBar.h */; };
+		1166A12628AA2A0200C2EC7A /* KKAlbumImagePickerNavTitleBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A01E28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.h */; };
+		1166A12728AA2A0200C2EC7A /* KKAlbumImagePickerDirectoryList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02128AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.h */; };
+		1166A12828AA2A0200C2EC7A /* KKAlbumImagePickerImageViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02328AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h */; };
+		1166A12928AA2A0200C2EC7A /* AlbumImageCollectionViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02628AA252500C2EC7A /* AlbumImageCollectionViewCell.h */; };
+		1166A12A28AA2A0200C2EC7A /* KKAlbumImageToolBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02828AA252500C2EC7A /* KKAlbumImageToolBar.h */; };
+		1166A12B28AA2A0200C2EC7A /* KKAlbumImagePickerManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02D28AA252500C2EC7A /* KKAlbumImagePickerManager.h */; };
+		1166A12C28AA2A0200C2EC7A /* KKAlbumImageShowToolBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03028AA252500C2EC7A /* KKAlbumImageShowToolBar.h */; };
+		1166A12D28AA2A0200C2EC7A /* KKAlbumImageShowCollectionBarItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03528AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h */; };
+		1166A12E28AA2A0200C2EC7A /* KKAlbumImageShowCollectionBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03828AA252500C2EC7A /* KKAlbumImageShowCollectionBar.h */; };
+		1166A12F28AA2A0200C2EC7A /* KKAlbumImageShowItemView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03B28AA252500C2EC7A /* KKAlbumImageShowItemView.h */; };
+		1166A13028AA2A0200C2EC7A /* KKAlbumImageShowViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03C28AA252500C2EC7A /* KKAlbumImageShowViewController.h */; };
+		1166A13128AA2A0200C2EC7A /* KKAlbumImageShowNavBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03E28AA252500C2EC7A /* KKAlbumImageShowNavBar.h */; };
+		1166A13228AA2A0200C2EC7A /* KKAlbumImagePickerController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A04028AA252500C2EC7A /* KKAlbumImagePickerController.h */; };
+		1166A13328AA2A0200C2EC7A /* KKImageCropperView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A04528AA252500C2EC7A /* KKImageCropperView.h */; };
+		1166A13428AA2A0200C2EC7A /* KKImageCropperViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A04628AA252500C2EC7A /* KKImageCropperViewController.h */; };
+		1166A13528AA2A0200C2EC7A /* KKAlbumAssetModal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A04B28AA252500C2EC7A /* KKAlbumAssetModal.h */; };
+		1166A13628AA2A0200C2EC7A /* KKAlbumManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A04C28AA252500C2EC7A /* KKAlbumManager.h */; };
+		1166A13728AA2A0200C2EC7A /* KKAlbumDirectoryModal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A04F28AA252500C2EC7A /* KKAlbumDirectoryModal.h */; };
+		1166A13828AA2A0200C2EC7A /* KKAlbumAssetModalPreviewItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A05628AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.h */; };
+		1166A13928AA2A0200C2EC7A /* KKAlbumAssetModalPreviewView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A05828AA252500C2EC7A /* KKAlbumAssetModalPreviewView.h */; };
+		1166A13A28AA2A0200C2EC7A /* KKAlbumAssetModalPreviewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A05928AA252500C2EC7A /* KKAlbumAssetModalPreviewController.h */; };
+		1166A13B28AA2A0200C2EC7A /* KKCameraCaptureTopBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A05D28AA252500C2EC7A /* KKCameraCaptureTopBar.h */; };
+		1166A13C28AA2A0200C2EC7A /* KKCameraCaptureDataModal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A05F28AA252500C2EC7A /* KKCameraCaptureDataModal.h */; };
+		1166A13D28AA2A0200C2EC7A /* KKCameraCaptureViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A06128AA252500C2EC7A /* KKCameraCaptureViewController.h */; };
+		1166A13E28AA2A0200C2EC7A /* XLCircleProgress.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A06428AA252500C2EC7A /* XLCircleProgress.h */; };
+		1166A13F28AA2A0200C2EC7A /* XLCircle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A06728AA252500C2EC7A /* XLCircle.h */; };
+		1166A14028AA2A0200C2EC7A /* KKCameraCaptureShowViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A06928AA252500C2EC7A /* KKCameraCaptureShowViewController.h */; };
+		1166A14128AA2A0200C2EC7A /* KKAlbumAssetModalVideoPlayBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A06F28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.h */; };
+		1166A14228AA2A0200C2EC7A /* KKAlbumAssetModalVideoPlayController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A07028AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.h */; };
+		1166A14328AA2A0200C2EC7A /* KKAlbumAssetModalVideoPlayView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A07328AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.h */; };
+		1166A14428AA2A0200C2EC7A /* KKMediaPicker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A11B28AA272700C2EC7A /* KKMediaPicker.h */; };
+		1166A14528AA2A2200C2EC7A /* KKAlbumManager.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A05028AA252500C2EC7A /* KKAlbumManager.bundle */; };
+		1166A14628AA2A2200C2EC7A /* KKCameraCapture.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A06228AA252500C2EC7A /* KKCameraCapture.bundle */; };
+		1166A14A28AA315500C2EC7A /* KKMediaPickerAuthorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A14828AA315500C2EC7A /* KKMediaPickerAuthorization.h */; };
+		1166A14B28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A14928AA315500C2EC7A /* KKMediaPickerAuthorization.m */; };
+		1166A14C28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A14928AA315500C2EC7A /* KKMediaPickerAuthorization.m */; };
+		1166A14D28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A14928AA315500C2EC7A /* KKMediaPickerAuthorization.m */; };
+		1166A19C28AA37C300C2EC7A /* KKMediaPickerWatingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A19A28AA37C300C2EC7A /* KKMediaPickerWatingView.h */; };
+		1166A19D28AA37C300C2EC7A /* KKMediaPickerWatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A19B28AA37C300C2EC7A /* KKMediaPickerWatingView.m */; };
+		1166A19E28AA37C300C2EC7A /* KKMediaPickerWatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A19B28AA37C300C2EC7A /* KKMediaPickerWatingView.m */; };
+		1166A19F28AA37C300C2EC7A /* KKMediaPickerWatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A19B28AA37C300C2EC7A /* KKMediaPickerWatingView.m */; };
+		1166A1A428AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A1A228AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m */; };
+		1166A1A528AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A1A228AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m */; };
+		1166A1A628AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A1A228AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m */; };
+		1166A1A728AA3EA400C2EC7A /* UIWindow+KKMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A1A328AA3EA400C2EC7A /* UIWindow+KKMediaPicker.h */; };
+		11856CD928AB9A3500EE4F62 /* KKMediaPickerDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 11856CD828AB9A3500EE4F62 /* KKMediaPickerDefine.h */; };
+		11856CDD28AB9B4200EE4F62 /* NSString+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 11856CDB28AB9B4200EE4F62 /* NSString+KKMediaPicker.m */; };
+		11856CDE28AB9B4200EE4F62 /* NSString+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 11856CDB28AB9B4200EE4F62 /* NSString+KKMediaPicker.m */; };
+		11856CDF28AB9B4200EE4F62 /* NSString+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 11856CDB28AB9B4200EE4F62 /* NSString+KKMediaPicker.m */; };
+		11856CE028AB9B4200EE4F62 /* NSString+KKMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 11856CDC28AB9B4200EE4F62 /* NSString+KKMediaPicker.h */; };
+		11AFBB4B28A9DCC800B72F7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AFBB4A28A9DCC800B72F7F /* AppDelegate.m */; };
+		11AFBB5C28A9DCCA00B72F7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AFBB5B28A9DCCA00B72F7F /* main.m */; };
+		11AFBB6F28A9DDDB00B72F7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AFBB6228A9DDDB00B72F7F /* LaunchScreen.storyboard */; };
+		11AFBB7028A9DDDB00B72F7F /* LaunchScreen.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AFBB6328A9DDDB00B72F7F /* LaunchScreen.xcassets */; };
+		11AFBB7228A9DDDB00B72F7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11AFBB6628A9DDDB00B72F7F /* Localizable.strings */; };
+		11AFBB7328A9DDDB00B72F7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11AFBB6828A9DDDB00B72F7F /* InfoPlist.strings */; };
+		11AFBB7428A9DDDB00B72F7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AFBB6D28A9DDDB00B72F7F /* Images.xcassets */; };
+		11AFBB7728A9DE5500B72F7F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AFBB7628A9DE5500B72F7F /* HomeViewController.m */; };
+		11E049ED28B76048007CB260 /* KKMediaPickerBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 11E049EB28B76048007CB260 /* KKMediaPickerBaseViewController.h */; };
+		11E049EE28B76048007CB260 /* KKMediaPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E049EC28B76048007CB260 /* KKMediaPickerBaseViewController.m */; };
+		11E049EF28B76048007CB260 /* KKMediaPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E049EC28B76048007CB260 /* KKMediaPickerBaseViewController.m */; };
+		11E049F028B76048007CB260 /* KKMediaPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E049EC28B76048007CB260 /* KKMediaPickerBaseViewController.m */; };
+		11E049F428B76075007CB260 /* KKMediaPickerBaseNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 11E049F228B76075007CB260 /* KKMediaPickerBaseNavigationController.h */; };
+		11E049F528B76075007CB260 /* KKMediaPickerBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E049F328B76075007CB260 /* KKMediaPickerBaseNavigationController.m */; };
+		11E049F628B76075007CB260 /* KKMediaPickerBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E049F328B76075007CB260 /* KKMediaPickerBaseNavigationController.m */; };
+		11E049F728B76075007CB260 /* KKMediaPickerBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E049F328B76075007CB260 /* KKMediaPickerBaseNavigationController.m */; };
+		3A654496258CC1C800942E7E /* KKMediaPickerFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A654494258CC1C800942E7E /* KKMediaPickerFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AA02E37258E488C004AF28A /* KKMediaPickerLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AA02E34258E4857004AF28A /* KKMediaPickerLibrary.h */; };
+		8A44E5281A2A056F1F9D2439 /* Pods_KKMediaPickerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BB4612BB40C6E4F3B1EA5B /* Pods_KKMediaPickerDemo.framework */; };
+		BCC09B1C5E7DB794C057B826 /* Pods_KKMediaPickerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8BAFEADE4E5D3B8FBBAEBE /* Pods_KKMediaPickerFramework.framework */; };
+		CAB1C5AD82A5EF41DAEC5D2D /* Pods_KKMediaPickerLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258EBBDE53E47288193D13DE /* Pods_KKMediaPickerLibrary.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A95458B23700BDF00684636 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = resouce;
+			dstSubfolderSpec = 16;
+			files = (
+				1166A14528AA2A2200C2EC7A /* KKAlbumManager.bundle in CopyFiles */,
+				1166A14628AA2A2200C2EC7A /* KKCameraCapture.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5A7FA23BDBE6400FBC8FA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include;
+			dstSubfolderSpec = 16;
+			files = (
+				1166A11C28AA2A0200C2EC7A /* KKCameraImageShowItemView.h in CopyFiles */,
+				1166A11D28AA2A0200C2EC7A /* KKCameraImageShowViewController.h in CopyFiles */,
+				1166A11E28AA2A0200C2EC7A /* KKCameraImageShowToolBar.h in CopyFiles */,
+				1166A11F28AA2A0200C2EC7A /* KKCameraImageShowNavBar.h in CopyFiles */,
+				1166A12028AA2A0200C2EC7A /* KKCameraImageTopBar.h in CopyFiles */,
+				1166A12128AA2A0200C2EC7A /* KKCameraWaitingView.h in CopyFiles */,
+				1166A12228AA2A0200C2EC7A /* KKCameraImagePickerViewController.h in CopyFiles */,
+				1166A12328AA2A0200C2EC7A /* KKCameraHelper.h in CopyFiles */,
+				1166A12428AA2A0200C2EC7A /* KKCameraImagePickerController.h in CopyFiles */,
+				1166A12528AA2A0200C2EC7A /* KKCameraImageToolBar.h in CopyFiles */,
+				1166A12628AA2A0200C2EC7A /* KKAlbumImagePickerNavTitleBar.h in CopyFiles */,
+				1166A12728AA2A0200C2EC7A /* KKAlbumImagePickerDirectoryList.h in CopyFiles */,
+				1166A12828AA2A0200C2EC7A /* KKAlbumImagePickerImageViewController.h in CopyFiles */,
+				1166A12928AA2A0200C2EC7A /* AlbumImageCollectionViewCell.h in CopyFiles */,
+				1166A12A28AA2A0200C2EC7A /* KKAlbumImageToolBar.h in CopyFiles */,
+				1166A12B28AA2A0200C2EC7A /* KKAlbumImagePickerManager.h in CopyFiles */,
+				1166A12C28AA2A0200C2EC7A /* KKAlbumImageShowToolBar.h in CopyFiles */,
+				1166A12D28AA2A0200C2EC7A /* KKAlbumImageShowCollectionBarItem.h in CopyFiles */,
+				1166A12E28AA2A0200C2EC7A /* KKAlbumImageShowCollectionBar.h in CopyFiles */,
+				1166A12F28AA2A0200C2EC7A /* KKAlbumImageShowItemView.h in CopyFiles */,
+				1166A13028AA2A0200C2EC7A /* KKAlbumImageShowViewController.h in CopyFiles */,
+				1166A13128AA2A0200C2EC7A /* KKAlbumImageShowNavBar.h in CopyFiles */,
+				1166A13228AA2A0200C2EC7A /* KKAlbumImagePickerController.h in CopyFiles */,
+				1166A13328AA2A0200C2EC7A /* KKImageCropperView.h in CopyFiles */,
+				1166A13428AA2A0200C2EC7A /* KKImageCropperViewController.h in CopyFiles */,
+				1166A13528AA2A0200C2EC7A /* KKAlbumAssetModal.h in CopyFiles */,
+				1166A13628AA2A0200C2EC7A /* KKAlbumManager.h in CopyFiles */,
+				1166A13728AA2A0200C2EC7A /* KKAlbumDirectoryModal.h in CopyFiles */,
+				1166A13828AA2A0200C2EC7A /* KKAlbumAssetModalPreviewItem.h in CopyFiles */,
+				1166A13928AA2A0200C2EC7A /* KKAlbumAssetModalPreviewView.h in CopyFiles */,
+				1166A13A28AA2A0200C2EC7A /* KKAlbumAssetModalPreviewController.h in CopyFiles */,
+				1166A13B28AA2A0200C2EC7A /* KKCameraCaptureTopBar.h in CopyFiles */,
+				1166A13C28AA2A0200C2EC7A /* KKCameraCaptureDataModal.h in CopyFiles */,
+				1166A13D28AA2A0200C2EC7A /* KKCameraCaptureViewController.h in CopyFiles */,
+				1166A13E28AA2A0200C2EC7A /* XLCircleProgress.h in CopyFiles */,
+				1166A13F28AA2A0200C2EC7A /* XLCircle.h in CopyFiles */,
+				1166A14028AA2A0200C2EC7A /* KKCameraCaptureShowViewController.h in CopyFiles */,
+				1166A14128AA2A0200C2EC7A /* KKAlbumAssetModalVideoPlayBar.h in CopyFiles */,
+				1166A14228AA2A0200C2EC7A /* KKAlbumAssetModalVideoPlayController.h in CopyFiles */,
+				1166A14328AA2A0200C2EC7A /* KKAlbumAssetModalVideoPlayView.h in CopyFiles */,
+				1166A14428AA2A0200C2EC7A /* KKMediaPicker.h in CopyFiles */,
+				3AA02E37258E488C004AF28A /* KKMediaPickerLibrary.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		110D864728B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KKMediaPicker.h"; sourceTree = "<group>"; };
+		110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KKMediaPicker.m"; sourceTree = "<group>"; };
+		114F7A7B28B60A90003DB692 /* UIImage+KKMediaPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+KKMediaPicker.h"; sourceTree = "<group>"; };
+		114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KKMediaPicker.m"; sourceTree = "<group>"; };
+		11669FFE28AA252500C2EC7A /* KKCameraImageShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImageShowViewController.m; sourceTree = "<group>"; };
+		1166A00028AA252500C2EC7A /* KKCameraImageShowItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImageShowItemView.h; sourceTree = "<group>"; };
+		1166A00128AA252500C2EC7A /* KKCameraImageShowItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImageShowItemView.m; sourceTree = "<group>"; };
+		1166A00228AA252500C2EC7A /* KKCameraImageShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImageShowViewController.h; sourceTree = "<group>"; };
+		1166A00428AA252500C2EC7A /* KKCameraImageShowToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImageShowToolBar.h; sourceTree = "<group>"; };
+		1166A00528AA252500C2EC7A /* KKCameraImageShowToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImageShowToolBar.m; sourceTree = "<group>"; };
+		1166A00728AA252500C2EC7A /* KKCameraImageShowNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImageShowNavBar.m; sourceTree = "<group>"; };
+		1166A00828AA252500C2EC7A /* KKCameraImageShowNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImageShowNavBar.h; sourceTree = "<group>"; };
+		1166A00A28AA252500C2EC7A /* KKCameraImageTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImageTopBar.m; sourceTree = "<group>"; };
+		1166A00B28AA252500C2EC7A /* KKCameraImageTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImageTopBar.h; sourceTree = "<group>"; };
+		1166A00C28AA252500C2EC7A /* KKCameraImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImagePickerController.m; sourceTree = "<group>"; };
+		1166A00E28AA252500C2EC7A /* KKCameraImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImagePickerViewController.m; sourceTree = "<group>"; };
+		1166A01028AA252500C2EC7A /* KKCameraWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraWaitingView.h; sourceTree = "<group>"; };
+		1166A01128AA252500C2EC7A /* KKCameraWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraWaitingView.m; sourceTree = "<group>"; };
+		1166A01228AA252500C2EC7A /* KKCameraImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImagePickerViewController.h; sourceTree = "<group>"; };
+		1166A01428AA252500C2EC7A /* KKCameraHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraHelper.m; sourceTree = "<group>"; };
+		1166A01528AA252500C2EC7A /* KKCameraHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraHelper.h; sourceTree = "<group>"; };
+		1166A01628AA252500C2EC7A /* KKCameraImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImagePickerController.h; sourceTree = "<group>"; };
+		1166A01828AA252500C2EC7A /* KKCameraImageToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImageToolBar.m; sourceTree = "<group>"; };
+		1166A01928AA252500C2EC7A /* KKCameraImageToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImageToolBar.h; sourceTree = "<group>"; };
+		1166A01C28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImagePickerImageViewController.m; sourceTree = "<group>"; };
+		1166A01E28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImagePickerNavTitleBar.h; sourceTree = "<group>"; };
+		1166A01F28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImagePickerNavTitleBar.m; sourceTree = "<group>"; };
+		1166A02128AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImagePickerDirectoryList.h; sourceTree = "<group>"; };
+		1166A02228AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImagePickerDirectoryList.m; sourceTree = "<group>"; };
+		1166A02328AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImagePickerImageViewController.h; sourceTree = "<group>"; };
+		1166A02528AA252500C2EC7A /* AlbumImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumImageCollectionViewCell.m; sourceTree = "<group>"; };
+		1166A02628AA252500C2EC7A /* AlbumImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumImageCollectionViewCell.h; sourceTree = "<group>"; };
+		1166A02828AA252500C2EC7A /* KKAlbumImageToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageToolBar.h; sourceTree = "<group>"; };
+		1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageToolBar.m; sourceTree = "<group>"; };
+		1166A02A28AA252500C2EC7A /* KKAlbumImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImagePickerController.m; sourceTree = "<group>"; };
+		1166A02C28AA252500C2EC7A /* KKAlbumImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImagePickerManager.m; sourceTree = "<group>"; };
+		1166A02D28AA252500C2EC7A /* KKAlbumImagePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImagePickerManager.h; sourceTree = "<group>"; };
+		1166A03028AA252500C2EC7A /* KKAlbumImageShowToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageShowToolBar.h; sourceTree = "<group>"; };
+		1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowToolBar.m; sourceTree = "<group>"; };
+		1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowViewController.m; sourceTree = "<group>"; };
+		1166A03528AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageShowCollectionBarItem.h; sourceTree = "<group>"; };
+		1166A03628AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowCollectionBarItem.m; sourceTree = "<group>"; };
+		1166A03728AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowCollectionBar.m; sourceTree = "<group>"; };
+		1166A03828AA252500C2EC7A /* KKAlbumImageShowCollectionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageShowCollectionBar.h; sourceTree = "<group>"; };
+		1166A03A28AA252500C2EC7A /* KKAlbumImageShowItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowItemView.m; sourceTree = "<group>"; };
+		1166A03B28AA252500C2EC7A /* KKAlbumImageShowItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageShowItemView.h; sourceTree = "<group>"; };
+		1166A03C28AA252500C2EC7A /* KKAlbumImageShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageShowViewController.h; sourceTree = "<group>"; };
+		1166A03E28AA252500C2EC7A /* KKAlbumImageShowNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageShowNavBar.h; sourceTree = "<group>"; };
+		1166A03F28AA252500C2EC7A /* KKAlbumImageShowNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowNavBar.m; sourceTree = "<group>"; };
+		1166A04028AA252500C2EC7A /* KKAlbumImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImagePickerController.h; sourceTree = "<group>"; };
+		1166A04228AA252500C2EC7A /* KKImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKImageCropperViewController.m; sourceTree = "<group>"; };
+		1166A04428AA252500C2EC7A /* KKImageCropperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKImageCropperView.m; sourceTree = "<group>"; };
+		1166A04528AA252500C2EC7A /* KKImageCropperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKImageCropperView.h; sourceTree = "<group>"; };
+		1166A04628AA252500C2EC7A /* KKImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKImageCropperViewController.h; sourceTree = "<group>"; };
+		1166A04828AA252500C2EC7A /* KKAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumManager.m; sourceTree = "<group>"; };
+		1166A04A28AA252500C2EC7A /* KKAlbumAssetModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumAssetModal.m; sourceTree = "<group>"; };
+		1166A04B28AA252500C2EC7A /* KKAlbumAssetModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumAssetModal.h; sourceTree = "<group>"; };
+		1166A04C28AA252500C2EC7A /* KKAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumManager.h; sourceTree = "<group>"; };
+		1166A04E28AA252500C2EC7A /* KKAlbumDirectoryModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumDirectoryModal.m; sourceTree = "<group>"; };
+		1166A04F28AA252500C2EC7A /* KKAlbumDirectoryModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumDirectoryModal.h; sourceTree = "<group>"; };
+		1166A05028AA252500C2EC7A /* KKAlbumManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KKAlbumManager.bundle; sourceTree = "<group>"; };
+		1166A05228AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumAssetModalPreviewController.m; sourceTree = "<group>"; };
+		1166A05528AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumAssetModalPreviewItem.m; sourceTree = "<group>"; };
+		1166A05628AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumAssetModalPreviewItem.h; sourceTree = "<group>"; };
+		1166A05728AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumAssetModalPreviewView.m; sourceTree = "<group>"; };
+		1166A05828AA252500C2EC7A /* KKAlbumAssetModalPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumAssetModalPreviewView.h; sourceTree = "<group>"; };
+		1166A05928AA252500C2EC7A /* KKAlbumAssetModalPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumAssetModalPreviewController.h; sourceTree = "<group>"; };
+		1166A05C28AA252500C2EC7A /* KKCameraCaptureTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraCaptureTopBar.m; sourceTree = "<group>"; };
+		1166A05D28AA252500C2EC7A /* KKCameraCaptureTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraCaptureTopBar.h; sourceTree = "<group>"; };
+		1166A05F28AA252500C2EC7A /* KKCameraCaptureDataModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraCaptureDataModal.h; sourceTree = "<group>"; };
+		1166A06028AA252500C2EC7A /* KKCameraCaptureDataModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraCaptureDataModal.m; sourceTree = "<group>"; };
+		1166A06128AA252500C2EC7A /* KKCameraCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraCaptureViewController.h; sourceTree = "<group>"; };
+		1166A06228AA252500C2EC7A /* KKCameraCapture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KKCameraCapture.bundle; sourceTree = "<group>"; };
+		1166A06428AA252500C2EC7A /* XLCircleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCircleProgress.h; sourceTree = "<group>"; };
+		1166A06528AA252500C2EC7A /* XLCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLCircle.m; sourceTree = "<group>"; };
+		1166A06628AA252500C2EC7A /* XLCircleProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLCircleProgress.m; sourceTree = "<group>"; };
+		1166A06728AA252500C2EC7A /* XLCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCircle.h; sourceTree = "<group>"; };
+		1166A06928AA252500C2EC7A /* KKCameraCaptureShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraCaptureShowViewController.h; sourceTree = "<group>"; };
+		1166A06A28AA252500C2EC7A /* KKCameraCaptureShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraCaptureShowViewController.m; sourceTree = "<group>"; };
+		1166A06B28AA252500C2EC7A /* KKCameraCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraCaptureViewController.m; sourceTree = "<group>"; };
+		1166A06E28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumAssetModalVideoPlayBar.m; sourceTree = "<group>"; };
+		1166A06F28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumAssetModalVideoPlayBar.h; sourceTree = "<group>"; };
+		1166A07028AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumAssetModalVideoPlayController.h; sourceTree = "<group>"; };
+		1166A07228AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumAssetModalVideoPlayView.m; sourceTree = "<group>"; };
+		1166A07328AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumAssetModalVideoPlayView.h; sourceTree = "<group>"; };
+		1166A07428AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumAssetModalVideoPlayController.m; sourceTree = "<group>"; };
+		1166A11B28AA272700C2EC7A /* KKMediaPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPicker.h; sourceTree = "<group>"; };
+		1166A14828AA315500C2EC7A /* KKMediaPickerAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerAuthorization.h; sourceTree = "<group>"; };
+		1166A14928AA315500C2EC7A /* KKMediaPickerAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediaPickerAuthorization.m; sourceTree = "<group>"; };
+		1166A19A28AA37C300C2EC7A /* KKMediaPickerWatingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerWatingView.h; sourceTree = "<group>"; };
+		1166A19B28AA37C300C2EC7A /* KKMediaPickerWatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMediaPickerWatingView.m; sourceTree = "<group>"; };
+		1166A1A228AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+KKMediaPicker.m"; sourceTree = "<group>"; };
+		1166A1A328AA3EA400C2EC7A /* UIWindow+KKMediaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+KKMediaPicker.h"; sourceTree = "<group>"; };
+		11856CD828AB9A3500EE4F62 /* KKMediaPickerDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerDefine.h; sourceTree = "<group>"; };
+		11856CDB28AB9B4200EE4F62 /* NSString+KKMediaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KKMediaPicker.m"; sourceTree = "<group>"; };
+		11856CDC28AB9B4200EE4F62 /* NSString+KKMediaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KKMediaPicker.h"; sourceTree = "<group>"; };
+		11AFBB4728A9DCC800B72F7F /* KKMediaPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKMediaPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11AFBB4928A9DCC800B72F7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		11AFBB4A28A9DCC800B72F7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11AFBB5B28A9DCCA00B72F7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11AFBB6228A9DDDB00B72F7F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11AFBB6328A9DDDB00B72F7F /* LaunchScreen.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LaunchScreen.xcassets; sourceTree = "<group>"; };
+		11AFBB6428A9DDDB00B72F7F /* KKMediaPickerDemo_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KKMediaPickerDemo_Info.plist; sourceTree = "<group>"; };
+		11AFBB6728A9DDDB00B72F7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		11AFBB6928A9DDDB00B72F7F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		11AFBB6A28A9DDDB00B72F7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		11AFBB6B28A9DDDB00B72F7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		11AFBB6C28A9DDDB00B72F7F /* AppDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDefine.h; sourceTree = "<group>"; };
+		11AFBB6D28A9DDDB00B72F7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		11AFBB6E28A9DDDB00B72F7F /* KKMediaPickerDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKMediaPickerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		11AFBB7528A9DE5500B72F7F /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		11AFBB7628A9DE5500B72F7F /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		11E049EB28B76048007CB260 /* KKMediaPickerBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerBaseViewController.h; sourceTree = "<group>"; };
+		11E049EC28B76048007CB260 /* KKMediaPickerBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMediaPickerBaseViewController.m; sourceTree = "<group>"; };
+		11E049F228B76075007CB260 /* KKMediaPickerBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerBaseNavigationController.h; sourceTree = "<group>"; };
+		11E049F328B76075007CB260 /* KKMediaPickerBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMediaPickerBaseNavigationController.m; sourceTree = "<group>"; };
+		227ECCD943B94FF8EFC56204 /* Pods-KKRequestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKRequestDemo.release.xcconfig"; path = "Target Support Files/Pods-KKRequestDemo/Pods-KKRequestDemo.release.xcconfig"; sourceTree = "<group>"; };
+		258EBBDE53E47288193D13DE /* Pods_KKMediaPickerLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKMediaPickerLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ADD94F6B22C1E6DEF880C49 /* Pods-KKMediaPickerFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKMediaPickerFramework.debug.xcconfig"; path = "Target Support Files/Pods-KKMediaPickerFramework/Pods-KKMediaPickerFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		2FC9A1B380CC64E7F875158C /* Pods-KKMediaPickerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKMediaPickerDemo.debug.xcconfig"; path = "Target Support Files/Pods-KKMediaPickerDemo/Pods-KKMediaPickerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3A654492258CC1C800942E7E /* KKMediaPickerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KKMediaPickerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A654494258CC1C800942E7E /* KKMediaPickerFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerFramework.h; sourceTree = "<group>"; };
+		3A654495258CC1C800942E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9542A523700AF800684636 /* libKKMediaPickerLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKKMediaPickerLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AA02E34258E4857004AF28A /* KKMediaPickerLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerLibrary.h; sourceTree = "<group>"; };
+		3B5059A85C944710AB4A429F /* Pods-KKMediaPickerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKMediaPickerDemo.release.xcconfig"; path = "Target Support Files/Pods-KKMediaPickerDemo/Pods-KKMediaPickerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		57233D42BF2694F755E5D664 /* Pods-KKRequestLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKRequestLibrary.release.xcconfig"; path = "Target Support Files/Pods-KKRequestLibrary/Pods-KKRequestLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		5AFE8056F1CB6ACC7AA2F751 /* Pods-KKRequestFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKRequestFramework.debug.xcconfig"; path = "Target Support Files/Pods-KKRequestFramework/Pods-KKRequestFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		78714100DC397C010C670DF6 /* Pods-KKMediaPickerLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKMediaPickerLibrary.debug.xcconfig"; path = "Target Support Files/Pods-KKMediaPickerLibrary/Pods-KKMediaPickerLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		7C834BA800BC1957B18DE49A /* Pods-KKRequestLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKRequestLibrary.debug.xcconfig"; path = "Target Support Files/Pods-KKRequestLibrary/Pods-KKRequestLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		935E16C35D26ABD96817CDEE /* Pods-KKMediaPickerLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKMediaPickerLibrary.release.xcconfig"; path = "Target Support Files/Pods-KKMediaPickerLibrary/Pods-KKMediaPickerLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		C6BB4612BB40C6E4F3B1EA5B /* Pods_KKMediaPickerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKMediaPickerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5486F14ACC22441B09B76B /* Pods-KKMediaPickerFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKMediaPickerFramework.release.xcconfig"; path = "Target Support Files/Pods-KKMediaPickerFramework/Pods-KKMediaPickerFramework.release.xcconfig"; sourceTree = "<group>"; };
+		F3D8B1EF9E86A4E5B148F211 /* Pods-KKRequestFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKRequestFramework.release.xcconfig"; path = "Target Support Files/Pods-KKRequestFramework/Pods-KKRequestFramework.release.xcconfig"; sourceTree = "<group>"; };
+		FA5CEA29543B2831F68E6E24 /* Pods-KKRequestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKRequestDemo.debug.xcconfig"; path = "Target Support Files/Pods-KKRequestDemo/Pods-KKRequestDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		FF8BAFEADE4E5D3B8FBBAEBE /* Pods_KKMediaPickerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKMediaPickerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11AFBB4428A9DCC800B72F7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A44E5281A2A056F1F9D2439 /* Pods_KKMediaPickerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A65448F258CC1C800942E7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC09B1C5E7DB794C057B826 /* Pods_KKMediaPickerFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9542A223700AF800684636 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB1C5AD82A5EF41DAEC5D2D /* Pods_KKMediaPickerLibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		110D864628B1F62E00DE9FEF /* NSBundle+KKMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				110D864728B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h */,
+				110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */,
+			);
+			path = "NSBundle+KKMediaPicker";
+			sourceTree = "<group>";
+		};
+		114F7A7A28B60A6D003DB692 /* UIImage+KKMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				114F7A7B28B60A90003DB692 /* UIImage+KKMediaPicker.h */,
+				114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */,
+			);
+			path = "UIImage+KKMediaPicker";
+			sourceTree = "<group>";
+		};
+		11669FFB28AA252500C2EC7A /* KKMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				11E049F128B76050007CB260 /* KKMediaPickerBaseNavigationController */,
+				11E049EA28B7600C007CB260 /* KKMediaPickerBaseViewController */,
+				11E049E928B741F9007CB260 /* KKCameraPicker */,
+				11E049E828B741D6007CB260 /* KKAlbumPicker */,
+				1166A04128AA252500C2EC7A /* KKImageCropperViewController */,
+			);
+			name = KKMediaPicker;
+			path = Classes/KKMediaPicker;
+			sourceTree = SOURCE_ROOT;
+		};
+		11669FFC28AA252500C2EC7A /* KKCameraImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				11669FFD28AA252500C2EC7A /* KKCameraImageShowViewController */,
+				1166A00928AA252500C2EC7A /* KKCameraImageTopBar */,
+				1166A00D28AA252500C2EC7A /* KKCameraImagePickerViewController */,
+				1166A01728AA252500C2EC7A /* KKCameraImageToolBar */,
+				1166A01628AA252500C2EC7A /* KKCameraImagePickerController.h */,
+				1166A00C28AA252500C2EC7A /* KKCameraImagePickerController.m */,
+			);
+			path = KKCameraImagePickerController;
+			sourceTree = "<group>";
+		};
+		11669FFD28AA252500C2EC7A /* KKCameraImageShowViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11669FFF28AA252500C2EC7A /* KKCameraImageShowItemView */,
+				1166A00328AA252500C2EC7A /* KKCameraImageShowToolBar */,
+				1166A00628AA252500C2EC7A /* KKCameraImageShowNavBar */,
+				1166A00228AA252500C2EC7A /* KKCameraImageShowViewController.h */,
+				11669FFE28AA252500C2EC7A /* KKCameraImageShowViewController.m */,
+			);
+			path = KKCameraImageShowViewController;
+			sourceTree = "<group>";
+		};
+		11669FFF28AA252500C2EC7A /* KKCameraImageShowItemView */ = {
+			isa = PBXGroup;
+			children = (
+				1166A00028AA252500C2EC7A /* KKCameraImageShowItemView.h */,
+				1166A00128AA252500C2EC7A /* KKCameraImageShowItemView.m */,
+			);
+			path = KKCameraImageShowItemView;
+			sourceTree = "<group>";
+		};
+		1166A00328AA252500C2EC7A /* KKCameraImageShowToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A00428AA252500C2EC7A /* KKCameraImageShowToolBar.h */,
+				1166A00528AA252500C2EC7A /* KKCameraImageShowToolBar.m */,
+			);
+			path = KKCameraImageShowToolBar;
+			sourceTree = "<group>";
+		};
+		1166A00628AA252500C2EC7A /* KKCameraImageShowNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A00828AA252500C2EC7A /* KKCameraImageShowNavBar.h */,
+				1166A00728AA252500C2EC7A /* KKCameraImageShowNavBar.m */,
+			);
+			path = KKCameraImageShowNavBar;
+			sourceTree = "<group>";
+		};
+		1166A00928AA252500C2EC7A /* KKCameraImageTopBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A00B28AA252500C2EC7A /* KKCameraImageTopBar.h */,
+				1166A00A28AA252500C2EC7A /* KKCameraImageTopBar.m */,
+			);
+			path = KKCameraImageTopBar;
+			sourceTree = "<group>";
+		};
+		1166A00D28AA252500C2EC7A /* KKCameraImagePickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A00F28AA252500C2EC7A /* KKCameraWaitingView */,
+				1166A01328AA252500C2EC7A /* KKCameraHelper */,
+				1166A01228AA252500C2EC7A /* KKCameraImagePickerViewController.h */,
+				1166A00E28AA252500C2EC7A /* KKCameraImagePickerViewController.m */,
+			);
+			path = KKCameraImagePickerViewController;
+			sourceTree = "<group>";
+		};
+		1166A00F28AA252500C2EC7A /* KKCameraWaitingView */ = {
+			isa = PBXGroup;
+			children = (
+				1166A01028AA252500C2EC7A /* KKCameraWaitingView.h */,
+				1166A01128AA252500C2EC7A /* KKCameraWaitingView.m */,
+			);
+			path = KKCameraWaitingView;
+			sourceTree = "<group>";
+		};
+		1166A01328AA252500C2EC7A /* KKCameraHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1166A01528AA252500C2EC7A /* KKCameraHelper.h */,
+				1166A01428AA252500C2EC7A /* KKCameraHelper.m */,
+			);
+			path = KKCameraHelper;
+			sourceTree = "<group>";
+		};
+		1166A01728AA252500C2EC7A /* KKCameraImageToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A01928AA252500C2EC7A /* KKCameraImageToolBar.h */,
+				1166A01828AA252500C2EC7A /* KKCameraImageToolBar.m */,
+			);
+			path = KKCameraImageToolBar;
+			sourceTree = "<group>";
+		};
+		1166A01A28AA252500C2EC7A /* KKAlbumImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A01B28AA252500C2EC7A /* KKAlbumImagePickerImageViewController */,
+				1166A02B28AA252500C2EC7A /* KKAlbumImagePickerManager */,
+				1166A02E28AA252500C2EC7A /* KKAlbumImageShowViewController */,
+				1166A04028AA252500C2EC7A /* KKAlbumImagePickerController.h */,
+				1166A02A28AA252500C2EC7A /* KKAlbumImagePickerController.m */,
+			);
+			path = KKAlbumImagePickerController;
+			sourceTree = "<group>";
+		};
+		1166A01B28AA252500C2EC7A /* KKAlbumImagePickerImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A02328AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h */,
+				1166A01C28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m */,
+				1166A01D28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar */,
+				1166A02028AA252500C2EC7A /* KKAlbumImagePickerDirectoryList */,
+				1166A02428AA252500C2EC7A /* AlbumImageCollectionViewCell */,
+				1166A02728AA252500C2EC7A /* KKAlbumImageToolBar */,
+			);
+			path = KKAlbumImagePickerImageViewController;
+			sourceTree = "<group>";
+		};
+		1166A01D28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A01E28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.h */,
+				1166A01F28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m */,
+			);
+			path = KKAlbumImagePickerNavTitleBar;
+			sourceTree = "<group>";
+		};
+		1166A02028AA252500C2EC7A /* KKAlbumImagePickerDirectoryList */ = {
+			isa = PBXGroup;
+			children = (
+				1166A02128AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.h */,
+				1166A02228AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m */,
+			);
+			path = KKAlbumImagePickerDirectoryList;
+			sourceTree = "<group>";
+		};
+		1166A02428AA252500C2EC7A /* AlbumImageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1166A02628AA252500C2EC7A /* AlbumImageCollectionViewCell.h */,
+				1166A02528AA252500C2EC7A /* AlbumImageCollectionViewCell.m */,
+			);
+			path = AlbumImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		1166A02728AA252500C2EC7A /* KKAlbumImageToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A02828AA252500C2EC7A /* KKAlbumImageToolBar.h */,
+				1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */,
+			);
+			path = KKAlbumImageToolBar;
+			sourceTree = "<group>";
+		};
+		1166A02B28AA252500C2EC7A /* KKAlbumImagePickerManager */ = {
+			isa = PBXGroup;
+			children = (
+				1166A02D28AA252500C2EC7A /* KKAlbumImagePickerManager.h */,
+				1166A02C28AA252500C2EC7A /* KKAlbumImagePickerManager.m */,
+			);
+			path = KKAlbumImagePickerManager;
+			sourceTree = "<group>";
+		};
+		1166A02E28AA252500C2EC7A /* KKAlbumImageShowViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A02F28AA252500C2EC7A /* KKAlbumImageShowToolBar */,
+				1166A03328AA252500C2EC7A /* KKAlbumImageShowCollectionBar */,
+				1166A03928AA252500C2EC7A /* KKAlbumImageShowItemView */,
+				1166A03D28AA252500C2EC7A /* KKAlbumImageShowNavBar */,
+				1166A03C28AA252500C2EC7A /* KKAlbumImageShowViewController.h */,
+				1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */,
+			);
+			path = KKAlbumImageShowViewController;
+			sourceTree = "<group>";
+		};
+		1166A02F28AA252500C2EC7A /* KKAlbumImageShowToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A03028AA252500C2EC7A /* KKAlbumImageShowToolBar.h */,
+				1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */,
+			);
+			path = KKAlbumImageShowToolBar;
+			sourceTree = "<group>";
+		};
+		1166A03328AA252500C2EC7A /* KKAlbumImageShowCollectionBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A03428AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem */,
+				1166A03828AA252500C2EC7A /* KKAlbumImageShowCollectionBar.h */,
+				1166A03728AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m */,
+			);
+			path = KKAlbumImageShowCollectionBar;
+			sourceTree = "<group>";
+		};
+		1166A03428AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				1166A03528AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h */,
+				1166A03628AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m */,
+			);
+			path = KKAlbumImageShowCollectionBarItem;
+			sourceTree = "<group>";
+		};
+		1166A03928AA252500C2EC7A /* KKAlbumImageShowItemView */ = {
+			isa = PBXGroup;
+			children = (
+				1166A03B28AA252500C2EC7A /* KKAlbumImageShowItemView.h */,
+				1166A03A28AA252500C2EC7A /* KKAlbumImageShowItemView.m */,
+			);
+			path = KKAlbumImageShowItemView;
+			sourceTree = "<group>";
+		};
+		1166A03D28AA252500C2EC7A /* KKAlbumImageShowNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A03E28AA252500C2EC7A /* KKAlbumImageShowNavBar.h */,
+				1166A03F28AA252500C2EC7A /* KKAlbumImageShowNavBar.m */,
+			);
+			path = KKAlbumImageShowNavBar;
+			sourceTree = "<group>";
+		};
+		1166A04128AA252500C2EC7A /* KKImageCropperViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A04328AA252500C2EC7A /* KKImageCropperView */,
+				1166A04628AA252500C2EC7A /* KKImageCropperViewController.h */,
+				1166A04228AA252500C2EC7A /* KKImageCropperViewController.m */,
+			);
+			path = KKImageCropperViewController;
+			sourceTree = "<group>";
+		};
+		1166A04328AA252500C2EC7A /* KKImageCropperView */ = {
+			isa = PBXGroup;
+			children = (
+				1166A04528AA252500C2EC7A /* KKImageCropperView.h */,
+				1166A04428AA252500C2EC7A /* KKImageCropperView.m */,
+			);
+			path = KKImageCropperView;
+			sourceTree = "<group>";
+		};
+		1166A04728AA252500C2EC7A /* KKAlbumManager */ = {
+			isa = PBXGroup;
+			children = (
+				1166A04C28AA252500C2EC7A /* KKAlbumManager.h */,
+				1166A04828AA252500C2EC7A /* KKAlbumManager.m */,
+				1166A04928AA252500C2EC7A /* KKAlbumAssetModal */,
+				1166A04D28AA252500C2EC7A /* KKAlbumDirectoryModal */,
+				1166A05028AA252500C2EC7A /* KKAlbumManager.bundle */,
+			);
+			path = KKAlbumManager;
+			sourceTree = "<group>";
+		};
+		1166A04928AA252500C2EC7A /* KKAlbumAssetModal */ = {
+			isa = PBXGroup;
+			children = (
+				1166A04A28AA252500C2EC7A /* KKAlbumAssetModal.m */,
+				1166A04B28AA252500C2EC7A /* KKAlbumAssetModal.h */,
+			);
+			path = KKAlbumAssetModal;
+			sourceTree = "<group>";
+		};
+		1166A04D28AA252500C2EC7A /* KKAlbumDirectoryModal */ = {
+			isa = PBXGroup;
+			children = (
+				1166A04E28AA252500C2EC7A /* KKAlbumDirectoryModal.m */,
+				1166A04F28AA252500C2EC7A /* KKAlbumDirectoryModal.h */,
+			);
+			path = KKAlbumDirectoryModal;
+			sourceTree = "<group>";
+		};
+		1166A05128AA252500C2EC7A /* KKAlbumAssetModalPreviewController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A05328AA252500C2EC7A /* KKAlbumAssetModalPreviewView */,
+				1166A05928AA252500C2EC7A /* KKAlbumAssetModalPreviewController.h */,
+				1166A05228AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m */,
+			);
+			path = KKAlbumAssetModalPreviewController;
+			sourceTree = "<group>";
+		};
+		1166A05328AA252500C2EC7A /* KKAlbumAssetModalPreviewView */ = {
+			isa = PBXGroup;
+			children = (
+				1166A05428AA252500C2EC7A /* KKAlbumAssetModalPreviewItem */,
+				1166A05828AA252500C2EC7A /* KKAlbumAssetModalPreviewView.h */,
+				1166A05728AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m */,
+			);
+			path = KKAlbumAssetModalPreviewView;
+			sourceTree = "<group>";
+		};
+		1166A05428AA252500C2EC7A /* KKAlbumAssetModalPreviewItem */ = {
+			isa = PBXGroup;
+			children = (
+				1166A05628AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.h */,
+				1166A05528AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m */,
+			);
+			path = KKAlbumAssetModalPreviewItem;
+			sourceTree = "<group>";
+		};
+		1166A05A28AA252500C2EC7A /* KKCameraCaptureViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A05B28AA252500C2EC7A /* KKCameraCaptureTopBar */,
+				1166A05E28AA252500C2EC7A /* KKCameraCaptureDataModal */,
+				1166A06228AA252500C2EC7A /* KKCameraCapture.bundle */,
+				1166A06328AA252500C2EC7A /* XLCircleProgress */,
+				1166A06828AA252500C2EC7A /* KKCameraCaptureShowViewController */,
+				1166A06128AA252500C2EC7A /* KKCameraCaptureViewController.h */,
+				1166A06B28AA252500C2EC7A /* KKCameraCaptureViewController.m */,
+			);
+			path = KKCameraCaptureViewController;
+			sourceTree = "<group>";
+		};
+		1166A05B28AA252500C2EC7A /* KKCameraCaptureTopBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A05D28AA252500C2EC7A /* KKCameraCaptureTopBar.h */,
+				1166A05C28AA252500C2EC7A /* KKCameraCaptureTopBar.m */,
+			);
+			path = KKCameraCaptureTopBar;
+			sourceTree = "<group>";
+		};
+		1166A05E28AA252500C2EC7A /* KKCameraCaptureDataModal */ = {
+			isa = PBXGroup;
+			children = (
+				1166A05F28AA252500C2EC7A /* KKCameraCaptureDataModal.h */,
+				1166A06028AA252500C2EC7A /* KKCameraCaptureDataModal.m */,
+			);
+			path = KKCameraCaptureDataModal;
+			sourceTree = "<group>";
+		};
+		1166A06328AA252500C2EC7A /* XLCircleProgress */ = {
+			isa = PBXGroup;
+			children = (
+				1166A06428AA252500C2EC7A /* XLCircleProgress.h */,
+				1166A06528AA252500C2EC7A /* XLCircle.m */,
+				1166A06628AA252500C2EC7A /* XLCircleProgress.m */,
+				1166A06728AA252500C2EC7A /* XLCircle.h */,
+			);
+			path = XLCircleProgress;
+			sourceTree = "<group>";
+		};
+		1166A06828AA252500C2EC7A /* KKCameraCaptureShowViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A06928AA252500C2EC7A /* KKCameraCaptureShowViewController.h */,
+				1166A06A28AA252500C2EC7A /* KKCameraCaptureShowViewController.m */,
+			);
+			path = KKCameraCaptureShowViewController;
+			sourceTree = "<group>";
+		};
+		1166A06C28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController */ = {
+			isa = PBXGroup;
+			children = (
+				1166A06D28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar */,
+				1166A07128AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView */,
+				1166A07028AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.h */,
+				1166A07428AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m */,
+			);
+			path = KKAlbumAssetModalVideoPlayController;
+			sourceTree = "<group>";
+		};
+		1166A06D28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar */ = {
+			isa = PBXGroup;
+			children = (
+				1166A06F28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.h */,
+				1166A06E28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m */,
+			);
+			path = KKAlbumAssetModalVideoPlayBar;
+			sourceTree = "<group>";
+		};
+		1166A07128AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView */ = {
+			isa = PBXGroup;
+			children = (
+				1166A07328AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.h */,
+				1166A07228AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m */,
+			);
+			path = KKAlbumAssetModalVideoPlayView;
+			sourceTree = "<group>";
+		};
+		1166A14728AA315500C2EC7A /* KKMediaPickerAuthorization */ = {
+			isa = PBXGroup;
+			children = (
+				1166A14828AA315500C2EC7A /* KKMediaPickerAuthorization.h */,
+				1166A14928AA315500C2EC7A /* KKMediaPickerAuthorization.m */,
+			);
+			path = KKMediaPickerAuthorization;
+			sourceTree = "<group>";
+		};
+		1166A19928AA374400C2EC7A /* KKMediaPickerWatingView */ = {
+			isa = PBXGroup;
+			children = (
+				1166A19A28AA37C300C2EC7A /* KKMediaPickerWatingView.h */,
+				1166A19B28AA37C300C2EC7A /* KKMediaPickerWatingView.m */,
+			);
+			path = KKMediaPickerWatingView;
+			sourceTree = "<group>";
+		};
+		11856CD628AB656D00EE4F62 /* KKMediaTool */ = {
+			isa = PBXGroup;
+			children = (
+				114F7A7A28B60A6D003DB692 /* UIImage+KKMediaPicker */,
+				110D864628B1F62E00DE9FEF /* NSBundle+KKMediaPicker */,
+				11856CDA28AB9B4200EE4F62 /* NSString+KKMediaPicker */,
+				1166A14728AA315500C2EC7A /* KKMediaPickerAuthorization */,
+				1166A19928AA374400C2EC7A /* KKMediaPickerWatingView */,
+				11856CD728AB657D00EE4F62 /* UIWindow+KKMediaPicker */,
+				11856CD828AB9A3500EE4F62 /* KKMediaPickerDefine.h */,
+			);
+			path = KKMediaTool;
+			sourceTree = "<group>";
+		};
+		11856CD728AB657D00EE4F62 /* UIWindow+KKMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				1166A1A328AA3EA400C2EC7A /* UIWindow+KKMediaPicker.h */,
+				1166A1A228AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m */,
+			);
+			path = "UIWindow+KKMediaPicker";
+			sourceTree = "<group>";
+		};
+		11856CDA28AB9B4200EE4F62 /* NSString+KKMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				11856CDC28AB9B4200EE4F62 /* NSString+KKMediaPicker.h */,
+				11856CDB28AB9B4200EE4F62 /* NSString+KKMediaPicker.m */,
+			);
+			path = "NSString+KKMediaPicker";
+			sourceTree = "<group>";
+		};
+		11AFBB4828A9DCC800B72F7F /* KKMediaPickerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				11AFBB6028A9DDDB00B72F7F /* KKMediaPickerDemo */,
+				11AFBB4928A9DCC800B72F7F /* AppDelegate.h */,
+				11AFBB4A28A9DCC800B72F7F /* AppDelegate.m */,
+				11AFBB5B28A9DCCA00B72F7F /* main.m */,
+				11AFBB7528A9DE5500B72F7F /* HomeViewController.h */,
+				11AFBB7628A9DE5500B72F7F /* HomeViewController.m */,
+			);
+			path = KKMediaPickerDemo;
+			sourceTree = "<group>";
+		};
+		11AFBB6028A9DDDB00B72F7F /* KKMediaPickerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				11AFBB6128A9DDDB00B72F7F /* Launch */,
+				11AFBB6528A9DDDB00B72F7F /* Language */,
+				11AFBB6C28A9DDDB00B72F7F /* AppDefine.h */,
+				11AFBB6D28A9DDDB00B72F7F /* Images.xcassets */,
+				11AFBB6428A9DDDB00B72F7F /* KKMediaPickerDemo_Info.plist */,
+				11AFBB6E28A9DDDB00B72F7F /* KKMediaPickerDemo-Prefix.pch */,
+			);
+			path = KKMediaPickerDemo;
+			sourceTree = "<group>";
+		};
+		11AFBB6128A9DDDB00B72F7F /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				11AFBB6228A9DDDB00B72F7F /* LaunchScreen.storyboard */,
+				11AFBB6328A9DDDB00B72F7F /* LaunchScreen.xcassets */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		11AFBB6528A9DDDB00B72F7F /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				11AFBB6628A9DDDB00B72F7F /* Localizable.strings */,
+				11AFBB6828A9DDDB00B72F7F /* InfoPlist.strings */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		11E049E828B741D6007CB260 /* KKAlbumPicker */ = {
+			isa = PBXGroup;
+			children = (
+				1166A04728AA252500C2EC7A /* KKAlbumManager */,
+				1166A01A28AA252500C2EC7A /* KKAlbumImagePickerController */,
+				1166A05128AA252500C2EC7A /* KKAlbumAssetModalPreviewController */,
+				1166A06C28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController */,
+			);
+			path = KKAlbumPicker;
+			sourceTree = "<group>";
+		};
+		11E049E928B741F9007CB260 /* KKCameraPicker */ = {
+			isa = PBXGroup;
+			children = (
+				11669FFC28AA252500C2EC7A /* KKCameraImagePickerController */,
+				1166A05A28AA252500C2EC7A /* KKCameraCaptureViewController */,
+			);
+			path = KKCameraPicker;
+			sourceTree = "<group>";
+		};
+		11E049EA28B7600C007CB260 /* KKMediaPickerBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11E049EB28B76048007CB260 /* KKMediaPickerBaseViewController.h */,
+				11E049EC28B76048007CB260 /* KKMediaPickerBaseViewController.m */,
+			);
+			path = KKMediaPickerBaseViewController;
+			sourceTree = "<group>";
+		};
+		11E049F128B76050007CB260 /* KKMediaPickerBaseNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				11E049F228B76075007CB260 /* KKMediaPickerBaseNavigationController.h */,
+				11E049F328B76075007CB260 /* KKMediaPickerBaseNavigationController.m */,
+			);
+			path = KKMediaPickerBaseNavigationController;
+			sourceTree = "<group>";
+		};
+		3A654493258CC1C800942E7E /* KKMediaPickerFramework */ = {
+			isa = PBXGroup;
+			children = (
+				3A654494258CC1C800942E7E /* KKMediaPickerFramework.h */,
+				3A654495258CC1C800942E7E /* Info.plist */,
+			);
+			path = KKMediaPickerFramework;
+			sourceTree = "<group>";
+		};
+		3A654613258CC75300942E7E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				11856CD628AB656D00EE4F62 /* KKMediaTool */,
+				11669FFB28AA252500C2EC7A /* KKMediaPicker */,
+				1166A11B28AA272700C2EC7A /* KKMediaPicker.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3A654614258CC76800942E7E /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				3A9542A723700AF800684636 /* KKMediaPickerLibrary */,
+				3A654493258CC1C800942E7E /* KKMediaPickerFramework */,
+				11AFBB4828A9DCC800B72F7F /* KKMediaPickerDemo */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		3A95429C23700AF800684636 = {
+			isa = PBXGroup;
+			children = (
+				3A654613258CC75300942E7E /* Classes */,
+				3A654614258CC76800942E7E /* Product */,
+				3A9542A623700AF800684636 /* Products */,
+				907A6AF25352050D299C305A /* Pods */,
+				5826B7A6DFB9BAF8319AC0A5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3A9542A623700AF800684636 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A9542A523700AF800684636 /* libKKMediaPickerLibrary.a */,
+				3A654492258CC1C800942E7E /* KKMediaPickerFramework.framework */,
+				11AFBB4728A9DCC800B72F7F /* KKMediaPickerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A9542A723700AF800684636 /* KKMediaPickerLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				3AA02E34258E4857004AF28A /* KKMediaPickerLibrary.h */,
+			);
+			path = KKMediaPickerLibrary;
+			sourceTree = "<group>";
+		};
+		5826B7A6DFB9BAF8319AC0A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6BB4612BB40C6E4F3B1EA5B /* Pods_KKMediaPickerDemo.framework */,
+				FF8BAFEADE4E5D3B8FBBAEBE /* Pods_KKMediaPickerFramework.framework */,
+				258EBBDE53E47288193D13DE /* Pods_KKMediaPickerLibrary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		907A6AF25352050D299C305A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AFE8056F1CB6ACC7AA2F751 /* Pods-KKRequestFramework.debug.xcconfig */,
+				F3D8B1EF9E86A4E5B148F211 /* Pods-KKRequestFramework.release.xcconfig */,
+				7C834BA800BC1957B18DE49A /* Pods-KKRequestLibrary.debug.xcconfig */,
+				57233D42BF2694F755E5D664 /* Pods-KKRequestLibrary.release.xcconfig */,
+				FA5CEA29543B2831F68E6E24 /* Pods-KKRequestDemo.debug.xcconfig */,
+				227ECCD943B94FF8EFC56204 /* Pods-KKRequestDemo.release.xcconfig */,
+				2FC9A1B380CC64E7F875158C /* Pods-KKMediaPickerDemo.debug.xcconfig */,
+				3B5059A85C944710AB4A429F /* Pods-KKMediaPickerDemo.release.xcconfig */,
+				2ADD94F6B22C1E6DEF880C49 /* Pods-KKMediaPickerFramework.debug.xcconfig */,
+				DF5486F14ACC22441B09B76B /* Pods-KKMediaPickerFramework.release.xcconfig */,
+				78714100DC397C010C670DF6 /* Pods-KKMediaPickerLibrary.debug.xcconfig */,
+				935E16C35D26ABD96817CDEE /* Pods-KKMediaPickerLibrary.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3A65448D258CC1C800942E7E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1166A0CB28AA252500C2EC7A /* KKAlbumImageShowViewController.h in Headers */,
+				11856CE028AB9B4200EE4F62 /* NSString+KKMediaPicker.h in Headers */,
+				1166A0BF28AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h in Headers */,
+				1166A0FE28AA252500C2EC7A /* XLCircleProgress.h in Headers */,
+				1166A08428AA252500C2EC7A /* KKCameraImageShowNavBar.h in Headers */,
+				1166A11028AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.h in Headers */,
+				110D864928B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h in Headers */,
+				1166A0AC28AA252500C2EC7A /* AlbumImageCollectionViewCell.h in Headers */,
+				1166A0D728AA252500C2EC7A /* KKImageCropperView.h in Headers */,
+				1166A07828AA252500C2EC7A /* KKCameraImageShowItemView.h in Headers */,
+				1166A0FB28AA252500C2EC7A /* KKCameraCaptureViewController.h in Headers */,
+				1166A09828AA252500C2EC7A /* KKCameraImagePickerController.h in Headers */,
+				11E049ED28B76048007CB260 /* KKMediaPickerBaseViewController.h in Headers */,
+				1166A08828AA252500C2EC7A /* KKCameraImageTopBar.h in Headers */,
+				1166A0D828AA252500C2EC7A /* KKImageCropperViewController.h in Headers */,
+				1166A0F228AA252500C2EC7A /* KKAlbumAssetModalPreviewController.h in Headers */,
+				1166A0D028AA252500C2EC7A /* KKAlbumImagePickerController.h in Headers */,
+				1166A0AD28AA252500C2EC7A /* KKAlbumImageToolBar.h in Headers */,
+				1166A0A828AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h in Headers */,
+				1166A10528AA252500C2EC7A /* XLCircle.h in Headers */,
+				1166A0C628AA252500C2EC7A /* KKAlbumImageShowCollectionBar.h in Headers */,
+				11856CD928AB9A3500EE4F62 /* KKMediaPickerDefine.h in Headers */,
+				1166A0A028AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.h in Headers */,
+				1166A14A28AA315500C2EC7A /* KKMediaPickerAuthorization.h in Headers */,
+				1166A0ED28AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.h in Headers */,
+				1166A19C28AA37C300C2EC7A /* KKMediaPickerWatingView.h in Headers */,
+				1166A0A428AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.h in Headers */,
+				1166A0B828AA252500C2EC7A /* KKAlbumImageShowToolBar.h in Headers */,
+				1166A0F128AA252500C2EC7A /* KKAlbumAssetModalPreviewView.h in Headers */,
+				1166A09328AA252500C2EC7A /* KKCameraImagePickerViewController.h in Headers */,
+				3A654496258CC1C800942E7E /* KKMediaPickerFramework.h in Headers */,
+				114F7A7D28B60A90003DB692 /* UIImage+KKMediaPicker.h in Headers */,
+				1166A0F728AA252500C2EC7A /* KKCameraCaptureDataModal.h in Headers */,
+				1166A0DF28AA252500C2EC7A /* KKAlbumAssetModal.h in Headers */,
+				11E049F428B76075007CB260 /* KKMediaPickerBaseNavigationController.h in Headers */,
+				1166A09C28AA252500C2EC7A /* KKCameraImageToolBar.h in Headers */,
+				1166A11128AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.h in Headers */,
+				1166A0E428AA252500C2EC7A /* KKAlbumDirectoryModal.h in Headers */,
+				1166A08F28AA252500C2EC7A /* KKCameraWaitingView.h in Headers */,
+				1166A0E028AA252500C2EC7A /* KKAlbumManager.h in Headers */,
+				1166A09728AA252500C2EC7A /* KKCameraHelper.h in Headers */,
+				1166A11528AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.h in Headers */,
+				1166A0CA28AA252500C2EC7A /* KKAlbumImageShowItemView.h in Headers */,
+				1166A0CC28AA252500C2EC7A /* KKAlbumImageShowNavBar.h in Headers */,
+				1166A07D28AA252500C2EC7A /* KKCameraImageShowToolBar.h in Headers */,
+				1166A1A728AA3EA400C2EC7A /* UIWindow+KKMediaPicker.h in Headers */,
+				1166A10628AA252500C2EC7A /* KKCameraCaptureShowViewController.h in Headers */,
+				1166A07C28AA252500C2EC7A /* KKCameraImageShowViewController.h in Headers */,
+				1166A0F628AA252500C2EC7A /* KKCameraCaptureTopBar.h in Headers */,
+				1166A0B728AA252500C2EC7A /* KKAlbumImagePickerManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		11AFBB4628A9DCC800B72F7F /* KKMediaPickerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11AFBB5F28A9DCCA00B72F7F /* Build configuration list for PBXNativeTarget "KKMediaPickerDemo" */;
+			buildPhases = (
+				149A2F4A4338657B6464F4D8 /* [CP] Check Pods Manifest.lock */,
+				11AFBB4328A9DCC800B72F7F /* Sources */,
+				11AFBB4428A9DCC800B72F7F /* Frameworks */,
+				11AFBB4528A9DCC800B72F7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKMediaPickerDemo;
+			productName = KKRequestDemo;
+			productReference = 11AFBB4728A9DCC800B72F7F /* KKMediaPickerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A654491258CC1C800942E7E /* KKMediaPickerFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A654499258CC1C800942E7E /* Build configuration list for PBXNativeTarget "KKMediaPickerFramework" */;
+			buildPhases = (
+				EBC5869416FDAE536F3C228D /* [CP] Check Pods Manifest.lock */,
+				3A65448D258CC1C800942E7E /* Headers */,
+				3A65448E258CC1C800942E7E /* Sources */,
+				3A65448F258CC1C800942E7E /* Frameworks */,
+				3A654490258CC1C800942E7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKMediaPickerFramework;
+			productName = KKFramework;
+			productReference = 3A654492258CC1C800942E7E /* KKMediaPickerFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3A9542A423700AF800684636 /* KKMediaPickerLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9542AE23700AF800684636 /* Build configuration list for PBXNativeTarget "KKMediaPickerLibrary" */;
+			buildPhases = (
+				2C7B5FE254FD08AB294F52C6 /* [CP] Check Pods Manifest.lock */,
+				3A9542A123700AF800684636 /* Sources */,
+				3A9542A223700AF800684636 /* Frameworks */,
+				3AE5A7FA23BDBE6400FBC8FA /* CopyFiles */,
+				3A95458B23700BDF00684636 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKMediaPickerLibrary;
+			productName = KKLibrary;
+			productReference = 3A9542A523700AF800684636 /* libKKMediaPickerLibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A95429D23700AF800684636 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1220;
+				ORGANIZATIONNAME = KKLibrary;
+				TargetAttributes = {
+					11AFBB4628A9DCC800B72F7F = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					3A654491258CC1C800942E7E = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					3A9542A423700AF800684636 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 3A9542A023700AF800684636 /* Build configuration list for PBXProject "KeKeMediaPicker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 3A95429C23700AF800684636;
+			productRefGroup = 3A9542A623700AF800684636 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A9542A423700AF800684636 /* KKMediaPickerLibrary */,
+				3A654491258CC1C800942E7E /* KKMediaPickerFramework */,
+				11AFBB4628A9DCC800B72F7F /* KKMediaPickerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11AFBB4528A9DCC800B72F7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11AFBB7028A9DDDB00B72F7F /* LaunchScreen.xcassets in Resources */,
+				1166A0FD28AA252500C2EC7A /* KKCameraCapture.bundle in Resources */,
+				11AFBB7228A9DDDB00B72F7F /* Localizable.strings in Resources */,
+				11AFBB7428A9DDDB00B72F7F /* Images.xcassets in Resources */,
+				11AFBB6F28A9DDDB00B72F7F /* LaunchScreen.storyboard in Resources */,
+				11AFBB7328A9DDDB00B72F7F /* InfoPlist.strings in Resources */,
+				1166A0E628AA252500C2EC7A /* KKAlbumManager.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A654490258CC1C800942E7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1166A0E528AA252500C2EC7A /* KKAlbumManager.bundle in Resources */,
+				1166A0FC28AA252500C2EC7A /* KKCameraCapture.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		149A2F4A4338657B6464F4D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKMediaPickerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C7B5FE254FD08AB294F52C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKMediaPickerLibrary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBC5869416FDAE536F3C228D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKMediaPickerFramework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11AFBB4328A9DCC800B72F7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1166A08728AA252500C2EC7A /* KKCameraImageTopBar.m in Sources */,
+				11AFBB4B28A9DCC800B72F7F /* AppDelegate.m in Sources */,
+				1166A10F28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m in Sources */,
+				1166A0DE28AA252500C2EC7A /* KKAlbumAssetModal.m in Sources */,
+				1166A09628AA252500C2EC7A /* KKCameraHelper.m in Sources */,
+				1166A11828AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m in Sources */,
+				1166A08B28AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */,
+				1166A0FA28AA252500C2EC7A /* KKCameraCaptureDataModal.m in Sources */,
+				1166A10428AA252500C2EC7A /* XLCircleProgress.m in Sources */,
+				1166A09B28AA252500C2EC7A /* KKCameraImageToolBar.m in Sources */,
+				11E049F028B76048007CB260 /* KKMediaPickerBaseViewController.m in Sources */,
+				1166A09228AA252500C2EC7A /* KKCameraWaitingView.m in Sources */,
+				11856CDF28AB9B4200EE4F62 /* NSString+KKMediaPicker.m in Sources */,
+				110D864C28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */,
+				1166A0A328AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m in Sources */,
+				1166A0A728AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m in Sources */,
+				1166A0BE28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */,
+				1166A08E28AA252500C2EC7A /* KKCameraImagePickerViewController.m in Sources */,
+				1166A19F28AA37C300C2EC7A /* KKMediaPickerWatingView.m in Sources */,
+				1166A08028AA252500C2EC7A /* KKCameraImageShowToolBar.m in Sources */,
+				1166A0F028AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m in Sources */,
+				1166A11428AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m in Sources */,
+				11AFBB5C28A9DCCA00B72F7F /* main.m in Sources */,
+				1166A07728AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */,
+				1166A10928AA252500C2EC7A /* KKCameraCaptureShowViewController.m in Sources */,
+				1166A1A628AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m in Sources */,
+				1166A09F28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m in Sources */,
+				1166A0EC28AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m in Sources */,
+				1166A0CF28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */,
+				1166A0C528AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m in Sources */,
+				1166A10C28AA252500C2EC7A /* KKCameraCaptureViewController.m in Sources */,
+				1166A0F528AA252500C2EC7A /* KKCameraCaptureTopBar.m in Sources */,
+				1166A0C228AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m in Sources */,
+				1166A14D28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */,
+				1166A0C928AA252500C2EC7A /* KKAlbumImageShowItemView.m in Sources */,
+				1166A0E928AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m in Sources */,
+				11AFBB7728A9DE5500B72F7F /* HomeViewController.m in Sources */,
+				1166A0DB28AA252500C2EC7A /* KKAlbumManager.m in Sources */,
+				1166A07B28AA252500C2EC7A /* KKCameraImageShowItemView.m in Sources */,
+				1166A0B628AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */,
+				114F7A8028B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */,
+				1166A0BB28AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */,
+				1166A0B028AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */,
+				1166A0B328AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */,
+				1166A0D628AA252500C2EC7A /* KKImageCropperView.m in Sources */,
+				1166A08328AA252500C2EC7A /* KKCameraImageShowNavBar.m in Sources */,
+				1166A0D328AA252500C2EC7A /* KKImageCropperViewController.m in Sources */,
+				1166A0AB28AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */,
+				1166A10128AA252500C2EC7A /* XLCircle.m in Sources */,
+				11E049F728B76075007CB260 /* KKMediaPickerBaseNavigationController.m in Sources */,
+				1166A0E328AA252500C2EC7A /* KKAlbumDirectoryModal.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A65448E258CC1C800942E7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1166A0DD28AA252500C2EC7A /* KKAlbumAssetModal.m in Sources */,
+				1166A10828AA252500C2EC7A /* KKCameraCaptureShowViewController.m in Sources */,
+				11856CDE28AB9B4200EE4F62 /* NSString+KKMediaPicker.m in Sources */,
+				1166A0F928AA252500C2EC7A /* KKCameraCaptureDataModal.m in Sources */,
+				1166A19E28AA37C300C2EC7A /* KKMediaPickerWatingView.m in Sources */,
+				1166A08D28AA252500C2EC7A /* KKCameraImagePickerViewController.m in Sources */,
+				1166A0C428AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m in Sources */,
+				1166A10E28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m in Sources */,
+				1166A0E828AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m in Sources */,
+				1166A08628AA252500C2EC7A /* KKCameraImageTopBar.m in Sources */,
+				1166A0C828AA252500C2EC7A /* KKAlbumImageShowItemView.m in Sources */,
+				1166A0C128AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m in Sources */,
+				1166A10328AA252500C2EC7A /* XLCircleProgress.m in Sources */,
+				1166A07628AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */,
+				1166A10028AA252500C2EC7A /* XLCircle.m in Sources */,
+				1166A0CE28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */,
+				1166A08A28AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */,
+				1166A11328AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m in Sources */,
+				1166A0D228AA252500C2EC7A /* KKImageCropperViewController.m in Sources */,
+				1166A0AA28AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */,
+				1166A11728AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m in Sources */,
+				1166A08228AA252500C2EC7A /* KKCameraImageShowNavBar.m in Sources */,
+				1166A09E28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m in Sources */,
+				1166A07F28AA252500C2EC7A /* KKCameraImageShowToolBar.m in Sources */,
+				1166A14C28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */,
+				1166A1A528AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m in Sources */,
+				1166A0BA28AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */,
+				1166A10B28AA252500C2EC7A /* KKCameraCaptureViewController.m in Sources */,
+				1166A0EB28AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m in Sources */,
+				1166A0A628AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m in Sources */,
+				1166A0D528AA252500C2EC7A /* KKImageCropperView.m in Sources */,
+				1166A0B528AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */,
+				11E049EF28B76048007CB260 /* KKMediaPickerBaseViewController.m in Sources */,
+				114F7A7F28B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */,
+				1166A0E228AA252500C2EC7A /* KKAlbumDirectoryModal.m in Sources */,
+				1166A09A28AA252500C2EC7A /* KKCameraImageToolBar.m in Sources */,
+				1166A07A28AA252500C2EC7A /* KKCameraImageShowItemView.m in Sources */,
+				11E049F628B76075007CB260 /* KKMediaPickerBaseNavigationController.m in Sources */,
+				1166A0F428AA252500C2EC7A /* KKCameraCaptureTopBar.m in Sources */,
+				1166A09128AA252500C2EC7A /* KKCameraWaitingView.m in Sources */,
+				1166A0AF28AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */,
+				1166A0BD28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */,
+				1166A0B228AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */,
+				110D864B28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */,
+				1166A0EF28AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m in Sources */,
+				1166A0A228AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m in Sources */,
+				1166A09528AA252500C2EC7A /* KKCameraHelper.m in Sources */,
+				1166A0DA28AA252500C2EC7A /* KKAlbumManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9542A123700AF800684636 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1166A0DC28AA252500C2EC7A /* KKAlbumAssetModal.m in Sources */,
+				1166A10728AA252500C2EC7A /* KKCameraCaptureShowViewController.m in Sources */,
+				11856CDD28AB9B4200EE4F62 /* NSString+KKMediaPicker.m in Sources */,
+				1166A0F828AA252500C2EC7A /* KKCameraCaptureDataModal.m in Sources */,
+				1166A19D28AA37C300C2EC7A /* KKMediaPickerWatingView.m in Sources */,
+				1166A08C28AA252500C2EC7A /* KKCameraImagePickerViewController.m in Sources */,
+				1166A0C328AA252500C2EC7A /* KKAlbumImageShowCollectionBar.m in Sources */,
+				1166A10D28AA252500C2EC7A /* KKAlbumAssetModalVideoPlayBar.m in Sources */,
+				1166A0E728AA252500C2EC7A /* KKAlbumAssetModalPreviewController.m in Sources */,
+				1166A08528AA252500C2EC7A /* KKCameraImageTopBar.m in Sources */,
+				1166A0C728AA252500C2EC7A /* KKAlbumImageShowItemView.m in Sources */,
+				1166A0C028AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m in Sources */,
+				1166A10228AA252500C2EC7A /* XLCircleProgress.m in Sources */,
+				1166A07528AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */,
+				1166A0FF28AA252500C2EC7A /* XLCircle.m in Sources */,
+				1166A0CD28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */,
+				1166A08928AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */,
+				1166A11228AA252500C2EC7A /* KKAlbumAssetModalVideoPlayView.m in Sources */,
+				1166A0D128AA252500C2EC7A /* KKImageCropperViewController.m in Sources */,
+				1166A0A928AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */,
+				1166A11628AA252500C2EC7A /* KKAlbumAssetModalVideoPlayController.m in Sources */,
+				1166A08128AA252500C2EC7A /* KKCameraImageShowNavBar.m in Sources */,
+				1166A09D28AA252500C2EC7A /* KKAlbumImagePickerImageViewController.m in Sources */,
+				1166A07E28AA252500C2EC7A /* KKCameraImageShowToolBar.m in Sources */,
+				1166A14B28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */,
+				1166A1A428AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m in Sources */,
+				1166A0B928AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */,
+				1166A10A28AA252500C2EC7A /* KKCameraCaptureViewController.m in Sources */,
+				1166A0EA28AA252500C2EC7A /* KKAlbumAssetModalPreviewItem.m in Sources */,
+				1166A0A528AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m in Sources */,
+				1166A0D428AA252500C2EC7A /* KKImageCropperView.m in Sources */,
+				1166A0B428AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */,
+				11E049EE28B76048007CB260 /* KKMediaPickerBaseViewController.m in Sources */,
+				114F7A7E28B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */,
+				1166A0E128AA252500C2EC7A /* KKAlbumDirectoryModal.m in Sources */,
+				1166A09928AA252500C2EC7A /* KKCameraImageToolBar.m in Sources */,
+				1166A07928AA252500C2EC7A /* KKCameraImageShowItemView.m in Sources */,
+				11E049F528B76075007CB260 /* KKMediaPickerBaseNavigationController.m in Sources */,
+				1166A0F328AA252500C2EC7A /* KKCameraCaptureTopBar.m in Sources */,
+				1166A09028AA252500C2EC7A /* KKCameraWaitingView.m in Sources */,
+				1166A0AE28AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */,
+				1166A0BC28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */,
+				1166A0B128AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */,
+				110D864A28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */,
+				1166A0EE28AA252500C2EC7A /* KKAlbumAssetModalPreviewView.m in Sources */,
+				1166A0A128AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.m in Sources */,
+				1166A09428AA252500C2EC7A /* KKCameraHelper.m in Sources */,
+				1166A0D928AA252500C2EC7A /* KKAlbumManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		11AFBB6628A9DDDB00B72F7F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11AFBB6728A9DDDB00B72F7F /* zh-Hans */,
+				11AFBB6A28A9DDDB00B72F7F /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		11AFBB6828A9DDDB00B72F7F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11AFBB6928A9DDDB00B72F7F /* zh-Hans */,
+				11AFBB6B28A9DDDB00B72F7F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11AFBB5D28A9DCCA00B72F7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FC9A1B380CC64E7F875158C /* Pods-KKMediaPickerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2GK9LWG75;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Product/KKMediaPickerDemo/KKMediaPickerDemo/KKMediaPickerDemo-Prefix.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Product/KKMediaPickerDemo/KKMediaPickerDemo/KKMediaPickerDemo_Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Music;
+				INFOPLIST_KEY_NSCameraUsageDescription = "《DEMO》想要访问您的系统相机，以便使用聊天里面的拍照发送照片等功能。";
+				INFOPLIST_KEY_NSContactsUsageDescription = "《DEMO》想要访问您的联系人，以便在我的好友里面实现添加通讯录好友等功能。";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "《DEMO》需要使用您的地理位置，以便使用手机打卡、外勤申请等功能。";
+				INFOPLIST_KEY_NSLocationUsageDescription = "《DEMO》需要使用您的地理位置，以便使用手机打卡、外勤申请等功能。";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "《DEMO》想要访问您的麦克风，以便在CRM实现录音笔等功能。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "《DEMO》想要访问您的手机系统相册，以便使用聊天里面的发送照片等功能。";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.10fw.com.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = 10fwDemo_Dev;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		11AFBB5E28A9DCCA00B72F7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B5059A85C944710AB4A429F /* Pods-KKMediaPickerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2GK9LWG75;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Product/KKMediaPickerDemo/KKMediaPickerDemo/KKMediaPickerDemo-Prefix.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Product/KKMediaPickerDemo/KKMediaPickerDemo/KKMediaPickerDemo_Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Music;
+				INFOPLIST_KEY_NSCameraUsageDescription = "《DEMO》想要访问您的系统相机，以便使用聊天里面的拍照发送照片等功能。";
+				INFOPLIST_KEY_NSContactsUsageDescription = "《DEMO》想要访问您的联系人，以便在我的好友里面实现添加通讯录好友等功能。";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "《DEMO》需要使用您的地理位置，以便使用手机打卡、外勤申请等功能。";
+				INFOPLIST_KEY_NSLocationUsageDescription = "《DEMO》需要使用您的地理位置，以便使用手机打卡、外勤申请等功能。";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "《DEMO》想要访问您的麦克风，以便在CRM实现录音笔等功能。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "《DEMO》想要访问您的手机系统相册，以便使用聊天里面的发送照片等功能。";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.10fw.com.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = 10fwDemo_AdHoc;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3A654497258CC1C800942E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ADD94F6B22C1E6DEF880C49 /* Pods-KKMediaPickerFramework.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+					armv7,
+				);
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Product/KKMediaPickerFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = mh_dylib;
+				MARKETING_VERSION = 0.1.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = KK.KKRequest;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3A654498258CC1C800942E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF5486F14ACC22441B09B76B /* Pods-KKMediaPickerFramework.release.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+					armv7,
+				);
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Product/KKMediaPickerFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = mh_dylib;
+				MARKETING_VERSION = 0.1.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = KK.KKRequest;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3A9542AC23700AF800684636 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3A9542AD23700AF800684636 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A9542AF23700AF800684636 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78714100DC397C010C670DF6 /* Pods-KKMediaPickerLibrary.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2548K98YUJ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A9542B023700AF800684636 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 935E16C35D26ABD96817CDEE /* Pods-KKMediaPickerLibrary.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2548K98YUJ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11AFBB5F28A9DCCA00B72F7F /* Build configuration list for PBXNativeTarget "KKMediaPickerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11AFBB5D28A9DCCA00B72F7F /* Debug */,
+				11AFBB5E28A9DCCA00B72F7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A654499258CC1C800942E7E /* Build configuration list for PBXNativeTarget "KKMediaPickerFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A654497258CC1C800942E7E /* Debug */,
+				3A654498258CC1C800942E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A9542A023700AF800684636 /* Build configuration list for PBXProject "KeKeMediaPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9542AC23700AF800684636 /* Debug */,
+				3A9542AD23700AF800684636 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A9542AE23700AF800684636 /* Build configuration list for PBXNativeTarget "KKMediaPickerLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9542AF23700AF800684636 /* Debug */,
+				3A9542B023700AF800684636 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A95429D23700AF800684636 /* Project object */;
+}
