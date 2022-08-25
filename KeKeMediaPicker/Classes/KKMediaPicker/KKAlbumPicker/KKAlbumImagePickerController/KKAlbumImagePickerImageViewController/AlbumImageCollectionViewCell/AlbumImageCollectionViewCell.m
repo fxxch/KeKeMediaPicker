@@ -60,15 +60,15 @@
         }
 
         [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumManagerDataSourceChanged:) name:NotificationName_KKAlbumManagerDataSourceChanged object:nil];
-        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumAssetModalEditImageFinished:) name:NotificationName_KKAlbumAssetModalEditImageFinished object:nil];
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumAssetModelEditImageFinished:) name:NotificationName_KKAlbumAssetModelEditImageFinished object:nil];
     }
     return self;
 }
 
-- (void)reloadWithInformation:(KKAlbumAssetModal*)aInformation
+- (void)reloadWithInformation:(KKAlbumAssetModel*)aInformation
                        select:(BOOL)select{
 
-    self.assetModal = aInformation;
+    self.assetModel = aInformation;
     
     if (select) {
         UIImage *image = [KKAlbumManager themeImageForName:@"SelectedH"];
@@ -97,26 +97,26 @@
     
     [self.mainImageView setImage:nil forState:UIControlStateNormal];
     
-    if ([aInformation isKindOfClass:[KKAlbumAssetModal class]]) {
+    if ([aInformation isKindOfClass:[KKAlbumAssetModel class]]) {
         
-        if (self.assetModal.smallImageForShowing) {
-            [self.mainImageView setImage:self.assetModal.smallImageForShowing forState:UIControlStateNormal];
+        if (self.assetModel.smallImageForShowing) {
+            [self.mainImageView setImage:self.assetModel.smallImageForShowing forState:UIControlStateNormal];
         }
         else{
             __weak   typeof(self) weakself = self;
-            [KKAlbumManager loadThumbnailImage_withPHAsset:((KKAlbumAssetModal*)aInformation).asset targetSize:self.mainImageView.frame.size resultBlock:^(UIImage * _Nullable aImage, NSDictionary * _Nullable info) {
-                weakself.assetModal.thumbImage = aImage;
+            [KKAlbumManager loadThumbnailImage_withPHAsset:((KKAlbumAssetModel*)aInformation).asset targetSize:self.mainImageView.frame.size resultBlock:^(UIImage * _Nullable aImage, NSDictionary * _Nullable info) {
+                weakself.assetModel.thumbImage = aImage;
                 [weakself.mainImageView setImage:aImage forState:UIControlStateNormal];
             }];
         }
     }
     
-    if (self.assetModal.asset.mediaType==PHAssetMediaTypeVideo) {
+    if (self.assetModel.asset.mediaType==PHAssetMediaTypeVideo) {
         self.videoLogoView.hidden = NO;
         self.timeLabel.hidden = NO;
 
         __weak   typeof(self) weakself = self;
-        [self.assetModal videoPlayDuration:^(double dur) {
+        [self.assetModel videoPlayDuration:^(double dur) {
             int HH = dur/(60*60);
             int MM = (dur - HH*(60*60))/60;
             int SS = dur - HH*(60*60) - MM*60;
@@ -153,8 +153,8 @@
 }
 
 - (void)Notification_KKAlbumManagerDataSourceChanged:(NSNotification*)notice{
-    if ([KKAlbumImagePickerManager.defaultManager.allSource containsObject:self.assetModal]) {
-        NSInteger index = [KKAlbumImagePickerManager.defaultManager.allSource indexOfObject:self.assetModal];
+    if ([KKAlbumImagePickerManager.defaultManager.allSource containsObject:self.assetModel]) {
+        NSInteger index = [KKAlbumImagePickerManager.defaultManager.allSource indexOfObject:self.assetModel];
         NSString *title = [NSString stringWithFormat:@"%ld",index+1];
 
         [self.selectedButton setBackgroundColor:KKMediaPicker_Clolor_1E95FF];
@@ -167,8 +167,8 @@
     }
 }
 
-- (void)Notification_KKAlbumAssetModalEditImageFinished:(NSNotification*)notice{
-    [self.mainImageView setImage:self.assetModal.smallImageForShowing forState:UIControlStateNormal];
+- (void)Notification_KKAlbumAssetModelEditImageFinished:(NSNotification*)notice{
+    [self.mainImageView setImage:self.assetModel.smallImageForShowing forState:UIControlStateNormal];
 }
 
 

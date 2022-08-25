@@ -13,7 +13,7 @@
 
 @interface KKImageCropperViewController ()
 
-@property (nonatomic , strong) KKAlbumAssetModal *inModal;
+@property (nonatomic , strong) KKAlbumAssetModel *inModel;
 @property (nonatomic , strong) UIImage *inImage;
 @property (nonatomic , assign) CGSize inCropSize;
 @property (nonatomic , strong) KKImageCropperView  *imageCropperView;
@@ -28,10 +28,10 @@
 
 }
 
-- (id)initWithAssetModal:(KKAlbumAssetModal *)aModal cropSize:(CGSize)cropSize{
+- (id)initWithAssetModel:(KKAlbumAssetModel *)aModel cropSize:(CGSize)cropSize{
     if (self = [super init]) {
-        self.inModal = aModal;
-        UIImage *tempImage = [UIImage imageWithData:aModal.img_originData];
+        self.inModel = aModel;
+        UIImage *tempImage = [UIImage imageWithData:aModel.img_originData];
         self.inImage = [tempImage kkmp_fixOrientation];
         self.inCropSize = cropSize;
     }
@@ -100,7 +100,7 @@
 
 - (void)croppedImage {
     if (self.finishedBlock != nil) {
-        self.finishedBlock(self.inModal,self.imageCropperView.croppedImage);
+        self.finishedBlock(self.inModel,self.imageCropperView.croppedImage);
     }
 }
 

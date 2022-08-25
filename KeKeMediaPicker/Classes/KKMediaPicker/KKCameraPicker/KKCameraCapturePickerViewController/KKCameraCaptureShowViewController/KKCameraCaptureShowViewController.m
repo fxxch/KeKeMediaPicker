@@ -14,7 +14,7 @@
 
 @interface KKCameraCaptureShowViewController ()<UIScrollViewDelegate>
 
-@property (nonatomic , strong) KKCameraCaptureDataModal *dataModal;
+@property (nonatomic , strong) KKCameraCaptureDataModel *dataModel;
 @property (nonatomic , strong) UIImage* placholderImage;
 @property (nonatomic , assign) CGRect myImageViewOriginFrame;
 
@@ -34,11 +34,11 @@
     UIImageView* playImg;
 }
 
-- (instancetype _Nullable)initWithDataModal:(KKCameraCaptureDataModal*_Nullable)aDataModal
+- (instancetype _Nullable)initWithDataModel:(KKCameraCaptureDataModel*_Nullable)aDataModel
                             placholderImage:(UIImage*_Nullable)aImage{
     self = [super init];
     if (self) {
-        self.dataModal = aDataModal;
+        self.dataModel = aDataModel;
         self.placholderImage = aImage;
     }
     return self;
@@ -47,7 +47,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.05];
-    if (self.dataModal.isImage) {
+    if (self.dataModel.isImage) {
         [self initImageUI];
     }
     else{
@@ -115,7 +115,7 @@
     videoView.userInteractionEnabled = YES;
     videoView.image = self.placholderImage;
 
-    NSURL *videoURL = [NSURL fileURLWithPath:self.dataModal.movFileFullPath];
+    NSURL *videoURL = [NSURL fileURLWithPath:self.dataModel.movFileFullPath];
 
     AVAsset *movieAsset = [AVURLAsset URLAssetWithURL:videoURL options:nil];
     playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
@@ -155,13 +155,13 @@
 
 //完成
 - (void)finishButtonClicked{
-    if (self.dataModal.isImage) {
+    if (self.dataModel.isImage) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(KKCameraCaptureShowViewController_ClickedOK:)]) {
-            [self.delegate KKCameraCaptureShowViewController_ClickedOK:self.dataModal.imageFilePath];
+            [self.delegate KKCameraCaptureShowViewController_ClickedOK:self.dataModel.imageFilePath];
         }
     }
     else{
-        NSURL *url = [NSURL fileURLWithPath:self.dataModal.movFileFullPath];
+        NSURL *url = [NSURL fileURLWithPath:self.dataModel.movFileFullPath];
         [self expotVideoToMP4_WithFileURL:url];
     }
 }
@@ -272,7 +272,7 @@
         [layerInstructionArray addObject:layerInstruciton];
     }
 
-    NSURL *mergeFileURL = [NSURL fileURLWithPath:self.dataModal.mp4FileFullPath];
+    NSURL *mergeFileURL = [NSURL fileURLWithPath:self.dataModel.mp4FileFullPath];
 
     AVMutableVideoCompositionInstruction *mainInstruciton = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
     mainInstruciton.timeRange = CMTimeRangeMake(kCMTimeZero, totalDuration);
@@ -329,7 +329,7 @@
      **/
     AVAssetExportSession *exportSession = [AVAssetExportSession exportSessionWithAsset:urlAsset presetName:AVAssetExportPresetMediumQuality];
     // 视频的输出地址
-    NSURL *mergeFileURL = [NSURL fileURLWithPath:self.dataModal.mp4FileFullPath];
+    NSURL *mergeFileURL = [NSURL fileURLWithPath:self.dataModel.mp4FileFullPath];
     exportSession.outputURL = mergeFileURL;
     // 视频的输出格式
     exportSession.outputFileType = AVFileTypeMPEG4;
@@ -465,7 +465,7 @@
     self.myImageView = [[UIImageView alloc]initWithFrame:self.myScrollView.bounds];
     self.myImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.myImageView.backgroundColor = [UIColor clearColor];
-    UIImage *originImage = [UIImage imageWithContentsOfFile:self.dataModal.imageFilePath];
+    UIImage *originImage = [UIImage imageWithContentsOfFile:self.dataModel.imageFilePath];
     self.myImageView.image = originImage;
     [self.myScrollView addSubview:self.myImageView];
     [self initImageViewFrame];

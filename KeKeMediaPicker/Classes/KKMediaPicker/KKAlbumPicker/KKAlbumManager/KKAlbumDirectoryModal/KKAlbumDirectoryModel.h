@@ -1,5 +1,5 @@
 //
-//  KKAlbumDirectoryModal.h
+//  KKAlbumDirectoryModel.h
 //  HeiPa
 //
 //  Created by liubo on 2019/3/13.
@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <Photos/Photos.h>
-#import "KKAlbumAssetModal.h"
+#import "KKAlbumAssetModel.h"
 
-@interface KKAlbumDirectoryModal : NSObject
+@interface KKAlbumDirectoryModel : NSObject
 
 @property (nonatomic , strong) PHAssetCollection *assetCollection;
 @property (nonatomic , copy)   NSString          *title;
 @property (nonatomic , assign) NSInteger         count;
 @property (nonatomic , strong) UIImage           *coverImage;
-@property (nonatomic , strong) NSArray<KKAlbumAssetModal*>           *assetsArray;
+@property (nonatomic , strong) NSArray<KKAlbumAssetModel*>           *assetsArray;
 
 @end

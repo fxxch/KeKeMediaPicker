@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "KKMediaPickerDefine.h"
-#import "KKCameraCaptureDataModal.h"
+#import "KKCameraCaptureDataModel.h"
 #import "KKMediaPickerBaseViewController.h"
 
 @protocol KKCameraCaptureShowDelegate;
 
 @interface KKCameraCaptureShowViewController : KKMediaPickerBaseViewController
 
-- (instancetype _Nullable)initWithDataModal:(KKCameraCaptureDataModal*_Nullable)aDataModal
+- (instancetype _Nullable)initWithDataModel:(KKCameraCaptureDataModel*_Nullable)aDataModel
                             placholderImage:(UIImage*_Nullable)aImage;
 
 @property (nonatomic , weak) id<KKCameraCaptureShowDelegate> _Nullable delegate;

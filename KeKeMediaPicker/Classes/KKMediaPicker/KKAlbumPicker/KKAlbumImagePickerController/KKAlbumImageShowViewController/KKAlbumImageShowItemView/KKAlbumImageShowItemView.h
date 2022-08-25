@@ -38,10 +38,10 @@ static NSString *KKAlbumImageShowItemView_ID = @"KKAlbumImageShowItemView_ID";
 
 @property (nonatomic , weak) id<KKAlbumImageShowItemViewDelegate> delegate;
 @property (nonatomic , assign) NSInteger row;
-@property (nonatomic , strong) KKAlbumAssetModal *assetModal;
+@property (nonatomic , strong) KKAlbumAssetModel *assetModel;
 @property (nonatomic , strong) UIView *waitingView;
 
-- (void)reloadWithInformation:(KKAlbumAssetModal*)aModal
+- (void)reloadWithInformation:(KKAlbumAssetModel*)aModel
                           row:(NSInteger)aRow;
 
 @end

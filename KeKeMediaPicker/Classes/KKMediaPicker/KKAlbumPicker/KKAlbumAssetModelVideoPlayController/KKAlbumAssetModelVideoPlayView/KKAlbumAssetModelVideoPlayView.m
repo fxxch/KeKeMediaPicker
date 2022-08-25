@@ -1,37 +1,37 @@
 //
-//  KKAlbumAssetModalVideoPlayView.m
+//  KKAlbumAssetModelVideoPlayView.m
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
 //  Copyright © 2020 bm. All rights reserved.
 //
 
-#import "KKAlbumAssetModalVideoPlayView.h"
+#import "KKAlbumAssetModelVideoPlayView.h"
 
 /**
- *  KKAlbumAssetModalVideoPlayStatus
+ *  KKAlbumAssetModelVideoPlayStatus
  */
-typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
+typedef NS_ENUM(NSInteger,KKAlbumAssetModelVideoPlayStatus) {
     
-    KKAlbumAssetModalVideoPlayStatusNone = 0,/* 未知 */
+    KKAlbumAssetModelVideoPlayStatusNone = 0,/* 未知 */
     
-    KKAlbumAssetModalVideoPlayStatusPlaying = 1,/* 播放 */
+    KKAlbumAssetModelVideoPlayStatusPlaying = 1,/* 播放 */
     
-    KKAlbumAssetModalVideoPlayStatusStop = 2,/* 停止 */
+    KKAlbumAssetModelVideoPlayStatusStop = 2,/* 停止 */
     
-    KKAlbumAssetModalVideoPlayStatusPause = 3,/* 暂停 */
+    KKAlbumAssetModelVideoPlayStatusPause = 3,/* 暂停 */
 
 };
 
-@interface KKAlbumAssetModalVideoPlayView ()
+@interface KKAlbumAssetModelVideoPlayView ()
 
 @property (nonatomic , strong) UIView *waitingView;
 @property (nonatomic , assign) float totalDuration;
-@property (nonatomic , assign) KKAlbumAssetModalVideoPlayStatus status;
+@property (nonatomic , assign) KKAlbumAssetModelVideoPlayStatus status;
 @property (nonatomic ,strong) id playbackTimeObserver;
 @end
 
-@implementation KKAlbumAssetModalVideoPlayView
+@implementation KKAlbumAssetModelVideoPlayView
 
 - (void)dealloc
 {
@@ -43,10 +43,10 @@ typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
     self.playerLayer.frame = self.bounds;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame albumAssetModal:(KKAlbumAssetModal*)aKKAlbumAssetModal{
+- (instancetype)initWithFrame:(CGRect)frame albumAssetModel:(KKAlbumAssetModel*)aKKAlbumAssetModel{
     self = [super initWithFrame:frame];
     if (self) {
-        self.assetModal = aKKAlbumAssetModal;
+        self.assetModel = aKKAlbumAssetModel;
         [self initUI];
     }
     return self;
@@ -65,7 +65,7 @@ typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
     [self showWaitingView:YES];
 
     __weak   typeof(self) weakself = self;
-    [[PHImageManager defaultManager] requestPlayerItemForVideo:self.assetModal.asset options:option resultHandler:^(AVPlayerItem *playerItem, NSDictionary *info) {
+    [[PHImageManager defaultManager] requestPlayerItemForVideo:self.assetModel.asset options:option resultHandler:^(AVPlayerItem *playerItem, NSDictionary *info) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakself showWaitingView:NO];
@@ -83,8 +83,8 @@ typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
                 
                 [self addNotification];
                                                 
-                if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayView:playVideo:)]) {
-                    [weakself.delegate KKAlbumAssetModalVideoPlayView:weakself playVideo:YES];
+                if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayView:playVideo:)]) {
+                    [weakself.delegate KKAlbumAssetModelVideoPlayView:weakself playVideo:YES];
                 }
             }
         });
@@ -124,26 +124,26 @@ typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
 #pragma mark ==================================================
 - (void)startPlay{
     [self.player play];
-    self.status = KKAlbumAssetModalVideoPlayStatusPlaying;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayView_PlayDidStart:)]) {
-        [self.delegate KKAlbumAssetModalVideoPlayView_PlayDidStart:self];
+    self.status = KKAlbumAssetModelVideoPlayStatusPlaying;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayView_PlayDidStart:)]) {
+        [self.delegate KKAlbumAssetModelVideoPlayView_PlayDidStart:self];
     }
 }
 
 - (void)stopPlay{
     [self.player seekToTime:kCMTimeZero];
     [self.player pause];
-    self.status = KKAlbumAssetModalVideoPlayStatusStop;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayView_PlayDidFinished:)]) {
-        [self.delegate KKAlbumAssetModalVideoPlayView_PlayDidFinished:self];
+    self.status = KKAlbumAssetModelVideoPlayStatusStop;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayView_PlayDidFinished:)]) {
+        [self.delegate KKAlbumAssetModelVideoPlayView_PlayDidFinished:self];
     }
 }
 
 - (void)pausePlay{
     [self.player pause];
-    self.status = KKAlbumAssetModalVideoPlayStatusPause;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayView_PlayDidPause:)]) {
-        [self.delegate KKAlbumAssetModalVideoPlayView_PlayDidPause:self];
+    self.status = KKAlbumAssetModelVideoPlayStatusPause;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayView_PlayDidPause:)]) {
+        [self.delegate KKAlbumAssetModelVideoPlayView_PlayDidPause:self];
     }
 }
 
@@ -152,7 +152,7 @@ typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
 }
 
 - (BOOL)isPlaying{
-    if (self.status == KKAlbumAssetModalVideoPlayStatusPlaying) {
+    if (self.status == KKAlbumAssetModelVideoPlayStatusPlaying) {
         return YES;
     } else {
         return NO;
@@ -207,7 +207,7 @@ typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
             NSLog(@"视频总时长:%.2f",self.totalDuration);
             // 播放
             [self.player play];
-            self.status = KKAlbumAssetModalVideoPlayStatusPlaying;
+            self.status = KKAlbumAssetModelVideoPlayStatusPlaying;
 
             // 监听播放状态
             if (self.playbackTimeObserver==nil) {
@@ -215,8 +215,8 @@ typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
                 self.playbackTimeObserver = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 5) queue:NULL usingBlock:^(CMTime time) {
                     CGFloat currentSecond = weakself.player.currentItem.currentTime.value/weakself.player.currentItem.currentTime.timescale;// 计算当前在第几秒
                     //如果需要进度条的话，这里可以更新进度条
-                    if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayView:playBackTimeChanged:durationtime:)]) {
-                        [weakself.delegate KKAlbumAssetModalVideoPlayView:weakself playBackTimeChanged:currentSecond durationtime:weakself.totalDuration];
+                    if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayView:playBackTimeChanged:durationtime:)]) {
+                        [weakself.delegate KKAlbumAssetModelVideoPlayView:weakself playBackTimeChanged:currentSecond durationtime:weakself.totalDuration];
                     }
 
                 }];
@@ -263,9 +263,9 @@ typedef NS_ENUM(NSInteger,KKAlbumAssetModalVideoPlayStatus) {
 - (void)PlayerItemDidPlayToEndTimeNotification:(NSNotification*)notice{
     [self.player seekToTime:kCMTimeZero];
     [self.player pause];
-    self.status = KKAlbumAssetModalVideoPlayStatusStop;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayView_PlayDidFinished:)]) {
-        [self.delegate KKAlbumAssetModalVideoPlayView_PlayDidFinished:self];
+    self.status = KKAlbumAssetModelVideoPlayStatusStop;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayView_PlayDidFinished:)]) {
+        [self.delegate KKAlbumAssetModelVideoPlayView_PlayDidFinished:self];
     }
 }
 

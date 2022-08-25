@@ -1,25 +1,25 @@
 //
-//  KKAlbumAssetModalVideoPlayController.m
+//  KKAlbumAssetModelVideoPlayController.m
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
 //  Copyright © 2020 bm. All rights reserved.
 //
 
-#import "KKAlbumAssetModalVideoPlayController.h"
-#import "KKAlbumAssetModalVideoPlayBar.h"
-#import "KKAlbumAssetModalVideoPlayView.h"
+#import "KKAlbumAssetModelVideoPlayController.h"
+#import "KKAlbumAssetModelVideoPlayBar.h"
+#import "KKAlbumAssetModelVideoPlayView.h"
 #import "NSBundle+KKMediaPicker.h"
 #import "UIWindow+KKMediaPicker.h"
 #import "KKAlbumManager.h"
 
 #define HiddenPlayerBarTimerMax 3
 
-@interface KKAlbumAssetModalVideoPlayController ()
-<KKAlbumAssetModalVideoPlayBarDelegate,UIGestureRecognizerDelegate,KKAlbumAssetModalVideoPlayViewDelegate>
+@interface KKAlbumAssetModelVideoPlayController ()
+<KKAlbumAssetModelVideoPlayBarDelegate,UIGestureRecognizerDelegate,KKAlbumAssetModelVideoPlayViewDelegate>
 
-@property (nonatomic,strong)KKAlbumAssetModalVideoPlayBar *toolBarView;
-@property (nonatomic,strong)KKAlbumAssetModalVideoPlayView *player;
+@property (nonatomic,strong)KKAlbumAssetModelVideoPlayBar *toolBarView;
+@property (nonatomic,strong)KKAlbumAssetModelVideoPlayView *player;
 @property (nonatomic,strong)UIButton *playButton;
 @property (nonatomic,assign)BOOL isGestureON;
 @property (nonatomic,assign)CGSize videoFrameSize;
@@ -28,20 +28,20 @@
 @property (nonatomic,assign) NSInteger myTimerCount;//定时隐藏操作Bar
 @property (nonatomic,assign) BOOL isBarHidden;
 
-@property (nonatomic , strong) KKAlbumAssetModal *albumAssetModal;
+@property (nonatomic , strong) KKAlbumAssetModel *albumAssetModel;
 
 @end
 
-@implementation KKAlbumAssetModalVideoPlayController
+@implementation KKAlbumAssetModelVideoPlayController
 
 - (void)dealloc{
     [self destroyTimer];
 }
 
-- (instancetype)initWitKKAlbumAssetModal:(KKAlbumAssetModal*)aKKAlbumAssetModal{
+- (instancetype)initWitKKAlbumAssetModel:(KKAlbumAssetModel*)aKKAlbumAssetModel{
     self = [super init];
     if (self) {
-        self.albumAssetModal = aKKAlbumAssetModal;
+        self.albumAssetModel = aKKAlbumAssetModel;
     }
     return self;
 }
@@ -51,14 +51,14 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     //播放器
-    self.player = [[KKAlbumAssetModalVideoPlayView alloc] initWithFrame:self.view.bounds albumAssetModal:self.albumAssetModal];
+    self.player = [[KKAlbumAssetModelVideoPlayView alloc] initWithFrame:self.view.bounds albumAssetModel:self.albumAssetModel];
     self.player.delegate = self;
     [self.view addSubview:self.player];
     //添加手势
     [self addGestureRecognizerOnView:self.player];
     
     //底部播放控制栏
-    self.toolBarView = [[KKAlbumAssetModalVideoPlayBar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-64, UIWindow.kkmp_screenWidth, 64)];
+    self.toolBarView = [[KKAlbumAssetModelVideoPlayBar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-64, UIWindow.kkmp_screenWidth, 64)];
     self.toolBarView.delegate = self;
     self.toolBarView.durationtime = 1.0;
     self.toolBarView.currentTime = 0;
@@ -238,7 +238,7 @@
 #pragma mark ==================================================
 #pragma mark == 代理事件
 #pragma mark ==================================================
-- (void)KKAlbumAssetModalVideoPlayBar_BackButtonClicked:(KKAlbumAssetModalVideoPlayBar*)aView{
+- (void)KKAlbumAssetModelVideoPlayBar_BackButtonClicked:(KKAlbumAssetModelVideoPlayBar*)aView{
     UIInterfaceOrientation nowOrientation = [UIApplication sharedApplication].statusBarOrientation;
     if (nowOrientation==UIInterfaceOrientationLandscapeLeft ||
         nowOrientation==UIInterfaceOrientationLandscapeRight) {
@@ -250,22 +250,22 @@
     }
 }
 
-- (void)KKAlbumAssetModalVideoPlayBar_MoreButtonClicked:(KKAlbumAssetModalVideoPlayBar*)aView{
+- (void)KKAlbumAssetModelVideoPlayBar_MoreButtonClicked:(KKAlbumAssetModelVideoPlayBar*)aView{
 
 }
 
 //播放
-- (void)KKAlbumAssetModalVideoPlayBar_PlayButtonClicked:(KKAlbumAssetModalVideoPlayBar*)aView{
+- (void)KKAlbumAssetModelVideoPlayBar_PlayButtonClicked:(KKAlbumAssetModelVideoPlayBar*)aView{
     [self.player startPlay];
 }
 
 //暂停
-- (void)KKAlbumAssetModalVideoPlayBar_PauseButtonClicked:(KKAlbumAssetModalVideoPlayBar*)aView{
+- (void)KKAlbumAssetModelVideoPlayBar_PauseButtonClicked:(KKAlbumAssetModelVideoPlayBar*)aView{
     [self.player pausePlay];
 }
 
 //前进
-- (void)KKAlbumAssetModalVideoPlayBar:(KKAlbumAssetModalVideoPlayBar*)aView currentTimeChanged:(NSTimeInterval)aCurrentTime{
+- (void)KKAlbumAssetModelVideoPlayBar:(KKAlbumAssetModelVideoPlayBar*)aView currentTimeChanged:(NSTimeInterval)aCurrentTime{
     [self.player seekToBackTime:aCurrentTime];
 }
 
@@ -273,21 +273,21 @@
 #pragma mark == 视频播放代理
 #pragma mark ==================================================
 //播放开始
-- (void)KKAlbumAssetModalVideoPlayView_PlayDidStart:(KKAlbumAssetModalVideoPlayView*)player{
+- (void)KKAlbumAssetModelVideoPlayView_PlayDidStart:(KKAlbumAssetModelVideoPlayView*)player{
     [self.toolBarView setButtonStatusPlaying];
     [self startTimer];
     self.playButton.hidden = YES;
 }
 
 //继续开始
-- (void)KKAlbumAssetModalVideoPlayView_PlayDidContinuePlay:(KKAlbumAssetModalVideoPlayView*)player{
+- (void)KKAlbumAssetModelVideoPlayView_PlayDidContinuePlay:(KKAlbumAssetModelVideoPlayView*)player{
     [self.toolBarView setButtonStatusPlaying];
     [self startTimer];
     self.playButton.hidden = YES;
 }
 
 //播放结束
-- (void)KKAlbumAssetModalVideoPlayView_PlayDidFinished:(KKAlbumAssetModalVideoPlayView*)player{
+- (void)KKAlbumAssetModelVideoPlayView_PlayDidFinished:(KKAlbumAssetModelVideoPlayView*)player{
     [self.toolBarView setButtonStatusStop];
     self.toolBarView.currentTime = 0;
     self.toolBarView.durationtime = 1.0;
@@ -299,7 +299,7 @@
 }
 
 //播放暂停
-- (void)KKAlbumAssetModalVideoPlayView_PlayDidPause:(KKAlbumAssetModalVideoPlayView*)player{
+- (void)KKAlbumAssetModelVideoPlayView_PlayDidPause:(KKAlbumAssetModelVideoPlayView*)player{
     [self.toolBarView setButtonStatusStop];
     [self destroyTimer];
     [self setAllBarHidden:NO];
@@ -307,7 +307,7 @@
 }
 
 //播放时间改变
-- (void)KKAlbumAssetModalVideoPlayView:(KKAlbumAssetModalVideoPlayView*)player
+- (void)KKAlbumAssetModelVideoPlayView:(KKAlbumAssetModelVideoPlayView*)player
                    playBackTimeChanged:(NSTimeInterval)currentTime
                           durationtime:(NSTimeInterval)durationtime{
     if (self.isGestureON==NO && self.toolBarView.isSliderTouched==NO) {

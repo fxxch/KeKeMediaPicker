@@ -13,7 +13,7 @@
 @property(nonatomic,strong)UIButton *backgroundView;
 @property(nonatomic,strong)UITableView *table;
 @property(nonatomic,strong)UIView *tableBackView;
-@property(nonatomic,strong)NSMutableArray<KKAlbumDirectoryModal*> *dataSource;
+@property(nonatomic,strong)NSMutableArray<KKAlbumDirectoryModel*> *dataSource;
 
 @end
 
@@ -176,7 +176,7 @@
     UILabel *subLabel = (UILabel*)[cell viewWithTag:1103];
     
     //封面
-    KKAlbumDirectoryModal *directory = (KKAlbumDirectoryModal*)[self.dataSource objectAtIndex:indexPath.row];
+    KKAlbumDirectoryModel *directory = (KKAlbumDirectoryModel*)[self.dataSource objectAtIndex:indexPath.row];
     if (directory.coverImage) {
         imageView.image = directory.coverImage;
     }
@@ -184,11 +184,11 @@
         imageView.image = nil;
         
         __weak   typeof(self) weakself = self;
-        KKAlbumAssetModal *aPHAsset = [directory.assetsArray firstObject];
+        KKAlbumAssetModel *aPHAsset = [directory.assetsArray firstObject];
         __block NSInteger row = indexPath.row;
         [KKAlbumManager loadThumbnailImage_withPHAsset:aPHAsset.asset targetSize:imageView.frame.size resultBlock:^(UIImage * _Nullable aImage, NSDictionary * _Nullable info) {
            
-            KKAlbumDirectoryModal *directory = (KKAlbumDirectoryModal*)[weakself.dataSource objectAtIndex:row];
+            KKAlbumDirectoryModel *directory = (KKAlbumDirectoryModel*)[weakself.dataSource objectAtIndex:row];
             directory.coverImage = aImage;
             imageView.image = directory.coverImage;
         }];
@@ -227,9 +227,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    KKAlbumDirectoryModal *data = (KKAlbumDirectoryModal*)[self.dataSource objectAtIndex:indexPath.row];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImagePickerDirectoryList:selectedDirectoryModal:)]) {
-        [self.delegate KKAlbumImagePickerDirectoryList:self selectedDirectoryModal:data];
+    KKAlbumDirectoryModel *data = (KKAlbumDirectoryModel*)[self.dataSource objectAtIndex:indexPath.row];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImagePickerDirectoryList:selectedDirectoryModel:)]) {
+        [self.delegate KKAlbumImagePickerDirectoryList:self selectedDirectoryModel:data];
     }
     [self beginHide];
 }

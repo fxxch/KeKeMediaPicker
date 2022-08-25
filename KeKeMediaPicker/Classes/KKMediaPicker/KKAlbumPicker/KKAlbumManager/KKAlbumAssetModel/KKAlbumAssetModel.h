@@ -1,5 +1,5 @@
 //
-//  KKAlbumAssetModal.h
+//  KKAlbumAssetModel.h
 //  HeiPa
 //
 //  Created by liubo on 2019/3/15.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Photos/Photos.h>
 
-@interface KKAlbumAssetModal : NSObject
+@interface KKAlbumAssetModel : NSObject
 
 /* 预览相关 */
 @property (nonatomic , strong) PHAsset  * _Nullable asset;

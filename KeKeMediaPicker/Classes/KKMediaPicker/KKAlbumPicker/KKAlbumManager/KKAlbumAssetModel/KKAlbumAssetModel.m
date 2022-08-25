@@ -1,16 +1,16 @@
 //
-//  KKAlbumAssetModal.m
+//  KKAlbumAssetModel.m
 //  HeiPa
 //
 //  Created by liubo on 2019/3/15.
 //  Copyright © 2019 gouuse. All rights reserved.
 //
 
-#import "KKAlbumAssetModal.h"
+#import "KKAlbumAssetModel.h"
 #import "NSString+KKMediaPicker.h"
 #import "KKAlbumManager.h"
 
-@implementation KKAlbumAssetModal
+@implementation KKAlbumAssetModel
 
 - (void)dealloc
 {

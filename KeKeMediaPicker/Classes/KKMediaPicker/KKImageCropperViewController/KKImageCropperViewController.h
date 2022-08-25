@@ -12,11 +12,11 @@
 #import "KKAlbumManager.h"
 #import "KKMediaPickerBaseViewController.h"
 
-typedef void(^KKImageCropperFinishedBlock)(KKAlbumAssetModal *aModal,UIImage *newImage);
+typedef void(^KKImageCropperFinishedBlock)(KKAlbumAssetModel *aModel,UIImage *newImage);
 
 @interface KKImageCropperViewController : KKMediaPickerBaseViewController
 
-- (id)initWithAssetModal:(KKAlbumAssetModal *)aModal cropSize:(CGSize)cropSize;
+- (id)initWithAssetModel:(KKAlbumAssetModel *)aModel cropSize:(CGSize)cropSize;
 
 - (id)initWithImage:(UIImage *)aImage cropSize:(CGSize)cropSize;
 

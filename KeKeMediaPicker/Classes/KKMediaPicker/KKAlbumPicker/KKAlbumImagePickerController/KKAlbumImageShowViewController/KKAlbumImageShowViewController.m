@@ -77,19 +77,19 @@ KKAlbumImageShowCollectionBarDelegate>
     self.topBar.delegate = self;
     [self.view addSubview:self.topBar];
     self.topBar.titleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)self.inIndex+1,(long)self.dataSource.count];
-    KKAlbumAssetModal *modal = [self.dataSource objectAtIndex:self.inIndex];
-    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModal:modal]) {
-        [self.topBar setSelect:YES item:modal];
+    KKAlbumAssetModel *model = [self.dataSource objectAtIndex:self.inIndex];
+    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModel:model]) {
+        [self.topBar setSelect:YES item:model];
     }
     else{
-        [self.topBar setSelect:NO item:modal];
+        [self.topBar setSelect:NO item:model];
     }
     
     /*底部工具栏*/
     self.collectionBar = [[KKAlbumImageShowCollectionBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+50)-60, UIWindow.kkmp_screenWidth, 60)];
     self.collectionBar.delegate = self;
     [self.view addSubview:self.collectionBar];
-    [self.collectionBar selectModal:modal];
+    [self.collectionBar selectModel:model];
 
     /*底部工具栏*/
     self.toolBar = [[KKAlbumImageShowToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+50), UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
@@ -109,11 +109,11 @@ KKAlbumImageShowCollectionBarDelegate>
     [self.mainCollectionView setContentOffset:CGPointMake(UIWindow.kkmp_screenWidth*self.inIndex, 0)];
 //    [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.inIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
 
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerSelectModal:) name:NotificationName_KKAlbumImagePickerSelectModal object:nil];
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerUnSelectModal:) name:NotificationName_KKAlbumImagePickerUnSelectModal object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerSelectModel:) name:NotificationName_KKAlbumImagePickerSelectModel object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerUnSelectModel:) name:NotificationName_KKAlbumImagePickerUnSelectModel object:nil];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumManagerDataSourceChanged:) name:NotificationName_KKAlbumManagerDataSourceChanged object:nil];
 
-    if (modal.asset.mediaType == PHAssetMediaTypeImage) {
+    if (model.asset.mediaType == PHAssetMediaTypeImage) {
         self.toolBar.editButton.hidden = NO;
     } else {
         self.toolBar.editButton.hidden = YES;
@@ -127,10 +127,10 @@ KKAlbumImageShowCollectionBarDelegate>
 - (void)KKAlbumImageShowNavBar_RightButtonClicked{
     
     NSInteger index = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
-    KKAlbumAssetModal *modal = [self.dataSource objectAtIndex:index];
+    KKAlbumAssetModel *model = [self.dataSource objectAtIndex:index];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImageShowViewController_ClickedModal:)]) {
-        [self.delegate KKAlbumImageShowViewController_ClickedModal:modal];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImageShowViewController_ClickedModel:)]) {
+        [self.delegate KKAlbumImageShowViewController_ClickedModel:model];
     }
 
 }
@@ -138,8 +138,8 @@ KKAlbumImageShowCollectionBarDelegate>
 - (void)KKAlbumImageShowToolBar_EditButtonClicked:(KKAlbumImageShowToolBar*)toolView{
 
 //    NSInteger index = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
-//    KKAlbumAssetModal *modal = [self.dataSource objectAtIndex:index];
-//    UIImage *editImage = modal.bigImageForShowing;
+//    KKAlbumAssetModel *model = [self.dataSource objectAtIndex:index];
+//    UIImage *editImage = model.bigImageForShowing;
 //
 //    // TODO:<#title#>
 //    //第三方图片剪辑
@@ -158,33 +158,33 @@ KKAlbumImageShowCollectionBarDelegate>
 //        }
 //    }];
 //    managerVc.mapImageArr = [managerVc defaultEmojiMapArray];
-//    managerVc.modalPresentationStyle = UIModalPresentationFullScreen;
+//    managerVc.modelPresentationStyle = UIModelPresentationFullScreen;
 //    managerVc.notBackAnimation = YES;
 //    [self.navigationController pushViewController:managerVc animated:NO];
 }
 
 - (void)thirdEditImageFinished:(UIImage*)aImage{
     NSInteger nowIndex = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
-    KKAlbumAssetModal *nowModal = [self.dataSource objectAtIndex:nowIndex];
-    nowModal.img_EditeImage = aImage;
-    [NSNotificationCenter.defaultCenter postNotificationName:NotificationName_KKAlbumAssetModalEditImageFinished object:nowModal];
+    KKAlbumAssetModel *nowModel = [self.dataSource objectAtIndex:nowIndex];
+    nowModel.img_EditeImage = aImage;
+    [NSNotificationCenter.defaultCenter postNotificationName:NotificationName_KKAlbumAssetModelEditImageFinished object:nowModel];
 }
 
 - (void)KKAlbumImageShowToolBar_OKButtonClicked:(KKAlbumImageShowToolBar*)toolView{
     [[KKAlbumImagePickerManager defaultManager] finishedWithNavigationController:self.navigationController];
 }
 
-- (void)KKAlbumImageShowCollectionBar_SelectModal:(KKAlbumAssetModal*)aModal{
+- (void)KKAlbumImageShowCollectionBar_SelectModel:(KKAlbumAssetModel*)aModel{
     
-    NSInteger index = [self.dataSource indexOfObject:aModal];
+    NSInteger index = [self.dataSource indexOfObject:aModel];
     [self.mainCollectionView setContentOffset:CGPointMake(UIWindow.kkmp_screenWidth*index, 0) animated:YES];
     self.topBar.titleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)(index+1),(long)self.dataSource.count];
-    [self.collectionBar selectModal:aModal];
-    [self.topBar setSelect:YES item:aModal];
+    [self.collectionBar selectModel:aModel];
+    [self.topBar setSelect:YES item:aModel];
 
     [NSNotificationCenter.defaultCenter postNotificationName:@"NotificationName_KKAlbumImageShowItemViewResetZoomScale" object:[NSNumber numberWithInteger:index]];
 
-    if (aModal.asset.mediaType == PHAssetMediaTypeImage) {
+    if (aModel.asset.mediaType == PHAssetMediaTypeImage) {
         self.toolBar.editButton.hidden = NO;
     } else {
         self.toolBar.editButton.hidden = YES;
@@ -204,9 +204,9 @@ KKAlbumImageShowCollectionBarDelegate>
     cell.delegate = self;
 
 
-    KKAlbumAssetModal *assetModal = [self.dataSource objectAtIndex:indexPath.row];
+    KKAlbumAssetModel *assetModel = [self.dataSource objectAtIndex:indexPath.row];
     
-    [cell reloadWithInformation:assetModal row:indexPath.row];
+    [cell reloadWithInformation:assetModel row:indexPath.row];
     
     return cell;
 }
@@ -300,22 +300,22 @@ KKAlbumImageShowCollectionBarDelegate>
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger index = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
-    KKAlbumAssetModal *modal = [self.dataSource objectAtIndex:index];
-    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModal:modal]) {
-        [self.topBar setSelect:YES item:modal];
+    KKAlbumAssetModel *model = [self.dataSource objectAtIndex:index];
+    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModel:model]) {
+        [self.topBar setSelect:YES item:model];
     }
     else{
-        [self.topBar setSelect:NO item:modal];
+        [self.topBar setSelect:NO item:model];
     }
 
-    if (modal.asset.mediaType == PHAssetMediaTypeImage) {
+    if (model.asset.mediaType == PHAssetMediaTypeImage) {
         self.toolBar.editButton.hidden = NO;
     } else {
         self.toolBar.editButton.hidden = YES;
     }
 
     self.topBar.titleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)(index+1),(long)self.dataSource.count];
-    [self.collectionBar selectModal:modal];
+    [self.collectionBar selectModel:model];
 
     [NSNotificationCenter.defaultCenter postNotificationName:@"NotificationName_KKAlbumImageShowItemViewResetZoomScale" object:[NSNumber numberWithInteger:index]];
 }
@@ -323,29 +323,29 @@ KKAlbumImageShowCollectionBarDelegate>
 #pragma mark ==================================================
 #pragma mark == 通知
 #pragma mark ==================================================
-- (void)Notification_KKAlbumImagePickerSelectModal:(NSNotification*)notice{
+- (void)Notification_KKAlbumImagePickerSelectModel:(NSNotification*)notice{
     NSInteger index = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
-    KKAlbumAssetModal *modalT = [self.dataSource objectAtIndex:index];
-    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModal:modalT]) {
-        [self.topBar setSelect:YES item:modalT];
+    KKAlbumAssetModel *modelT = [self.dataSource objectAtIndex:index];
+    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModel:modelT]) {
+        [self.topBar setSelect:YES item:modelT];
     }
     else{
-        [self.topBar setSelect:NO item:modalT];
+        [self.topBar setSelect:NO item:modelT];
     }
 }
 
-- (void)Notification_KKAlbumImagePickerUnSelectModal:(NSNotification*)notice{
+- (void)Notification_KKAlbumImagePickerUnSelectModel:(NSNotification*)notice{
     NSInteger index = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
-    KKAlbumAssetModal *modalT = [self.dataSource objectAtIndex:index];
-    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModal:modalT]) {
-        [self.topBar setSelect:YES item:modalT];
+    KKAlbumAssetModel *modelT = [self.dataSource objectAtIndex:index];
+    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModel:modelT]) {
+        [self.topBar setSelect:YES item:modelT];
     }
     else{
-        [self.topBar setSelect:NO item:modalT];
+        [self.topBar setSelect:NO item:modelT];
     }
     
-    [[KKAlbumImagePickerManager defaultManager] deselectAssetModal:modalT];
-    [self.dataSource removeObject:modalT];
+    [[KKAlbumImagePickerManager defaultManager] deselectAssetModel:modelT];
+    [self.dataSource removeObject:modelT];
     if ([self.dataSource count]==0) {
         [self.navigationController popViewControllerAnimated:YES];
         return;

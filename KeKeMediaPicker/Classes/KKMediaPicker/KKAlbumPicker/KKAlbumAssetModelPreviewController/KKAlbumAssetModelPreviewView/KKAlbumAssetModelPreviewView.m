@@ -1,5 +1,5 @@
 //
-//  KKAlbumAssetModalPreviewView.m
+//  KKAlbumAssetModelPreviewView.m
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
@@ -8,33 +8,33 @@
 
 #import <UIKit/UIKit.h>
 #import "KKMediaPickerDefine.h"
-#import "KKAlbumAssetModalPreviewView.h"
+#import "KKAlbumAssetModelPreviewView.h"
 #import "NSBundle+KKMediaPicker.h"
 #import "UIWindow+KKMediaPicker.h"
 #import "KKMediaPickerBaseViewController.h"
 
-@interface KKAlbumAssetModalPreviewView ()
+@interface KKAlbumAssetModelPreviewView ()
 <UICollectionViewDataSource,
 UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout,
-KKAlbumAssetModalPreviewItemDelegate>
+KKAlbumAssetModelPreviewItemDelegate>
 
 @property (nonatomic , strong) UIView *backgroundView;
 @property (nonatomic , strong) UICollectionView *mainCollectionView;
 @property (nonatomic , strong) UIPageControl *myPageControl;
 @property (nonatomic , assign) NSInteger initSelectIndex;
 
-@property (nonatomic,strong)KKAlbumAssetModalPreviewItem *animationView;
+@property (nonatomic,strong)KKAlbumAssetModelPreviewItem *animationView;
 @property (nonatomic,assign)UIStatusBarStyle nowStatusBarStyle;
 @property (nonatomic,assign)CGRect fromRect;
 @property (nonatomic , strong) UIButton *closeButton;
 
 @end
 
-@implementation KKAlbumAssetModalPreviewView
+@implementation KKAlbumAssetModelPreviewView
 
 - (id)initWithFrame:(CGRect)frame
-              items:(NSArray<KKAlbumAssetModal*>*)aItemsArray
+              items:(NSArray<KKAlbumAssetModel*>*)aItemsArray
       selectedIndex:(NSInteger)aSelectedIndex
            fromRect:(CGRect)aFromRect{
     self = [super initWithFrame:frame];
@@ -73,7 +73,7 @@ KKAlbumAssetModalPreviewItemDelegate>
         self.mainCollectionView.delegate = self;
         self.mainCollectionView.bounces = YES;
         self.mainCollectionView.alwaysBounceHorizontal = YES;
-        [self.mainCollectionView registerClass:[KKAlbumAssetModalPreviewItem class] forCellWithReuseIdentifier:KKAlbumAssetModalPreviewItem_ID];
+        [self.mainCollectionView registerClass:[KKAlbumAssetModelPreviewItem class] forCellWithReuseIdentifier:KKAlbumAssetModelPreviewItem_ID];
         self.mainCollectionView.pagingEnabled = YES;
         [self addSubview:self.mainCollectionView];
 
@@ -99,8 +99,8 @@ KKAlbumAssetModalPreviewItemDelegate>
         UIImage *image02 = [NSBundle kkmp_imageInBundle:@"KKCameraCapture.bundle" imageName:@"close"];
         [self.closeButton setImage:image02 forState:UIControlStateNormal];
 
-        KKAlbumAssetModal *assetModal = [self.itemsArray objectAtIndex:self.nowSelectedIndex];
-        if (assetModal.asset.mediaType == PHAssetMediaTypeVideo) {
+        KKAlbumAssetModel *assetModel = [self.itemsArray objectAtIndex:self.nowSelectedIndex];
+        if (assetModel.asset.mediaType == PHAssetMediaTypeVideo) {
             self.closeButton.hidden = NO;
         } else {
             self.closeButton.hidden = YES;
@@ -122,13 +122,13 @@ KKAlbumAssetModalPreviewItemDelegate>
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    KKAlbumAssetModalPreviewItem *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:KKAlbumAssetModalPreviewItem_ID forIndexPath:indexPath];
+    KKAlbumAssetModelPreviewItem *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:KKAlbumAssetModelPreviewItem_ID forIndexPath:indexPath];
     cell.delegate = self;
 
 
-    KKAlbumAssetModal *assetModal = [self.itemsArray objectAtIndex:indexPath.row];
+    KKAlbumAssetModel *assetModel = [self.itemsArray objectAtIndex:indexPath.row];
     
-    [cell reloadWithInformation:assetModal row:indexPath.row];
+    [cell reloadWithInformation:assetModel row:indexPath.row];
     
     return cell;
 }
@@ -178,14 +178,14 @@ KKAlbumAssetModalPreviewItemDelegate>
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger index = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
-    KKAlbumAssetModal *assetModal = [self.itemsArray objectAtIndex:index];
-    if (assetModal.asset.mediaType == PHAssetMediaTypeVideo) {
+    KKAlbumAssetModel *assetModel = [self.itemsArray objectAtIndex:index];
+    if (assetModel.asset.mediaType == PHAssetMediaTypeVideo) {
         self.closeButton.hidden = NO;
     } else {
         self.closeButton.hidden = YES;
     }
     self.myPageControl.currentPage = index;
-    [NSNotificationCenter.defaultCenter postNotificationName:@"NotificationName_KKAlbumAssetModalPreviewItemResetZoomScale" object:[NSNumber numberWithInteger:index]];
+    [NSNotificationCenter.defaultCenter postNotificationName:@"NotificationName_KKAlbumAssetModelPreviewItemResetZoomScale" object:[NSNumber numberWithInteger:index]];
 }
 
 #pragma mark ==================================================
@@ -195,11 +195,11 @@ KKAlbumAssetModalPreviewItemDelegate>
     self.nowStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     self.mainCollectionView.hidden = YES;
 
-    self.animationView = [[KKAlbumAssetModalPreviewItem alloc] initWithFrame:self.fromRect];
+    self.animationView = [[KKAlbumAssetModelPreviewItem alloc] initWithFrame:self.fromRect];
     self.animationView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-    KKAlbumAssetModal *assetModal = [self.itemsArray objectAtIndex:self.nowSelectedIndex];
-    [self.animationView reloadWithInformation:assetModal row:self.nowSelectedIndex];
+    KKAlbumAssetModel *assetModel = [self.itemsArray objectAtIndex:self.nowSelectedIndex];
+    [self.animationView reloadWithInformation:assetModel row:self.nowSelectedIndex];
     [self addSubview:self.animationView];
 
     if (CGRectEqualToRect(self.fromRect, CGRectZero)) {
@@ -241,7 +241,7 @@ KKAlbumAssetModalPreviewItemDelegate>
     } else {
         CGRect nowFrame = self.fromRect;
 
-        self.animationView = [[KKAlbumAssetModalPreviewItem alloc] initWithFrame:self.bounds];
+        self.animationView = [[KKAlbumAssetModelPreviewItem alloc] initWithFrame:self.bounds];
         self.animationView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.animationView.delegate = nil;
 
@@ -292,11 +292,11 @@ KKAlbumAssetModalPreviewItemDelegate>
 #pragma mark ==================================================
 #pragma mark == KKWindowImageShowItemViewDelegate
 #pragma mark ==================================================
-- (void)KKAlbumAssetModalPreviewItemSingleTap:(KKAlbumAssetModalPreviewItem*)aItemView{
+- (void)KKAlbumAssetModelPreviewItemSingleTap:(KKAlbumAssetModelPreviewItem*)aItemView{
     [self cancelSelf];
 }
 
-- (void)KKAlbumAssetModalPreviewItem:(KKAlbumAssetModalPreviewItem*)aItemView
+- (void)KKAlbumAssetModelPreviewItem:(KKAlbumAssetModelPreviewItem*)aItemView
                                   playVideo:(BOOL)aPlay{
     
 }

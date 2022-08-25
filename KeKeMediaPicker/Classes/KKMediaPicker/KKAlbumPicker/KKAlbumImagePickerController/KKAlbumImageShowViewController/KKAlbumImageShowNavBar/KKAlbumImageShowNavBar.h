@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class KKButton;
-@class KKAlbumAssetModal;
+@class KKAlbumAssetModel;
 
 #pragma mark ==================================================
 #pragma mark == KKAlbumImageShowNavBarDelegate
@@ -29,7 +29,7 @@
 @property (nonatomic , strong) UILabel  *titleLabel;
 @property (nonatomic , weak) id<KKAlbumImageShowNavBarDelegate> delegate;
 
-- (void)setSelect:(BOOL)select item:(KKAlbumAssetModal*)aModal;
+- (void)setSelect:(BOOL)select item:(KKAlbumAssetModel*)aModel;
 
 - (BOOL)isSelect;
 

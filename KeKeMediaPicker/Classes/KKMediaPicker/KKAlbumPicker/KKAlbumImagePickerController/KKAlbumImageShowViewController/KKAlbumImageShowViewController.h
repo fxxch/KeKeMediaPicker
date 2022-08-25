@@ -17,7 +17,7 @@
 @protocol KKAlbumImageShowViewControllerDelegate <NSObject>
 @required
 
-- (void)KKAlbumImageShowViewController_ClickedModal:(KKAlbumAssetModal*)aModal;
+- (void)KKAlbumImageShowViewController_ClickedModel:(KKAlbumAssetModel*)aModel;
 
 @end
 

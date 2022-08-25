@@ -18,8 +18,8 @@
 
 #import "KKMediaPickerDefine.h"
 
-#import "KKAlbumDirectoryModal.h"
-#import "KKAlbumAssetModal.h"
+#import "KKAlbumDirectoryModel.h"
+#import "KKAlbumAssetModel.h"
 #import "KKAlbumManager.h"
 
 #import "KKMediaPickerBaseViewController.h"

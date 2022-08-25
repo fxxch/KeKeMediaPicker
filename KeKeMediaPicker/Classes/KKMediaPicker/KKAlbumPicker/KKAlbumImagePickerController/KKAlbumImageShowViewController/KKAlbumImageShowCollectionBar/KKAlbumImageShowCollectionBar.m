@@ -15,7 +15,7 @@ UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic , strong) UICollectionView *mainCollectionView;
-@property (nonatomic , strong) KKAlbumAssetModal *selectModal;
+@property (nonatomic , strong) KKAlbumAssetModel *selectModel;
 
 @end
 
@@ -58,8 +58,8 @@ UICollectionViewDelegateFlowLayout>
             self.hidden = NO;
         }
 
-        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerSelectModal:) name:NotificationName_KKAlbumImagePickerSelectModal object:nil];
-        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerUnSelectModal:) name:NotificationName_KKAlbumImagePickerUnSelectModal object:nil];
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerSelectModel:) name:NotificationName_KKAlbumImagePickerSelectModel object:nil];
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerUnSelectModel:) name:NotificationName_KKAlbumImagePickerUnSelectModel object:nil];
 
         
         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-0.5, self.frame.size.width, 0.5)];
@@ -69,12 +69,12 @@ UICollectionViewDelegateFlowLayout>
     return self;
 }
 
-- (void)selectModal:(KKAlbumAssetModal*)aSelectModal{
-    self.selectModal = aSelectModal;
+- (void)selectModel:(KKAlbumAssetModel*)aSelectModel{
+    self.selectModel = aSelectModel;
     [self.mainCollectionView reloadData];
     
-    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModal:aSelectModal]) {
-        NSInteger index = [[KKAlbumImagePickerManager defaultManager].allSource indexOfObject:aSelectModal];
+    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModel:aSelectModel]) {
+        NSInteger index = [[KKAlbumImagePickerManager defaultManager].allSource indexOfObject:aSelectModel];
         [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     }
 }
@@ -83,7 +83,7 @@ UICollectionViewDelegateFlowLayout>
 #pragma mark ==================================================
 #pragma mark == 通知
 #pragma mark ==================================================
-- (void)Notification_KKAlbumImagePickerSelectModal:(NSNotification*)notice{
+- (void)Notification_KKAlbumImagePickerSelectModel:(NSNotification*)notice{
     [self.mainCollectionView reloadData];
     if ([[KKAlbumImagePickerManager defaultManager].allSource count]==0) {
         self.hidden = YES;
@@ -96,7 +96,7 @@ UICollectionViewDelegateFlowLayout>
     [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
 }
 
-- (void)Notification_KKAlbumImagePickerUnSelectModal:(NSNotification*)notice{
+- (void)Notification_KKAlbumImagePickerUnSelectModel:(NSNotification*)notice{
     [self.mainCollectionView reloadData];
     if ([[KKAlbumImagePickerManager defaultManager].allSource count]==0) {
         self.hidden = YES;
@@ -117,12 +117,12 @@ UICollectionViewDelegateFlowLayout>
     
     KKAlbumImageShowCollectionBarItem *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:KKAlbumImageShowCollectionBarItem_ID forIndexPath:indexPath];
     
-    KKAlbumAssetModal *assetModal = [[KKAlbumImagePickerManager defaultManager].allSource objectAtIndex:indexPath.row];
-    if (assetModal==self.selectModal) {
-        [cell reloadWithInformation:assetModal select:YES];
+    KKAlbumAssetModel *assetModel = [[KKAlbumImagePickerManager defaultManager].allSource objectAtIndex:indexPath.row];
+    if (assetModel==self.selectModel) {
+        [cell reloadWithInformation:assetModel select:YES];
     }
     else{
-        [cell reloadWithInformation:assetModal select:NO];
+        [cell reloadWithInformation:assetModel select:NO];
     }
     return cell;
 }
@@ -187,9 +187,9 @@ UICollectionViewDelegateFlowLayout>
 // 选中某item
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImageShowCollectionBar_SelectModal:)]) {
-        KKAlbumAssetModal *assetModal = [[KKAlbumImagePickerManager defaultManager].allSource objectAtIndex:indexPath.row];
-        [self.delegate KKAlbumImageShowCollectionBar_SelectModal:assetModal];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImageShowCollectionBar_SelectModel:)]) {
+        KKAlbumAssetModel *assetModel = [[KKAlbumImagePickerManager defaultManager].allSource objectAtIndex:indexPath.row];
+        [self.delegate KKAlbumImageShowCollectionBar_SelectModel:assetModel];
     }
 }
 

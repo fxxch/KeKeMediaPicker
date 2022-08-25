@@ -133,9 +133,9 @@
 //
 //}
 
-- (void)KKAlbumImagePicker_didFinishedPickImages:(NSArray<KKAlbumAssetModal*>*)aImageArray{
+- (void)KKAlbumImagePicker_didFinishedPickImages:(NSArray<KKAlbumAssetModel*>*)aImageArray{
     [self.dataSource removeAllObjects];
-    for (KKAlbumAssetModal *model in aImageArray) {
+    for (KKAlbumAssetModel *model in aImageArray) {
         if (model.img_croppedbImage) {
             [self.dataSource addObject:model.img_croppedbImage];
         }

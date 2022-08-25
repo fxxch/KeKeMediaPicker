@@ -13,7 +13,7 @@
 #import "KKCameraWaitingView.h"
 #import "KKCircleProgress.h"
 #import "KKCameraCaptureShowViewController.h"
-#import "KKCameraCaptureDataModal.h"
+#import "KKCameraCaptureDataModel.h"
 #import "KKMediaPickerWatingView.h"
 #import "KKMediaPickerAuthorization.h"
 #import "UIWindow+KKMediaPicker.h"
@@ -35,7 +35,7 @@ AVCaptureFileOutputRecordingDelegate,
 KKCameraCaptureShowDelegate>
 
 // 数据模型
-@property (nonatomic, strong)KKCameraCaptureDataModal *dataModal;
+@property (nonatomic, strong)KKCameraCaptureDataModel *dataModel;
 
 // AVCaptureSession对象来执行输入设备和输出设备之间的数据传递
 @property (nonatomic, strong)AVCaptureSession *captureSession;
@@ -81,7 +81,7 @@ KKCameraCaptureShowDelegate>
 
 - (void)dealloc{
     [self destroyTimer];
-    [self.dataModal stopMotionManager];
+    [self.dataModel stopMotionManager];
 }
 
 - (instancetype)init{
@@ -96,10 +96,10 @@ KKCameraCaptureShowDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    self.dataModal = [[KKCameraCaptureDataModal alloc] init];
+    self.dataModel = [[KKCameraCaptureDataModel alloc] init];
 
     if ([KKMediaPickerAuthorization isCameraAuthorized]) {
-        [self.dataModal startMotionManager];
+        [self.dataModel startMotionManager];
 
         [self initialSession];
 
@@ -139,7 +139,7 @@ KKCameraCaptureShowDelegate>
     /* ========== 输入设备 ========== */
     //获得输入设备(取得后置摄像头)
     AVCaptureDevice *videoCaptureDevice=[KKCameraHelper cameraVideoWithPosition:AVCaptureDevicePositionBack];
-    self.dataModal.captureDevicePosition = AVCaptureDevicePositionBack;
+    self.dataModel.captureDevicePosition = AVCaptureDevicePositionBack;
     //获取音频输入设备（麦克风）
     AVCaptureDevice *audioCaptureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
     NSError *error=nil;
@@ -351,8 +351,8 @@ KKCameraCaptureShowDelegate>
     }
 
     if (videoConnection.active) {
-        videoConnection.videoOrientation = [self.dataModal.helper captureVideoOrientation];
-        self.dataModal.isImage = YES;
+        videoConnection.videoOrientation = [self.dataModel.helper captureVideoOrientation];
+        self.dataModel.isImage = YES;
         AVCapturePhotoSettings *outputSettings = [KKCameraHelper getAVCapturePhotoSettings:self.flashMode];
         [self.capturePhotoOutput capturePhotoWithSettings:outputSettings delegate:self];
     }
@@ -372,14 +372,14 @@ KKCameraCaptureShowDelegate>
         NSData *newData = UIImageJPEGRepresentation(image, 1.0);
         if (data &&
             image && [image isKindOfClass:[UIImage class]] ) {
-            BOOL saveResult = [newData writeToFile:weakself.dataModal.imageFilePath atomically:YES];
+            BOOL saveResult = [newData writeToFile:weakself.dataModel.imageFilePath atomically:YES];
             if (saveResult) {
                 //回到主线程
                 dispatch_async(dispatch_get_main_queue(), ^{
                     weakself.previewImageView.image = image;
                     [KKMediaPickerWatingView hideForView:weakself.view];
 
-                    [weakself cameraCaptureFinishedWithFilePath:weakself.dataModal.imageFilePath placeHolderImage:nil];
+                    [weakself cameraCaptureFinishedWithFilePath:weakself.dataModel.imageFilePath placeHolderImage:nil];
                 });
             }
             else{
@@ -408,9 +408,9 @@ KKCameraCaptureShowDelegate>
     //根据连接取得设备输出的数据
     if (![self.captureMovieFileOutput isRecording]) {
         //预览图层和视频方向保持一致
-        captureConnection.videoOrientation = [self.dataModal.helper captureVideoOrientation];
-        self.dataModal.isImage = NO;
-        [self.captureMovieFileOutput startRecordingToOutputFileURL:[NSURL fileURLWithPath:self.dataModal.movFileFullPath] recordingDelegate:self];
+        captureConnection.videoOrientation = [self.dataModel.helper captureVideoOrientation];
+        self.dataModel.isImage = NO;
+        [self.captureMovieFileOutput startRecordingToOutputFileURL:[NSURL fileURLWithPath:self.dataModel.movFileFullPath] recordingDelegate:self];
     }
 }
 
@@ -446,20 +446,20 @@ KKCameraCaptureShowDelegate>
         // 为了防止界面卡住，可以异步执行
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             // 这个就是HEIF(HEIC)的文件数据,直接保存即可
-            UIImage *image = [KKAlbumManager getVideoPreViewImageWithURL:[NSURL fileURLWithPath:weakself.dataModal.movFileFullPath]];
-            [weakself.dataModal reset];
-            weakself.dataModal.isImage = YES;
+            UIImage *image = [KKAlbumManager getVideoPreViewImageWithURL:[NSURL fileURLWithPath:weakself.dataModel.movFileFullPath]];
+            [weakself.dataModel reset];
+            weakself.dataModel.isImage = YES;
             NSData *newData = UIImageJPEGRepresentation(image, 1.0);
             if (newData &&
                 image && [image isKindOfClass:[UIImage class]] ) {
-                BOOL saveResult = [newData writeToFile:weakself.dataModal.imageFilePath atomically:YES];
+                BOOL saveResult = [newData writeToFile:weakself.dataModel.imageFilePath atomically:YES];
                 if (saveResult) {
                     //回到主线程
                     dispatch_async(dispatch_get_main_queue(), ^{
                         weakself.previewImageView.image = image;
                         [KKMediaPickerWatingView hideForView:weakself.view];
                         
-                        [weakself cameraCaptureFinishedWithFilePath:weakself.dataModal.imageFilePath placeHolderImage:nil];
+                        [weakself cameraCaptureFinishedWithFilePath:weakself.dataModel.imageFilePath placeHolderImage:nil];
                     });
                 }
                 else{
@@ -480,7 +480,7 @@ KKCameraCaptureShowDelegate>
 
         
     } else {
-        [self cameraCaptureFinishedWithFilePath:self.dataModal.movFileFullPath placeHolderImage:nil];
+        [self cameraCaptureFinishedWithFilePath:self.dataModel.movFileFullPath placeHolderImage:nil];
     }}
 
 - (void)startTimer{
@@ -538,7 +538,7 @@ KKCameraCaptureShowDelegate>
 
 /*摄像头*/
 - (void)KKCameraCaptureTopBar:(KKCameraCaptureTopBar*)topView  cameraDeviceButtonClicked:(AVCaptureDevicePosition)aCameraDevicePositon{
-    self.dataModal.captureDevicePosition = aCameraDevicePositon;
+    self.dataModel.captureDevicePosition = aCameraDevicePositon;
     [self toggleCamera:aCameraDevicePositon];
 }
 
@@ -750,7 +750,7 @@ KKCameraCaptureShowDelegate>
 
     [self setUpCameraLayer];
 
-    [self.dataModal reset];
+    [self.dataModel reset];
     self.previewImageView.image = nil;
 }
 
@@ -771,13 +771,13 @@ KKCameraCaptureShowDelegate>
 //        [self goEditViewController:aImage];
 
         /* 不编辑 */
-        KKCameraCaptureShowViewController* view = [[KKCameraCaptureShowViewController alloc] initWithDataModal:self.dataModal placholderImage:aImage];
+        KKCameraCaptureShowViewController* view = [[KKCameraCaptureShowViewController alloc] initWithDataModel:self.dataModel placholderImage:aImage];
         view.delegate = self;
         [self.navigationController pushViewController:view animated:NO];
     }
     //视频
     else if ([pathExtention isEqualToString:@"mp4"] || [pathExtention isEqualToString:@"mov"]) {
-        KKCameraCaptureShowViewController* view = [[KKCameraCaptureShowViewController alloc] initWithDataModal:self.dataModal placholderImage:aImage];
+        KKCameraCaptureShowViewController* view = [[KKCameraCaptureShowViewController alloc] initWithDataModel:self.dataModel placholderImage:aImage];
         view.delegate = self;
         [self.navigationController pushViewController:view animated:NO];
     }
@@ -847,8 +847,8 @@ KKCameraCaptureShowDelegate>
 //    [managerVc loadImageOnCompleteResult:^(UIImage *image, NSURL *outputPath, NSError *error) {
 //        if (image) {
 //            NSData *data = UIImageJPEGRepresentation(image, 1.0);
-//            if (data && [data writeToFile:weakself.dataModal.imageEditFilePath atomically:YES]) {
-//                [weakself confimFinishedWithFilePath:weakself.dataModal.imageEditFilePath];
+//            if (data && [data writeToFile:weakself.dataModel.imageEditFilePath atomically:YES]) {
+//                [weakself confimFinishedWithFilePath:weakself.dataModel.imageEditFilePath];
 //            }
 //            return YES;
 //        } else {
@@ -856,7 +856,7 @@ KKCameraCaptureShowDelegate>
 //        }
 //    }];
 //    managerVc.mapImageArr = [managerVc defaultEmojiMapArray];
-//    managerVc.modalPresentationStyle = UIModalPresentationFullScreen;
+//    managerVc.modalPresentationStyle = UIModelPresentationFullScreen;
 //    [self.navigationController pushViewController:managerVc animated:YES];
 }
 

@@ -1,5 +1,5 @@
 //
-//  KKAlbumAssetModalVideoPlayController.h
+//  KKAlbumAssetModelVideoPlayController.h
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
@@ -10,13 +10,13 @@
 #import "KKMediaPickerDefine.h"
 #import "KKMediaPickerBaseViewController.h"
 
-@class KKAlbumAssetModal;
+@class KKAlbumAssetModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKAlbumAssetModalVideoPlayController : KKMediaPickerBaseViewController
+@interface KKAlbumAssetModelVideoPlayController : KKMediaPickerBaseViewController
 
-- (instancetype)initWitKKAlbumAssetModal:(KKAlbumAssetModal*)aKKAlbumAssetModal;
+- (instancetype)initWitKKAlbumAssetModel:(KKAlbumAssetModel*)aKKAlbumAssetModel;
 
 @end
 

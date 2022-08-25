@@ -1,5 +1,5 @@
 //
-//  KKAlbumAssetModalPreviewItem.h
+//  KKAlbumAssetModelPreviewItem.h
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
@@ -10,24 +10,24 @@
 #import "KKAlbumManager.h"
 #import <AVFoundation/AVFoundation.h>
 
-@class KKAlbumAssetModalPreviewItem;
+@class KKAlbumAssetModelPreviewItem;
 #pragma mark ==================================================
-#pragma mark == KKAlbumAssetModalPreviewItemDelegate
+#pragma mark == KKAlbumAssetModelPreviewItemDelegate
 #pragma mark ==================================================
-@protocol KKAlbumAssetModalPreviewItemDelegate <NSObject>
+@protocol KKAlbumAssetModelPreviewItemDelegate <NSObject>
 @optional
 
-- (void)KKAlbumAssetModalPreviewItemSingleTap:(KKAlbumAssetModalPreviewItem*)aItemView;
+- (void)KKAlbumAssetModelPreviewItemSingleTap:(KKAlbumAssetModelPreviewItem*)aItemView;
 
-- (void)KKAlbumAssetModalPreviewItem:(KKAlbumAssetModalPreviewItem*)aItemView
+- (void)KKAlbumAssetModelPreviewItem:(KKAlbumAssetModelPreviewItem*)aItemView
                                   playVideo:(BOOL)aPlay;
 
 @end
 
 
-static NSString *KKAlbumAssetModalPreviewItem_ID = @"KKAlbumAssetModalPreviewItem_ID";
+static NSString *KKAlbumAssetModelPreviewItem_ID = @"KKAlbumAssetModelPreviewItem_ID";
 
-@interface KKAlbumAssetModalPreviewItem : UICollectionViewCell
+@interface KKAlbumAssetModelPreviewItem : UICollectionViewCell
 <UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
 @property (nonatomic,strong)UIScrollView *myScrollView;
@@ -36,12 +36,12 @@ static NSString *KKAlbumAssetModalPreviewItem_ID = @"KKAlbumAssetModalPreviewIte
 @property (nonatomic,strong) AVPlayer *player;
 @property (nonatomic,strong) AVPlayerLayer *playerLayer;
 
-@property (nonatomic , weak) id<KKAlbumAssetModalPreviewItemDelegate> delegate;
+@property (nonatomic , weak) id<KKAlbumAssetModelPreviewItemDelegate> delegate;
 @property (nonatomic , assign) NSInteger row;
-@property (nonatomic , strong) KKAlbumAssetModal *assetModal;
+@property (nonatomic , strong) KKAlbumAssetModel *assetModel;
 @property (nonatomic , strong) UIView *waitingView;
 
-- (void)reloadWithInformation:(KKAlbumAssetModal*)aModal
+- (void)reloadWithInformation:(KKAlbumAssetModel*)aModel
                           row:(NSInteger)aRow;
 
 

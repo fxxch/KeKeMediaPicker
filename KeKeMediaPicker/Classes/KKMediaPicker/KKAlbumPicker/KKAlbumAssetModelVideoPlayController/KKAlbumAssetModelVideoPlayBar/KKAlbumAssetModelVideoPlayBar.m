@@ -1,17 +1,17 @@
 //
-//  KKAlbumAssetModalVideoPlayBar.m
+//  KKAlbumAssetModelVideoPlayBar.m
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
 //  Copyright © 2020 bm. All rights reserved.
 //
 
-#import "KKAlbumAssetModalVideoPlayBar.h"
+#import "KKAlbumAssetModelVideoPlayBar.h"
 #import "NSString+KKMediaPicker.h"
 #import "NSBundle+KKMediaPicker.h"
 #import "KKMediaPickerDefine.h"
 
-@implementation KKAlbumAssetModalVideoPlaySlider
+@implementation KKAlbumAssetModelVideoPlaySlider
 
 - (CGRect)trackRectForBounds:(CGRect)bounds{
     CGRect rect = bounds;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation KKAlbumAssetModalVideoPlayBar
+@implementation KKAlbumAssetModelVideoPlayBar
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -49,7 +49,7 @@
 
         
         //滑动条
-        self.mySlider = [[KKAlbumAssetModalVideoPlaySlider alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 5)];
+        self.mySlider = [[KKAlbumAssetModelVideoPlaySlider alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 5)];
 //        self.mySlider.minimumTrackTintColor = [UIColor colorWithHexString:@"#1296DB"];
 //        self.mySlider.maximumTrackTintColor = [UIColor colorWithRed:0.82f green:0.82f blue:0.82f alpha:1.00f];
         self.mySlider.minimumTrackTintColor = KKMediaPicker_Clolor_BEBFBE;
@@ -227,8 +227,8 @@
         self.stopPlayButton.tag=1111;
         [self.stopPlayButton setImage:[self VideoPlay_Pause_ButtonImage]
                              forState:UIControlStateNormal];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayBar_PlayButtonClicked:)]) {
-            [self.delegate KKAlbumAssetModalVideoPlayBar_PlayButtonClicked:self];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayBar_PlayButtonClicked:)]) {
+            [self.delegate KKAlbumAssetModelVideoPlayBar_PlayButtonClicked:self];
         }
     }
     else{
@@ -236,21 +236,21 @@
         self.stopPlayButton.tag=1110;
         [self.stopPlayButton setImage:[self VideoPlay_Play_ButtonImage]
                              forState:UIControlStateNormal];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayBar_PauseButtonClicked:)]) {
-            [self.delegate KKAlbumAssetModalVideoPlayBar_PauseButtonClicked:self];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayBar_PauseButtonClicked:)]) {
+            [self.delegate KKAlbumAssetModelVideoPlayBar_PauseButtonClicked:self];
         }
     }
 }
 
 - (void)moreButtonClicked{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayBar_MoreButtonClicked:)]) {
-        [self.delegate KKAlbumAssetModalVideoPlayBar_MoreButtonClicked:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayBar_MoreButtonClicked:)]) {
+        [self.delegate KKAlbumAssetModelVideoPlayBar_MoreButtonClicked:self];
     }
 }
 
 - (void)backButtonClicked{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayBar_BackButtonClicked:)]) {
-        [self.delegate KKAlbumAssetModalVideoPlayBar_BackButtonClicked:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayBar_BackButtonClicked:)]) {
+        [self.delegate KKAlbumAssetModelVideoPlayBar_BackButtonClicked:self];
     }
 }
 
@@ -261,8 +261,8 @@
 - (void)sliderClicked:(UISlider*)slider{
     self.currentTime = slider.value;
     self.isSliderTouched = NO;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalVideoPlayBar:currentTimeChanged:)]) {
-        [self.delegate KKAlbumAssetModalVideoPlayBar:self currentTimeChanged:_currentTime];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelVideoPlayBar:currentTimeChanged:)]) {
+        [self.delegate KKAlbumAssetModelVideoPlayBar:self currentTimeChanged:_currentTime];
     }
 }
 

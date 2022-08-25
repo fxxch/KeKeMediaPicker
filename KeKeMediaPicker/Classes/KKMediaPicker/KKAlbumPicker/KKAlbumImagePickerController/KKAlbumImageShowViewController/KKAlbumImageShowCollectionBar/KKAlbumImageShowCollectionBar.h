@@ -11,7 +11,7 @@
 
 @protocol KKAlbumImageShowCollectionBarDelegate <NSObject>
 
-- (void)KKAlbumImageShowCollectionBar_SelectModal:(KKAlbumAssetModal*)aModal;
+- (void)KKAlbumImageShowCollectionBar_SelectModel:(KKAlbumAssetModel*)aModel;
 
 @end
 
@@ -21,6 +21,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame;
 
-- (void)selectModal:(KKAlbumAssetModal*)aSelectModal;
+- (void)selectModel:(KKAlbumAssetModel*)aSelectModel;
 
 @end

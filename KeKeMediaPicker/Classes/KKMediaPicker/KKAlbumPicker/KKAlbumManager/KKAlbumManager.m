@@ -34,7 +34,7 @@
 
  @return 返回所有的相册目录
  */
-+ (NSArray<KKAlbumDirectoryModal *> *_Nullable)loadDirectory_WithMediaType:(KKAssetMediaType)aAssetMediaType{
++ (NSArray<KKAlbumDirectoryModel *> *_Nullable)loadDirectory_WithMediaType:(KKAssetMediaType)aAssetMediaType{
     
     NSMutableArray *dataSource = [NSMutableArray array];
     NSMutableArray *directoryArray = [NSMutableArray array];
@@ -50,12 +50,12 @@
         if (![directoryArray containsObject:directory]) {
             NSArray *array = [KKAlbumManager loadObjects_InDirectory:directory mediaType:aAssetMediaType];
             if ([array count]>0) {
-                KKAlbumDirectoryModal *modal = [[KKAlbumDirectoryModal alloc] init];
-                modal.assetCollection = directory;
-                modal.count = [array count];
-                modal.title = [KKAlbumManager ablumTitleForPHAssetCollection:directory];
-                modal.assetsArray = array;
-                [dataSource addObject:modal];
+                KKAlbumDirectoryModel *model = [[KKAlbumDirectoryModel alloc] init];
+                model.assetCollection = directory;
+                model.count = [array count];
+                model.title = [KKAlbumManager ablumTitleForPHAssetCollection:directory];
+                model.assetsArray = array;
+                [dataSource addObject:model];
                 [directoryArray addObject:directory];
             }
         }
@@ -67,12 +67,12 @@
         if (![directoryArray containsObject:directory]) {
             NSArray *array = [KKAlbumManager loadObjects_InDirectory:directory mediaType:aAssetMediaType];
             if ([array count]>0) {
-                KKAlbumDirectoryModal *modal = [[KKAlbumDirectoryModal alloc] init];
-                modal.assetCollection = directory;
-                modal.count = [array count];
-                modal.title = [KKAlbumManager ablumTitleForPHAssetCollection:directory];
-                modal.assetsArray = array;
-                [dataSource addObject:modal];
+                KKAlbumDirectoryModel *model = [[KKAlbumDirectoryModel alloc] init];
+                model.assetCollection = directory;
+                model.count = [array count];
+                model.title = [KKAlbumManager ablumTitleForPHAssetCollection:directory];
+                model.assetsArray = array;
+                [dataSource addObject:model];
                 [directoryArray addObject:directory];
             }
         }
@@ -91,7 +91,7 @@
  @param aAssetCollection 相册目录
  @return 某个相册的所有图片
  */
-+ (NSArray<KKAlbumAssetModal*>*_Nonnull)loadObjects_InDirectory:(PHAssetCollection*_Nullable)aAssetCollection
++ (NSArray<KKAlbumAssetModel*>*_Nonnull)loadObjects_InDirectory:(PHAssetCollection*_Nullable)aAssetCollection
                                   mediaType:(KKAssetMediaType)aAssetMediaType{
     
     PHFetchOptions *options = [[PHFetchOptions alloc] init];
@@ -106,67 +106,67 @@
     for (PHAsset *asset in fetchResult2) {
         
         if (aAssetMediaType==KKAssetMediaType_All) {
-            KKAlbumAssetModal *modal = [[KKAlbumAssetModal alloc] init];
-            modal.asset = asset;
+            KKAlbumAssetModel *model = [[KKAlbumAssetModel alloc] init];
+            model.asset = asset;
             
             //文件名
             NSString *filename = [asset valueForKey:@"filename"];
-            modal.fileName = filename;
+            model.fileName = filename;
 
-            [returnArray addObject:modal];
+            [returnArray addObject:model];
         }
         else if (aAssetMediaType==KKAssetMediaType_Video){
             if ([asset mediaType]==PHAssetMediaTypeVideo
                 ) {
-                KKAlbumAssetModal *modal = [[KKAlbumAssetModal alloc] init];
-                modal.asset = asset;
+                KKAlbumAssetModel *model = [[KKAlbumAssetModel alloc] init];
+                model.asset = asset;
                 
                 //文件名
                 NSString *filename = [asset valueForKey:@"filename"];
-                modal.fileName = filename;
+                model.fileName = filename;
                 
-                [returnArray addObject:modal];
+                [returnArray addObject:model];
             }
         }
         else if (aAssetMediaType==KKAssetMediaType_ImageAll){
             if ([asset mediaType]==PHAssetMediaTypeImage
                 ) {
-                KKAlbumAssetModal *modal = [[KKAlbumAssetModal alloc] init];
-                modal.asset = asset;
+                KKAlbumAssetModel *model = [[KKAlbumAssetModel alloc] init];
+                model.asset = asset;
                 
                 //文件名
                 NSString *filename = [asset valueForKey:@"filename"];
-                modal.fileName = filename;
+                model.fileName = filename;
                 
-                [returnArray addObject:modal];
+                [returnArray addObject:model];
             }
         }
         else if (aAssetMediaType==KKAssetMediaType_ImageGif){
             if ([asset mediaType]==PHAssetMediaTypeImage &&
                 asset.kkmp_isGif == YES
                 ) {
-                KKAlbumAssetModal *modal = [[KKAlbumAssetModal alloc] init];
-                modal.asset = asset;
+                KKAlbumAssetModel *model = [[KKAlbumAssetModel alloc] init];
+                model.asset = asset;
 
                 //文件名
                 NSString *filename = [asset valueForKey:@"filename"];
-                modal.fileName = filename;
+                model.fileName = filename;
 
-                [returnArray addObject:modal];
+                [returnArray addObject:model];
             }
         }
         else if (aAssetMediaType==KKAssetMediaType_ImageNormal){
             if ([asset mediaType]==PHAssetMediaTypeImage &&
                 asset.kkmp_isGif == NO
                 ) {
-                KKAlbumAssetModal *modal = [[KKAlbumAssetModal alloc] init];
-                modal.asset = asset;
+                KKAlbumAssetModel *model = [[KKAlbumAssetModel alloc] init];
+                model.asset = asset;
 
                 //文件名
                 NSString *filename = [asset valueForKey:@"filename"];
-                modal.fileName = filename;
+                model.fileName = filename;
 
-                [returnArray addObject:modal];
+                [returnArray addObject:model];
             }
         }
         else{

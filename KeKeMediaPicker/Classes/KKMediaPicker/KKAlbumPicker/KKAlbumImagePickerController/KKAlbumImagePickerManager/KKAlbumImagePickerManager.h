@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "KKAlbumManager.h"
 
-UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumImagePickerSelectModal;
-UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumImagePickerUnSelectModal;
+UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumImagePickerSelectModel;
+UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumImagePickerUnSelectModel;
 UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumManagerLoadSourceFinished;
 UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumManagerDataSourceChanged;
 UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumManagerIsSelectOriginChanged;
-UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished;
+UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumAssetModelEditImageFinished;
 
 @protocol KKAlbumImagePickerDelegate <NSObject>
 @optional
@@ -32,7 +32,7 @@ UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumAssetModalEditImag
 - (NSURL*)KKAlbumImagePicker_fileURLForCompress:(NSString*)fileName
                               fileExtentionName:(NSString*)aExtentionName;
 
-- (void)KKAlbumImagePicker_didFinishedPickImages:(NSArray<KKAlbumAssetModal*>*)aImageArray;
+- (void)KKAlbumImagePicker_didFinishedPickImages:(NSArray<KKAlbumAssetModel*>*)aImageArray;
 
 @end
 
@@ -63,11 +63,11 @@ UIKIT_EXTERN NSNotificationName const NotificationName_KKAlbumAssetModalEditImag
 #pragma mark ==================================================
 #pragma mark == 选择
 #pragma mark ==================================================
-- (void)selectAssetModal:(KKAlbumAssetModal*)aModal;
+- (void)selectAssetModel:(KKAlbumAssetModel*)aModel;
 
-- (void)deselectAssetModal:(KKAlbumAssetModal*)aModal;
+- (void)deselectAssetModel:(KKAlbumAssetModel*)aModel;
 
-- (BOOL)isSelectAssetModal:(KKAlbumAssetModal*)aModal;
+- (BOOL)isSelectAssetModel:(KKAlbumAssetModel*)aModel;
 
 - (void)clearAllObjects;
 

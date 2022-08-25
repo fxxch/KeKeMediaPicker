@@ -20,8 +20,8 @@ static NSString *KKAlbumImageShowCollectionBarItem_ID = @"KKAlbumImageShowCollec
 
 @property (nonatomic,strong) UIButton *mainImageView;
 @property (nonatomic,strong) UIImageView *videoLogoView;
-@property (nonatomic,strong) KKAlbumAssetModal *assetModal;
+@property (nonatomic,strong) KKAlbumAssetModel *assetModel;
 
-- (void)reloadWithInformation:(KKAlbumAssetModal*)aInformation select:(BOOL)select;
+- (void)reloadWithInformation:(KKAlbumAssetModel*)aInformation select:(BOOL)select;
 
 @end

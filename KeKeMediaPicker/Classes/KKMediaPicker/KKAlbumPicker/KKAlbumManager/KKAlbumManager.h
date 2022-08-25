@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "KKAlbumDirectoryModal.h"
+#import "KKAlbumDirectoryModel.h"
 #import <CoreServices/CoreServices.h>
 
 typedef void(^KKMPConvertImageOneCompletedBlock)(NSData * _Nullable imageData,NSInteger index);
@@ -89,7 +89,7 @@ typedef void (^KKAlbumManager_LoadPHAssetFileSize_FinishedBlock)(
 
  @return 返回所有的相册目录
  */
-+ (NSArray<KKAlbumDirectoryModal *> *_Nullable)loadDirectory_WithMediaType:(KKAssetMediaType)aAssetMediaType;
++ (NSArray<KKAlbumDirectoryModel *> *_Nullable)loadDirectory_WithMediaType:(KKAssetMediaType)aAssetMediaType;
 
 /**
  获取某个相册的所有图片
@@ -97,7 +97,7 @@ typedef void (^KKAlbumManager_LoadPHAssetFileSize_FinishedBlock)(
  @param aAssetCollection 相册目录
  @return 某个相册的所有图片
  */
-+ (NSArray<KKAlbumAssetModal*>*_Nonnull)loadObjects_InDirectory:(PHAssetCollection*_Nullable)aAssetCollection
++ (NSArray<KKAlbumAssetModel*>*_Nonnull)loadObjects_InDirectory:(PHAssetCollection*_Nullable)aAssetCollection
                                                       mediaType:(KKAssetMediaType)aAssetMediaType;
 
 /**

@@ -123,9 +123,9 @@
         self.hidden = NO;
         NSArray *array = notice.object;
         for (NSInteger i=0; i<[array count]; i++) {
-            KKAlbumDirectoryModal *data = (KKAlbumDirectoryModal*)[array objectAtIndex:i];
+            KKAlbumDirectoryModel *data = (KKAlbumDirectoryModel*)[array objectAtIndex:i];
             if ([data.title isEqualToString:KKMediaPicker_Album_UserLibrary]) {
-                [self reloadWithDirectoryModal:data];
+                [self reloadWithDirectoryModel:data];
                 break;
             }
         }
@@ -137,8 +137,8 @@
     [self checkAlbumLimited];
 }
 
-- (void)reloadWithDirectoryModal:(KKAlbumDirectoryModal*)aModal{
-    NSString *title = aModal.title;
+- (void)reloadWithDirectoryModel:(KKAlbumDirectoryModel*)aModel{
+    NSString *title = aModel.title;
     CGSize size = [title kkmp_sizeWithFont:[UIFont systemFontOfSize:17] maxWidth:1000];
     CGFloat width = 10 + size.width + 10 + 20 + 5;
     

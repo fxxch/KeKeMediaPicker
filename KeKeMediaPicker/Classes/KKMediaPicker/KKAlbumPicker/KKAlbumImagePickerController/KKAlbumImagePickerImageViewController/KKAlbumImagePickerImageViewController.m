@@ -33,7 +33,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
 @property (nonatomic , strong) KKAlbumImagePickerDirectoryList *directoryList;
 // 放置图像处理时候的等待View
 @property (nonatomic , strong)UIView *waitingView;
-@property (nonatomic , strong) KKAlbumDirectoryModal *directoryModal;
+@property (nonatomic , strong) KKAlbumDirectoryModel *directoryModel;
 
 @end
 
@@ -202,12 +202,12 @@ KKAlbumImagePickerNavTitleBarDelegate>
         [self.view addSubview:self.mainCollectionView];
     }
 
-    if (self.directoryModal.assetsArray.count>0) {
-        [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.directoryModal.assetsArray.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    if (self.directoryModel.assetsArray.count>0) {
+        [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.directoryModel.assetsArray.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     }
 
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerSelectModal:) name:NotificationName_KKAlbumImagePickerSelectModal object:nil];
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerUnSelectModal:) name:NotificationName_KKAlbumImagePickerUnSelectModal object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerSelectModel:) name:NotificationName_KKAlbumImagePickerSelectModel object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumImagePickerUnSelectModel:) name:NotificationName_KKAlbumImagePickerUnSelectModel object:nil];
 }
 
 - (void)initWaitingView{
@@ -230,7 +230,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (self.directoryModal==nil) {
+    if (self.directoryModel==nil) {
         self.waitingView.hidden = NO;
     }
 }
@@ -244,16 +244,16 @@ KKAlbumImagePickerNavTitleBarDelegate>
 #pragma mark ==================================================
 #pragma mark == 通知
 #pragma mark ==================================================
-- (void)Notification_KKAlbumImagePickerSelectModal:(NSNotification*)notice{
-    KKAlbumAssetModal *modal = notice.object;
-    NSInteger index = [self.directoryModal.assetsArray indexOfObject:modal];
+- (void)Notification_KKAlbumImagePickerSelectModel:(NSNotification*)notice{
+    KKAlbumAssetModel *model = notice.object;
+    NSInteger index = [self.directoryModel.assetsArray indexOfObject:model];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.mainCollectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
 }
 
-- (void)Notification_KKAlbumImagePickerUnSelectModal:(NSNotification*)notice{
-    KKAlbumAssetModal *modal = notice.object;
-    NSInteger index = [self.directoryModal.assetsArray indexOfObject:modal];
+- (void)Notification_KKAlbumImagePickerUnSelectModel:(NSNotification*)notice{
+    KKAlbumAssetModel *model = notice.object;
+    NSInteger index = [self.directoryModel.assetsArray indexOfObject:model];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.mainCollectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
 }
@@ -262,9 +262,9 @@ KKAlbumImagePickerNavTitleBarDelegate>
     [self.waitingView removeFromSuperview];
     NSArray *array = notice.object;
     for (NSInteger i=0; i<[array count]; i++) {
-        KKAlbumDirectoryModal *data = (KKAlbumDirectoryModal*)[array objectAtIndex:i];
+        KKAlbumDirectoryModel *data = (KKAlbumDirectoryModel*)[array objectAtIndex:i];
         if ([data.title isEqualToString:KKMediaPicker_Album_UserLibrary]) {
-            self.directoryModal = data;
+            self.directoryModel = data;
             [self.mainCollectionView reloadData];
             [self collectionViewScrollToBottom];
             break;
@@ -281,9 +281,9 @@ KKAlbumImagePickerNavTitleBarDelegate>
 }
 
 - (void)KKAlbumImagePickerDirectoryList:(KKAlbumImagePickerDirectoryList*)aListView
-                 selectedDirectoryModal:(KKAlbumDirectoryModal*)aModal{
-    self.directoryModal = aModal;
-    [self.titleBar reloadWithDirectoryModal:self.directoryModal];
+                 selectedDirectoryModel:(KKAlbumDirectoryModel*)aModel{
+    self.directoryModel = aModel;
+    [self.titleBar reloadWithDirectoryModel:self.directoryModel];
     [self.mainCollectionView reloadData];
     [self collectionViewScrollToBottom];
 }
@@ -310,7 +310,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
 #pragma mark == UICollectionViewDataSource
 #pragma mark ====================================================
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.directoryModal.assetsArray count];
+    return [self.directoryModel.assetsArray count];
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -323,12 +323,12 @@ KKAlbumImagePickerNavTitleBarDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0){
     
-    KKAlbumAssetModal *assetModal = [self.directoryModal.assetsArray objectAtIndex:indexPath.row];
-    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModal:assetModal]) {
-        [(AlbumImageCollectionViewCell*)cell reloadWithInformation:assetModal select:YES];
+    KKAlbumAssetModel *assetModel = [self.directoryModel.assetsArray objectAtIndex:indexPath.row];
+    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModel:assetModel]) {
+        [(AlbumImageCollectionViewCell*)cell reloadWithInformation:assetModel select:YES];
     }
     else{
-        [(AlbumImageCollectionViewCell*)cell reloadWithInformation:assetModal select:NO];
+        [(AlbumImageCollectionViewCell*)cell reloadWithInformation:assetModel select:NO];
     }
 
 }
@@ -402,7 +402,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
         NSInteger index = [self.mainCollectionView indexPathForCell:aItemCell].row;
         
         //全屏展示
-        KKAlbumImageShowViewController *viewController = [[KKAlbumImageShowViewController alloc] initWithArray:self.directoryModal.assetsArray selectIndex:index];
+        KKAlbumImageShowViewController *viewController = [[KKAlbumImageShowViewController alloc] initWithArray:self.directoryModel.assetsArray selectIndex:index];
         viewController.delegate = self;
         [self.navigationController pushViewController:viewController animated:YES];
     }
@@ -416,8 +416,8 @@ KKAlbumImagePickerNavTitleBarDelegate>
 
 - (void)collectionViewItem_didSelectAtIndexPath:(NSIndexPath *)indexPath{
     
-    KKAlbumAssetModal *assetModal = [self.directoryModal.assetsArray objectAtIndex:indexPath.row];
-    [self selectdModalProcess:assetModal];
+    KKAlbumAssetModel *assetModel = [self.directoryModel.assetsArray objectAtIndex:indexPath.row];
+    [self selectdModelProcess:assetModel];
 }
 
 
@@ -468,29 +468,29 @@ KKAlbumImagePickerNavTitleBarDelegate>
     [self selectMultipleFinished];
 }
 
-- (void)selectSingleComplete:(KKAlbumAssetModal*)assetModal{
+- (void)selectSingleComplete:(KKAlbumAssetModel*)assetModel{
     
-    if (assetModal.asset.mediaType==PHAssetMediaTypeImage) {
+    if (assetModel.asset.mediaType==PHAssetMediaTypeImage) {
         if ([KKAlbumImagePickerManager defaultManager].cropEnable) {
             
-            if (assetModal.fileURL==nil) {
+            if (assetModel.fileURL==nil) {
                 NSLog(@"KKAlbumImagePickerManager 图片任务处理开始");
                 __weak   typeof(self) weakself = self;
-                [KKAlbumManager startExportImageWithPHAsset:assetModal.asset
+                [KKAlbumManager startExportImageWithPHAsset:assetModel.asset
                                                 resultBlock:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
                     if (imageData) {
-                        [assetModal setOriginImageInfo:info
+                        [assetModel setOriginImageInfo:info
                                              imageData:imageData
                                           imageDataUTI:dataUTI
                                       imageOrientation:orientation
                                            filePathURL:nil];
                         
-                        if (assetModal.fileURL) {
-                            KKImageCropperViewController *cropImageViewController = [[KKImageCropperViewController alloc] initWithAssetModal:assetModal cropSize:[KKAlbumImagePickerManager defaultManager].cropSize];
+                        if (assetModel.fileURL) {
+                            KKImageCropperViewController *cropImageViewController = [[KKImageCropperViewController alloc] initWithAssetModel:assetModel cropSize:[KKAlbumImagePickerManager defaultManager].cropSize];
                             [weakself.navigationController pushViewController:cropImageViewController animated:YES];
-                            [cropImageViewController cropImage:^(KKAlbumAssetModal *aModal, UIImage *newImage) {
-                                aModal.img_croppedbImage = newImage;
-                                [[KKAlbumImagePickerManager defaultManager] selectAssetModal:aModal];
+                            [cropImageViewController cropImage:^(KKAlbumAssetModel *aModel, UIImage *newImage) {
+                                aModel.img_croppedbImage = newImage;
+                                [[KKAlbumImagePickerManager defaultManager] selectAssetModel:aModel];
                                 [weakself selectSingleFinished];
                             }];
                             NSLog(@"KKAlbumImagePickerManager A图片任务处理结束:【成功】");
@@ -507,24 +507,24 @@ KKAlbumImagePickerNavTitleBarDelegate>
             }
             else{
                 NSLog(@"KKAlbumImagePickerManager 图片存在");
-                KKImageCropperViewController *cropImageViewController = [[KKImageCropperViewController alloc] initWithAssetModal:assetModal cropSize:[KKAlbumImagePickerManager defaultManager].cropSize];
+                KKImageCropperViewController *cropImageViewController = [[KKImageCropperViewController alloc] initWithAssetModel:assetModel cropSize:[KKAlbumImagePickerManager defaultManager].cropSize];
                 
                 [self.navigationController pushViewController:cropImageViewController animated:YES];
                 __weak   typeof(self) weakself = self;
-                [cropImageViewController cropImage:^(KKAlbumAssetModal *aModal, UIImage *newImage) {
-                    aModal.img_croppedbImage = newImage;
-                    [[KKAlbumImagePickerManager defaultManager] selectAssetModal:aModal];
+                [cropImageViewController cropImage:^(KKAlbumAssetModel *aModel, UIImage *newImage) {
+                    aModel.img_croppedbImage = newImage;
+                    [[KKAlbumImagePickerManager defaultManager] selectAssetModel:aModel];
                     [weakself selectSingleFinished];
                 }];
             }
         }
         else{
-            [[KKAlbumImagePickerManager defaultManager] selectAssetModal:assetModal];
+            [[KKAlbumImagePickerManager defaultManager] selectAssetModel:assetModel];
             [self selectSingleFinished];
         }
     }
-    else if (assetModal.asset.mediaType==PHAssetMediaTypeVideo){
-        [[KKAlbumImagePickerManager defaultManager] selectAssetModal:assetModal];
+    else if (assetModel.asset.mediaType==PHAssetMediaTypeVideo){
+        [[KKAlbumImagePickerManager defaultManager] selectAssetModel:assetModel];
         [self selectSingleFinished];
     }
     else{
@@ -541,21 +541,21 @@ KKAlbumImagePickerNavTitleBarDelegate>
     [[KKAlbumImagePickerManager defaultManager] finishedWithNavigationController:self.navigationController];
 }
 
-- (void)KKAlbumImageShowViewController_ClickedModal:(KKAlbumAssetModal*)aModal{
-    [self selectdModalProcess:aModal];
+- (void)KKAlbumImageShowViewController_ClickedModel:(KKAlbumAssetModel*)aModel{
+    [self selectdModelProcess:aModel];
 }
 
-- (void)selectdModalProcess:(KKAlbumAssetModal*)assetModal{
+- (void)selectdModelProcess:(KKAlbumAssetModel*)assetModel{
     
     /* 最大允许数量 */
     NSInteger maxNumber = [KKAlbumImagePickerManager defaultManager].numberOfPhotosNeedSelected;
     if (maxNumber==1) {
         [[KKAlbumImagePickerManager defaultManager] clearAllObjects];
-        [self selectSingleComplete:assetModal];
+        [self selectSingleComplete:assetModel];
     }
     else{
-        if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModal:assetModal]) {
-            [[KKAlbumImagePickerManager defaultManager] deselectAssetModal:assetModal];
+        if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModel:assetModel]) {
+            [[KKAlbumImagePickerManager defaultManager] deselectAssetModel:assetModel];
         }
         else{
             /* 已经达到最大 */
@@ -568,7 +568,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
                 [[UIWindow kkmp_currentKeyWindow].rootViewController presentViewController:alertController animated:true completion:nil];
                 return;
             }
-            [[KKAlbumImagePickerManager defaultManager] selectAssetModal:assetModal];
+            [[KKAlbumImagePickerManager defaultManager] selectAssetModel:assetModel];
         }
     }
 

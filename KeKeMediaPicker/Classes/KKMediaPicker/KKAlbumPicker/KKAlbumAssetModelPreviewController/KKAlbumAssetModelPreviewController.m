@@ -1,17 +1,17 @@
 //
-//  KKAlbumAssetModalPreviewController.m
+//  KKAlbumAssetModelPreviewController.m
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
 //  Copyright © 2020 bm. All rights reserved.
 //
 
-#import "KKAlbumAssetModalPreviewController.h"
-#import "KKAlbumAssetModalPreviewView.h"
-#import "KKAlbumAssetModal.h"
+#import "KKAlbumAssetModelPreviewController.h"
+#import "KKAlbumAssetModelPreviewView.h"
+#import "KKAlbumAssetModel.h"
 #import "UIWindow+KKMediaPicker.h"
 
-@interface KKAlbumAssetModalPreviewController ()
+@interface KKAlbumAssetModelPreviewController ()
 
 @property (nonatomic , strong) UIImageView *imageView;
 
@@ -22,10 +22,10 @@
 
 @end
 
-@implementation KKAlbumAssetModalPreviewController
+@implementation KKAlbumAssetModelPreviewController
 
 + (void)showFromNavigationController:(UINavigationController*_Nullable)aNavController
-                               items:(NSArray<KKAlbumAssetModal*>*_Nullable)aItemsArray
+                               items:(NSArray<KKAlbumAssetModel*>*_Nullable)aItemsArray
                        selectedIndex:(NSInteger)aSelectedIndex
                             fromRect:(CGRect)aFromRect{
     if ([aItemsArray count]<=0 ||
@@ -34,13 +34,13 @@
     }
 
     if (CGRectEqualToRect(aFromRect, CGRectZero)) {
-        KKAlbumAssetModalPreviewController *viewController = [[KKAlbumAssetModalPreviewController alloc] initWithNavigationController:aNavController items:aItemsArray selectedIndex:aSelectedIndex fromRect:aFromRect];
+        KKAlbumAssetModelPreviewController *viewController = [[KKAlbumAssetModelPreviewController alloc] initWithNavigationController:aNavController items:aItemsArray selectedIndex:aSelectedIndex fromRect:aFromRect];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
         [aNavController presentViewController:nav animated:YES completion:^{
 
         }];
     } else {
-        KKAlbumAssetModalPreviewController *viewController = [[KKAlbumAssetModalPreviewController alloc] initWithNavigationController:aNavController items:aItemsArray selectedIndex:aSelectedIndex fromRect:aFromRect];
+        KKAlbumAssetModelPreviewController *viewController = [[KKAlbumAssetModelPreviewController alloc] initWithNavigationController:aNavController items:aItemsArray selectedIndex:aSelectedIndex fromRect:aFromRect];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
         [aNavController presentViewController:nav animated:NO completion:^{
 
@@ -50,7 +50,7 @@
 }
 
 - (instancetype)initWithNavigationController:(UINavigationController*)aNavController
-                                       items:(NSArray<KKAlbumAssetModal*>*_Nullable)aItemsArray
+                                       items:(NSArray<KKAlbumAssetModel*>*_Nullable)aItemsArray
                                selectedIndex:(NSInteger)aSelectedIndex
                                     fromRect:(CGRect)aFromRect{
     self = [super init];
@@ -81,7 +81,7 @@
 
 - (void)show{
     if (self.itemsArray) {
-        KKAlbumAssetModalPreviewView *windowImageView = [[KKAlbumAssetModalPreviewView alloc]initWithFrame:CGRectMake(0, 0, UIWindow.kkmp_screenWidth, UIWindow.kkmp_screenHeight) items:self.itemsArray selectedIndex:self.selectIndex fromRect:self.fromRect];
+        KKAlbumAssetModelPreviewView *windowImageView = [[KKAlbumAssetModelPreviewView alloc]initWithFrame:CGRectMake(0, 0, UIWindow.kkmp_screenWidth, UIWindow.kkmp_screenHeight) items:self.itemsArray selectedIndex:self.selectIndex fromRect:self.fromRect];
         windowImageView.tag = 2020040701;
         windowImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.view addSubview:windowImageView];

@@ -1,21 +1,21 @@
 //
-//  KKAlbumAssetModalPreviewItem.m
+//  KKAlbumAssetModelPreviewItem.m
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
 //  Copyright © 2020 bm. All rights reserved.
 //
 
-#import "KKAlbumAssetModalPreviewItem.h"
+#import "KKAlbumAssetModelPreviewItem.h"
 #import "KKAlbumImagePickerManager.h"
 
-@interface KKAlbumAssetModalPreviewItem ()
+@interface KKAlbumAssetModelPreviewItem ()
 
 @property (nonatomic , assign) CGRect myImageViewOriginFrame;
 
 @end
 
-@implementation KKAlbumAssetModalPreviewItem
+@implementation KKAlbumAssetModelPreviewItem
 
 - (void)dealloc
 {
@@ -54,8 +54,8 @@
         [self.videoPlayButton setImage:playImage forState:UIControlStateNormal];
         [self addSubview:self.videoPlayButton];
         
-        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumAssetModalPreviewItemResetZoomScale:) name:@"NotificationName_KKAlbumAssetModalPreviewItemResetZoomScale" object:nil];
-        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumAssetModalEditImageFinished:) name:NotificationName_KKAlbumAssetModalEditImageFinished object:nil];
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumAssetModelPreviewItemResetZoomScale:) name:@"NotificationName_KKAlbumAssetModelPreviewItemResetZoomScale" object:nil];
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(Notification_KKAlbumAssetModelEditImageFinished:) name:NotificationName_KKAlbumAssetModelEditImageFinished object:nil];
     }
     return self;
 }
@@ -90,12 +90,12 @@
 
 //单击
 -(void) singleTap:(UITapGestureRecognizer*) tap {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalPreviewItemSingleTap:)]) {
-        [self.delegate KKAlbumAssetModalPreviewItemSingleTap:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelPreviewItemSingleTap:)]) {
+        [self.delegate KKAlbumAssetModelPreviewItemSingleTap:self];
     }
 }
 
-- (void)Notification_KKAlbumAssetModalPreviewItemResetZoomScale:(NSNotification*)notice{
+- (void)Notification_KKAlbumAssetModelPreviewItemResetZoomScale:(NSNotification*)notice{
     
     NSInteger index = [notice.object integerValue];
     if (index!=self.row) {
@@ -111,30 +111,30 @@
     }
 }
 
-- (void)Notification_KKAlbumAssetModalEditImageFinished:(NSNotification*)notice{
-    self.myImageView.image = self.assetModal.img_EditeImage;
+- (void)Notification_KKAlbumAssetModelEditImageFinished:(NSNotification*)notice{
+    self.myImageView.image = self.assetModel.img_EditeImage;
     [self initImageViewFrame];
 }
 
 
-- (void)reloadWithInformation:(KKAlbumAssetModal*)aModal
+- (void)reloadWithInformation:(KKAlbumAssetModel*)aModel
                           row:(NSInteger)aRow{
     self.row = aRow;
-    self.assetModal = aModal;
+    self.assetModel = aModel;
 
     
     //本地没有，去下载
-    if (self.assetModal.bigImageForShowing==nil) {
+    if (self.assetModel.bigImageForShowing==nil) {
         [self showWaitingView:YES];
         __weak   typeof(self) weakself = self;
-        [KKAlbumManager loadBigImage_withPHAsset:weakself.assetModal.asset targetSize:CGSizeMake(self.myImageView.frame.size.width, self.myImageView.frame.size.height) resultBlock:^(UIImage * _Nullable aImage, NSDictionary * _Nullable info) {
+        [KKAlbumManager loadBigImage_withPHAsset:weakself.assetModel.asset targetSize:CGSizeMake(self.myImageView.frame.size.width, self.myImageView.frame.size.height) resultBlock:^(UIImage * _Nullable aImage, NSDictionary * _Nullable info) {
             
             [weakself showWaitingView:NO];
 
             if (aImage) {
-                weakself.assetModal.bigImage = aImage;
+                weakself.assetModel.bigImage = aImage;
                 weakself.myImageView.image = aImage;
-                if (weakself.assetModal.asset.mediaType==PHAssetMediaTypeImage) {
+                if (weakself.assetModel.asset.mediaType==PHAssetMediaTypeImage) {
                     [weakself initImageViewFrame];
                 }
             }
@@ -142,18 +142,18 @@
         }];
     }
     else{
-        self.myImageView.image = self.assetModal.bigImageForShowing;
-        if (self.assetModal.asset.mediaType==PHAssetMediaTypeImage) {
+        self.myImageView.image = self.assetModel.bigImageForShowing;
+        if (self.assetModel.asset.mediaType==PHAssetMediaTypeImage) {
             [self initImageViewFrame];
         }
     }
 
-    if (self.assetModal.asset.mediaType==PHAssetMediaTypeImage) {
+    if (self.assetModel.asset.mediaType==PHAssetMediaTypeImage) {
         self.videoPlayButton.hidden = YES;
         self.myScrollView.minimumZoomScale = 1.0;
         self.myScrollView.maximumZoomScale = 5.0;
     }
-    else if (self.assetModal.asset.mediaType==PHAssetMediaTypeVideo) {
+    else if (self.assetModel.asset.mediaType==PHAssetMediaTypeVideo) {
         self.myImageViewOriginFrame = self.bounds;
         [self.myScrollView setZoomScale:1.0 animated:YES];
         self.videoPlayButton.hidden = NO;
@@ -189,7 +189,7 @@
 //            });
     };
     __weak   typeof(self) weakself = self;
-    [[PHImageManager defaultManager] requestPlayerItemForVideo:self.assetModal.asset options:option resultHandler:^(AVPlayerItem *playerItem, NSDictionary *info) {
+    [[PHImageManager defaultManager] requestPlayerItemForVideo:self.assetModel.asset options:option resultHandler:^(AVPlayerItem *playerItem, NSDictionary *info) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (playerItem) {
@@ -282,8 +282,8 @@
             
             [self.videoPlayButton setImage:nil forState:UIControlStateNormal];
             
-            if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalPreviewItem:playVideo:)]) {
-                [self.delegate KKAlbumAssetModalPreviewItem:self playVideo:YES];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelPreviewItem:playVideo:)]) {
+                [self.delegate KKAlbumAssetModelPreviewItem:self playVideo:YES];
             }
 
         }
@@ -299,8 +299,8 @@
         UIImage *playImage = [KKAlbumManager themeImageForName:@"VideoPreviewPlay"];
         [self.videoPlayButton setImage:playImage forState:UIControlStateNormal];
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModalPreviewItem:playVideo:)]) {
-            [self.delegate KKAlbumAssetModalPreviewItem:self playVideo:NO];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumAssetModelPreviewItem:playVideo:)]) {
+            [self.delegate KKAlbumAssetModelPreviewItem:self playVideo:NO];
         }
     }
 }
@@ -320,7 +320,7 @@
         };
         [self showWaitingView:YES];
         __weak   typeof(self) weakself = self;
-        [[PHImageManager defaultManager] requestPlayerItemForVideo:self.assetModal.asset options:option resultHandler:^(AVPlayerItem *playerItem, NSDictionary *info) {
+        [[PHImageManager defaultManager] requestPlayerItemForVideo:self.assetModel.asset options:option resultHandler:^(AVPlayerItem *playerItem, NSDictionary *info) {
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakself showWaitingView:NO];
@@ -340,8 +340,8 @@
 
                     [weakself.videoPlayButton setImage:nil forState:UIControlStateNormal];
                     
-                    if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKAlbumAssetModalPreviewItem:playVideo:)]) {
-                        [weakself.delegate KKAlbumAssetModalPreviewItem:weakself playVideo:YES];
+                    if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKAlbumAssetModelPreviewItem:playVideo:)]) {
+                        [weakself.delegate KKAlbumAssetModelPreviewItem:weakself playVideo:YES];
                     }
                 }
             });

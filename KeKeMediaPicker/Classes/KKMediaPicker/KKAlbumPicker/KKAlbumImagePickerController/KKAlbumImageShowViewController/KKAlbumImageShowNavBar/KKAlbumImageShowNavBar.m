@@ -73,11 +73,11 @@
     }
 }
 
-- (void)setSelect:(BOOL)select item:(KKAlbumAssetModal*)aModal{
+- (void)setSelect:(BOOL)select item:(KKAlbumAssetModel*)aModel{
     self.isSelectItem = select;
     
     if (select) {
-        NSInteger index = [KKAlbumImagePickerManager.defaultManager.allSource indexOfObject:aModal];
+        NSInteger index = [KKAlbumImagePickerManager.defaultManager.allSource indexOfObject:aModel];
         NSString *title = [NSString stringWithFormat:@"%ld",index+1];
         [self.rightButton setBackgroundColor:KKMediaPicker_Clolor_1E95FF];
         [self.rightButton setImage:nil

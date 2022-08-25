@@ -13,12 +13,12 @@
 #import "NSString+KKMediaPicker.h"
 #import "KKAlbumManager.h"
 
-NSNotificationName const NotificationName_KKAlbumImagePickerSelectModal  = @"NotificationName_KKAlbumImagePickerSelectModal";
-NSNotificationName const NotificationName_KKAlbumImagePickerUnSelectModal  = @"NotificationName_KKAlbumImagePickerUnSelectModal";
+NSNotificationName const NotificationName_KKAlbumImagePickerSelectModel  = @"NotificationName_KKAlbumImagePickerSelectModel";
+NSNotificationName const NotificationName_KKAlbumImagePickerUnSelectModel  = @"NotificationName_KKAlbumImagePickerUnSelectModel";
 NSNotificationName const NotificationName_KKAlbumManagerLoadSourceFinished  = @"NotificationName_KKAlbumManagerLoadSourceFinished";
 NSNotificationName const NotificationName_KKAlbumManagerDataSourceChanged  = @"NotificationName_KKAlbumManagerDataSourceChanged";
 NSNotificationName const NotificationName_KKAlbumManagerIsSelectOriginChanged  = @"NotificationName_KKAlbumManagerIsSelectOriginChanged";
-NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished  = @"NotificationName_KKAlbumAssetModalEditImageFinished";
+NSNotificationName const NotificationName_KKAlbumAssetModelEditImageFinished  = @"NotificationName_KKAlbumAssetModelEditImageFinished";
 
 @interface KKAlbumImagePickerManager ()
 
@@ -69,23 +69,23 @@ NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished  = 
     
     for (NSInteger i = 0; i < [self.selectDataSource count]; i++) {
         
-        KKAlbumAssetModal *assetModal = [self.selectDataSource objectAtIndex:i];
-        if (assetModal.fileURL==nil) {
+        KKAlbumAssetModel *assetModel = [self.selectDataSource objectAtIndex:i];
+        if (assetModel.fileURL==nil) {
             dispatch_group_enter(group);
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 
-                if (assetModal.asset.mediaType==PHAssetMediaTypeImage) {
-                    if (assetModal.img_EditeImage) {
+                if (assetModel.asset.mediaType==PHAssetMediaTypeImage) {
+                    if (assetModel.img_EditeImage) {
                         NSURL *filePathURL = nil;
                         if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImagePicker_fileURLForSave:fileExtentionName:)]) {
-                            filePathURL = [self.delegate KKAlbumImagePicker_fileURLForSave:assetModal.fileName fileExtentionName:assetModal.fileName.pathExtension];
+                            filePathURL = [self.delegate KKAlbumImagePicker_fileURLForSave:assetModel.fileName fileExtentionName:assetModel.fileName.pathExtension];
                         }
-                        [assetModal setOriginImageInfo:nil
-                                             imageData:UIImageJPEGRepresentation(assetModal.img_EditeImage, 1.0)
+                        [assetModel setOriginImageInfo:nil
+                                             imageData:UIImageJPEGRepresentation(assetModel.img_EditeImage, 1.0)
                                           imageDataUTI:nil
                                       imageOrientation:UIImageOrientationUp
                                            filePathURL:filePathURL];
-                        if (assetModal.fileURL) {
+                        if (assetModel.fileURL) {
                             NSLog(@"KKAlbumImagePickerManager A图片任务处理结束%ld:【成功】",(long)i);
                         }
                         else{
@@ -96,21 +96,21 @@ NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished  = 
                     } else {
                         NSLog(@"KKAlbumImagePickerManager 图片任务处理开始%ld",(long)i);
                         __weak   typeof(self) weakself = self;
-                        [KKAlbumManager startExportImageWithPHAsset:assetModal.asset
+                        [KKAlbumManager startExportImageWithPHAsset:assetModel.asset
                                                         resultBlock:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
                             if (imageData) {
                                 NSURL *filePathURL = nil;
 
                                 if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKAlbumImagePicker_fileURLForSave:fileExtentionName:)]) {
-                                    filePathURL = [weakself.delegate KKAlbumImagePicker_fileURLForSave:assetModal.fileName fileExtentionName:assetModal.fileName.pathExtension];
+                                    filePathURL = [weakself.delegate KKAlbumImagePicker_fileURLForSave:assetModel.fileName fileExtentionName:assetModel.fileName.pathExtension];
                                 }
-                                [assetModal setOriginImageInfo:info
+                                [assetModel setOriginImageInfo:info
                                                      imageData:imageData
                                                   imageDataUTI:dataUTI
                                               imageOrientation:orientation
                                                    filePathURL:filePathURL];
 
-                                if (assetModal.fileURL) {
+                                if (assetModel.fileURL) {
                                     NSLog(@"KKAlbumImagePickerManager A图片任务处理结束%ld:【成功】",(long)i);
                                 }
                                 else{
@@ -131,16 +131,16 @@ NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished  = 
                     NSURL *filePathURL = nil;
                     
                     if (self.delegate && [self.delegate respondsToSelector:@selector(KKAlbumImagePicker_fileURLForSave:fileExtentionName:)]) {
-                        filePathURL = [self.delegate KKAlbumImagePicker_fileURLForSave:assetModal.fileName fileExtentionName:assetModal.fileName.pathExtension];
+                        filePathURL = [self.delegate KKAlbumImagePicker_fileURLForSave:assetModel.fileName fileExtentionName:assetModel.fileName.pathExtension];
                     }
 
-                    [KKAlbumManager startExportVideoWithPHAsset:assetModal.asset
+                    [KKAlbumManager startExportVideoWithPHAsset:assetModel.asset
                                                     filePathURL:filePathURL
                                                     resultBlock:^(NSURL * _Nullable fileURL) {
                        
                         if (fileURL) {
-                            assetModal.fileURL = fileURL;
-                            assetModal.video_originDataSize = [KKAlbumManager fileSizeAtPath:[fileURL path]];
+                            assetModel.fileURL = fileURL;
+                            assetModel.video_originDataSize = [KKAlbumManager fileSizeAtPath:[fileURL path]];
                             
                             NSLog(@"KKAlbumImagePickerManager A视频任务处理结束%ld：【成功】",(long)i);
                         }
@@ -176,9 +176,9 @@ NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished  = 
     [KKMediaPickerWatingView hideForView:[UIWindow kkmp_currentKeyWindow] animation:YES];
     
     __block NSMutableArray *resultArray = [NSMutableArray array];
-    for (KKAlbumAssetModal *modal in self.selectDataSource) {
-        if (modal.fileURL) {
-            [resultArray addObject:modal];
+    for (KKAlbumAssetModel *model in self.selectDataSource) {
+        if (model.fileURL) {
+            [resultArray addObject:model];
         }
     }
         
@@ -191,21 +191,21 @@ NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished  = 
     
     for (NSInteger i = 0; i < [resultArray count]; i++) {
         
-        __block KKAlbumAssetModal *assetModal = [resultArray objectAtIndex:i];
+        __block KKAlbumAssetModel *assetModel = [resultArray objectAtIndex:i];
         //非图片不用压缩
-        if (assetModal.asset.mediaType!=PHAssetMediaTypeImage) {
-            [returnArray setObject:assetModal forKey:[NSString stringWithFormat:@"%ld",i]];
+        if (assetModel.asset.mediaType!=PHAssetMediaTypeImage) {
+            [returnArray setObject:assetModel forKey:[NSString stringWithFormat:@"%ld",i]];
         }
         else {
             //发送原图 不用压缩
             if (KKAlbumImagePickerManager.defaultManager.isSelectOrigin) {
-                [returnArray setObject:assetModal forKey:[NSString stringWithFormat:@"%ld",i]];
+                [returnArray setObject:assetModel forKey:[NSString stringWithFormat:@"%ld",i]];
                 continue;
             }
             
-            __block UIImage *willProcessImage = assetModal.img_EditeImage;
+            __block UIImage *willProcessImage = assetModel.img_EditeImage;
             if (willProcessImage==nil) {
-                willProcessImage = [[UIImage imageWithData:assetModal.img_originData] kkmp_fixOrientation];
+                willProcessImage = [[UIImage imageWithData:assetModel.img_originData] kkmp_fixOrientation];
             }
             
             if (willProcessImage) {
@@ -217,24 +217,24 @@ NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished  = 
                                       toDataSize:300
                                     oneCompleted:^(NSData * _Nullable imageData, NSInteger index) {
                         
-                        NSString *extention = [assetModal.fileName pathExtension];
+                        NSString *extention = [assetModel.fileName pathExtension];
                         NSString *nameShort = nil;
                         if ([NSString kkmp_isStringNotEmpty:extention]) {
                             NSString *extentionDel = [NSString stringWithFormat:@".%@",extention];
-                            nameShort = [assetModal.fileName stringByReplacingOccurrencesOfString:extentionDel withString:@""];
+                            nameShort = [assetModel.fileName stringByReplacingOccurrencesOfString:extentionDel withString:@""];
                         } else {
-                            nameShort = assetModal.fileName;
+                            nameShort = assetModel.fileName;
                         }
 
                         NSString *compressfileName = [NSString stringWithFormat:@"%@.%@",nameShort,extention];
                         NSURL *filePathURL = nil;
                         if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKAlbumImagePicker_fileURLForCompress:fileExtentionName:)]) {
-                            assetModal.compressfileName = compressfileName;
+                            assetModel.compressfileName = compressfileName;
                             filePathURL = [weakself.delegate KKAlbumImagePicker_fileURLForCompress:compressfileName fileExtentionName:compressfileName.pathExtension];
                         }
-                        [assetModal setCompressImageData:imageData filePathURL:filePathURL];
-                        if (assetModal.compressfileURL) {
-                            [returnArray setObject:assetModal forKey:[NSString stringWithFormat:@"%ld",i]];
+                        [assetModel setCompressImageData:imageData filePathURL:filePathURL];
+                        if (assetModel.compressfileURL) {
+                            [returnArray setObject:assetModel forKey:[NSString stringWithFormat:@"%ld",i]];
                             NSLog(@"KKAlbumImagePickerManager【图片压缩】 处理结束%ld:【成功】",(long)i);
                         }
                         else{
@@ -299,53 +299,53 @@ NSNotificationName const NotificationName_KKAlbumAssetModalEditImageFinished  = 
 #pragma mark ==================================================
 #pragma mark == 选择
 #pragma mark ==================================================
-- (void)selectAssetModal:(KKAlbumAssetModal*)aModal{
+- (void)selectAssetModel:(KKAlbumAssetModel*)aModel{
     if (self.mediaType==KKAssetMediaType_Video) {
-        if (aModal.video_originDataSize>1000) {
-//            if (aModal.video_originDataSize>(1024*1024*30)) {
+        if (aModel.video_originDataSize>1000) {
+//            if (aModel.video_originDataSize>(1024*1024*30)) {
 //                [KKToastView showInView:[UIWindow currentKeyWindow] text:KKLocalization(@"chat.file.video.maxSize.tips") image:nil alignment:KKToastViewAlignment_Center];
 //            } else {
-//                [self private_selectAssetModal:aModal];
+//                [self private_selectAssetModel:aModel];
 //            }
-            [self private_selectAssetModal:aModal];
+            [self private_selectAssetModel:aModel];
         }
         else{
             __weak   typeof(self) weakself = self;
-            [KKAlbumManager loadPHAssetFileSize_withPHAsset:aModal.asset resultBlock:^(long long fileSize) {
-                aModal.video_originDataSize = fileSize;
-//            if (aModal.video_originDataSize>(1024*1024*30)) {
+            [KKAlbumManager loadPHAssetFileSize_withPHAsset:aModel.asset resultBlock:^(long long fileSize) {
+                aModel.video_originDataSize = fileSize;
+//            if (aModel.video_originDataSize>(1024*1024*30)) {
 //                [KKToastView showInView:[UIWindow currentKeyWindow] text:KKLocalization(@"chat.file.video.maxSize.tips") image:nil alignment:KKToastViewAlignment_Center];
 //            } else {
-//                [weakself private_selectAssetModal:aModal];
+//                [weakself private_selectAssetModel:aModel];
 //            }
-                [weakself private_selectAssetModal:aModal];
+                [weakself private_selectAssetModel:aModel];
             }];
         }
     }
     else{
-        [self private_selectAssetModal:aModal];
+        [self private_selectAssetModel:aModel];
     }
 }
 
-- (void)private_selectAssetModal:(KKAlbumAssetModal*)aModal{
-    if ([self isSelectAssetModal:aModal]) {
+- (void)private_selectAssetModel:(KKAlbumAssetModel*)aModel{
+    if ([self isSelectAssetModel:aModel]) {
         return;
     }
-    [self.selectDataSource addObject:aModal];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NotificationName_KKAlbumImagePickerSelectModal object:aModal];
+    [self.selectDataSource addObject:aModel];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NotificationName_KKAlbumImagePickerSelectModel object:aModel];
     [[NSNotificationCenter defaultCenter] postNotificationName:NotificationName_KKAlbumManagerDataSourceChanged object:nil];
 }
 
-- (void)deselectAssetModal:(KKAlbumAssetModal*)aModal{
-    if ([self isSelectAssetModal:aModal]) {
-        [self.selectDataSource removeObject:aModal];
-        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationName_KKAlbumImagePickerUnSelectModal object:aModal];
+- (void)deselectAssetModel:(KKAlbumAssetModel*)aModel{
+    if ([self isSelectAssetModel:aModel]) {
+        [self.selectDataSource removeObject:aModel];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationName_KKAlbumImagePickerUnSelectModel object:aModel];
         [[NSNotificationCenter defaultCenter] postNotificationName:NotificationName_KKAlbumManagerDataSourceChanged object:nil];
     }
 }
 
-- (BOOL)isSelectAssetModal:(KKAlbumAssetModal*)aModal{
-    return [self.selectDataSource containsObject:aModal];
+- (BOOL)isSelectAssetModel:(KKAlbumAssetModel*)aModel{
+    return [self.selectDataSource containsObject:aModel];
 }
 
 - (void)clearAllObjects{

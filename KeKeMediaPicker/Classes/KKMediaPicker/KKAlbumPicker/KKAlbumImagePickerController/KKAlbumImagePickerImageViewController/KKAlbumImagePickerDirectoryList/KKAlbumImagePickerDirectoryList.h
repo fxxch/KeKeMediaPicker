@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 - (void)KKAlbumImagePickerDirectoryList:(KKAlbumImagePickerDirectoryList*)aListView
-                 selectedDirectoryModal:(KKAlbumDirectoryModal*)aModal;
+                 selectedDirectoryModel:(KKAlbumDirectoryModel*)aModel;
 
 - (void)KKAlbumImagePickerDirectoryList_WillHide:(KKAlbumImagePickerDirectoryList*)aListView;
 

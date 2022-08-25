@@ -324,7 +324,7 @@ AVCapturePhotoCaptureDelegate>
             KKImageCropperViewController *cropImageViewController = [[KKImageCropperViewController alloc] initWithImage:aImage cropSize:self.cropSize];
             [self.navigationController pushViewController:cropImageViewController animated:YES];
             __weak   typeof(self) weakself = self;
-            [cropImageViewController cropImage:^(KKAlbumAssetModal *aModal, UIImage *newImage) {
+            [cropImageViewController cropImage:^(KKAlbumAssetModel *aModel, UIImage *newImage) {
                 
                 if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(KKCameraImagePicker_didFinishedPickImages:)]) {
                     [weakself.delegate KKCameraImagePicker_didFinishedPickImages:[NSArray arrayWithObject:newImage]];

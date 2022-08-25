@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-    s.name         = "KeKeRequest"
-    s.version      = "0.1.3"
+    s.name         = "KeKeMediaPicker"
+    s.version      = "1.0"
     s.summary      = "A marquee view used on iOS."
 
   # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
                     It is a marquee view used on iOS, which implement by Objective-C.
                     DESC
 
-    s.homepage      = "https://github.com/fxxch/KeKeRequest"
+    s.homepage      = "https://github.com/fxxch/KeKeMediaPicker"
   # s.screenshots = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -69,10 +69,10 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-    s.platform     = :ios, "10.0"
+    s.platform     = :ios, "11.0"
 
   #  When using multiple platforms
-    s.ios.deployment_target = "10.0"
+    s.ios.deployment_target = "11.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -85,7 +85,7 @@ Pod::Spec.new do |s|
   #
 
   # 根据Tag
-   s.source       = { :git => "https://github.com/fxxch/KeKeRequest.git", :tag => s.version }
+   s.source       = { :git => "https://github.com/fxxch/KeKeMediaPicker.git", :tag => s.version }
 
   # 根据提交的版本标识符
   # s.source       = { :git => "https://github.com/fxxch/KeKeRequest.git", :commit => 'f8509d887a3788a5d2673315fc0769bac4b4d903'}
@@ -99,10 +99,19 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-    s.source_files  = "KKRequest/Classes/**/*.{h,m,c}"
-    s.public_header_files = "KKRequest/Classes/**/*.h"
-  # s.exclude_files = "Classes/Exclude"
+    s.source_files  = "KeKeMediaPicker/Classes/**/*.{h,m,c}"
+    # s.public_header_files = "KeKeMediaPicker/Classes/**/*.h",
+    s.public_header_files = "KeKeMediaPicker/Classes/**/KKMediaPickerDefine.h",
+                            "KeKeMediaPicker/Classes/**/KKAlbumDirectoryModal.h",
+                            "KeKeMediaPicker/Classes/**/KKAlbumAssetModal.h",
+                            "KeKeMediaPicker/Classes/**/KKAlbumManager.h",
+                            "KeKeMediaPicker/Classes/**/KKMediaPickerBaseViewController.h",
+                            "KeKeMediaPicker/Classes/**/KKMediaPickerBaseNavigationController.h",
+                            "KeKeMediaPicker/Classes/**/KKAlbumImagePickerController.h",
+                            "KeKeMediaPicker/Classes/**/KKCameraImagePickerController.h",
+                            "KeKeMediaPicker/Classes/**/KKCameraCapturePickerController.h"
 
+  # s.exclude_files = "Classes/Exclude"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -143,7 +152,7 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-  s.dependency 'AFNetworking'
+  #s.dependency 'AFNetworking'
   
   # s.dependency 'MBProgressHUD'
   # s.dependency 'AFNetworking'

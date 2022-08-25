@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class KKAlbumDirectoryModal;
+@class KKAlbumDirectoryModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)open;
 
-- (void)reloadWithDirectoryModal:(KKAlbumDirectoryModal*)aModal;
+- (void)reloadWithDirectoryModel:(KKAlbumDirectoryModel*)aModel;
 
 @end
 

@@ -1,5 +1,5 @@
 //
-//  KKCameraCaptureDataModal.h
+//  KKCameraCaptureDataModel.h
 //  BM
 //
 //  Created by 刘波 on 2020/3/16.
@@ -11,7 +11,7 @@
 #import <AVKit/AVKit.h>
 #import "KKCameraHelper.h"
 
-@interface KKCameraCaptureDataModal : NSObject
+@interface KKCameraCaptureDataModel : NSObject
 
 /* 公共的 */
 @property (nonatomic , copy)  NSString* fileName;//拍摄出来的文件名称

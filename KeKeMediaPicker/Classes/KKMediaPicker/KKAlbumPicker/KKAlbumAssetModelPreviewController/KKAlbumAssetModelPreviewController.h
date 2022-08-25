@@ -1,5 +1,5 @@
 //
-//  KKAlbumAssetModalPreviewController.h
+//  KKAlbumAssetModelPreviewController.h
 //  BM
 //
 //  Created by sjyt on 2020/4/7.
@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "KKMediaPickerDefine.h"
-#import "KKAlbumAssetModal.h"
+#import "KKAlbumAssetModel.h"
 #import "KKMediaPickerBaseViewController.h"
 
-@interface KKAlbumAssetModalPreviewController : KKMediaPickerBaseViewController
+@interface KKAlbumAssetModelPreviewController : KKMediaPickerBaseViewController
 
 + (void)showFromNavigationController:(UINavigationController*_Nullable)aNavController
-                               items:(NSArray<KKAlbumAssetModal*>*_Nullable)aItemsArray
+                               items:(NSArray<KKAlbumAssetModel*>*_Nullable)aItemsArray
                        selectedIndex:(NSInteger)aSelectedIndex
                             fromRect:(CGRect)aFromRect;
 

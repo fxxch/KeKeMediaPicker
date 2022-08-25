@@ -37,10 +37,10 @@ static NSString *AlbumImageCollectionViewCell_ID = @"AlbumImageCollectionViewCel
 @property (nonatomic,strong) UIButton *selectedButton;
 @property (nonatomic,strong) UIImageView *videoLogoView;
 @property (nonatomic,strong) UILabel *timeLabel;
-@property (nonatomic,strong) KKAlbumAssetModal *assetModal;
+@property (nonatomic,strong) KKAlbumAssetModel *assetModel;
 @property (nonatomic , weak) id<AlbumImageCollectionViewCellDelegate> delegate;
 
-- (void)reloadWithInformation:(KKAlbumAssetModal*)aInformation select:(BOOL)select;
+- (void)reloadWithInformation:(KKAlbumAssetModel*)aInformation select:(BOOL)select;
 
 @end
 

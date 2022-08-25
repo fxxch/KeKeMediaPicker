@@ -1,15 +1,15 @@
 //
-//  KKCameraCaptureDataModal.m
+//  KKCameraCaptureDataModel.m
 //  BM
 //
 //  Created by 刘波 on 2020/3/16.
 //  Copyright © 2020 bm. All rights reserved.
 //
 
-#import "KKCameraCaptureDataModal.h"
+#import "KKCameraCaptureDataModel.h"
 #import "NSString+KKMediaPicker.h"
 
-@implementation KKCameraCaptureDataModal
+@implementation KKCameraCaptureDataModel
 
 - (instancetype)init{
     self = [super init];
@@ -89,7 +89,7 @@
     if(![fileManager contentsOfDirectoryAtPath:selfClassPath error:&error]){
         BOOL result = [fileManager createDirectoryAtPath:selfClassPath withIntermediateDirectories:YES attributes:nil error:&error];
         if (!result) {
-            NSLog(@"❌KKCameraCaptureDataModal：创建文件夹失败：%@",[error localizedDescription]);
+            NSLog(@"❌KKCameraCaptureDataModel：创建文件夹失败：%@",[error localizedDescription]);
             return @"";
         }
     }
