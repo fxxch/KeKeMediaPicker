@@ -182,7 +182,7 @@
 		1166A14428AA2A0200C2EC7A /* KKMediaPicker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A11B28AA272700C2EC7A /* KKMediaPicker.h */; };
 		1166A14528AA2A2200C2EC7A /* KKAlbumManager.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A05028AA252500C2EC7A /* KKAlbumManager.bundle */; };
 		1166A14628AA2A2200C2EC7A /* KKCameraCapture.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A06228AA252500C2EC7A /* KKCameraCapture.bundle */; };
-		1166A14A28AA315500C2EC7A /* KKMediaPickerAuthorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A14828AA315500C2EC7A /* KKMediaPickerAuthorization.h */; };
+		1166A14A28AA315500C2EC7A /* KKMediaPickerAuthorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A14828AA315500C2EC7A /* KKMediaPickerAuthorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1166A14B28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A14928AA315500C2EC7A /* KKMediaPickerAuthorization.m */; };
 		1166A14C28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A14928AA315500C2EC7A /* KKMediaPickerAuthorization.m */; };
 		1166A19C28AA37C300C2EC7A /* KKMediaPickerWatingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A19A28AA37C300C2EC7A /* KKMediaPickerWatingView.h */; };
@@ -1110,6 +1110,7 @@
 				11E049ED28B76048007CB260 /* KKMediaPickerBaseViewController.h in Headers */,
 				11E049F428B76075007CB260 /* KKMediaPickerBaseNavigationController.h in Headers */,
 				11856CD928AB9A3500EE4F62 /* KKMediaPickerDefine.h in Headers */,
+				1166A14A28AA315500C2EC7A /* KKMediaPickerAuthorization.h in Headers */,
 				1166A0E028AA252500C2EC7A /* KKAlbumManager.h in Headers */,
 				1166A0DF28AA252500C2EC7A /* KKAlbumAssetModel.h in Headers */,
 				1166A0E428AA252500C2EC7A /* KKAlbumDirectoryModel.h in Headers */,
@@ -1146,7 +1147,6 @@
 				1166A09728AA252500C2EC7A /* KKCameraHelper.h in Headers */,
 				11856CE028AB9B4200EE4F62 /* NSString+KKMediaPicker.h in Headers */,
 				110D864928B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h in Headers */,
-				1166A14A28AA315500C2EC7A /* KKMediaPickerAuthorization.h in Headers */,
 				1166A19C28AA37C300C2EC7A /* KKMediaPickerWatingView.h in Headers */,
 				114F7A7D28B60A90003DB692 /* UIImage+KKMediaPicker.h in Headers */,
 				1166A1A728AA3EA400C2EC7A /* UIWindow+KKMediaPicker.h in Headers */,
@@ -1557,7 +1557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.10fw.com.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = 10fwDemo_Dev;
@@ -1600,7 +1600,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.10fw.com.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = 10fwDemo_AdHoc;
@@ -1638,7 +1638,7 @@
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACH_O_TYPE = mh_dylib;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = KK.KKRequest;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1680,7 +1680,7 @@
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACH_O_TYPE = mh_dylib;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = KK.KKRequest;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

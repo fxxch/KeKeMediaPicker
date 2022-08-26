@@ -9,14 +9,8 @@
 #ifndef KKMediaPicker_h
 #define KKMediaPicker_h
 
-//#import "UIImage+KKMediaPicker.h"
-//#import "NSBundle+KKMediaPicker.h"
-//#import "NSString+KKMediaPicker.h"
-//#import "KKMediaPickerAuthorization.h"
-//#import "KKMediaPickerWatingView.h"
-//#import "UIWindow+KKMediaPicker.h"
-
 #import "KKMediaPickerDefine.h"
+#import "KKMediaPickerAuthorization.h"
 
 #import "KKAlbumDirectoryModel.h"
 #import "KKAlbumAssetModel.h"
