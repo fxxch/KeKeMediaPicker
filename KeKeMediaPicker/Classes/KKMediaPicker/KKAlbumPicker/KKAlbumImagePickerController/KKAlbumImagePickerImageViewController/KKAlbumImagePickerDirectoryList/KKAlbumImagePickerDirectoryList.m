@@ -160,12 +160,14 @@
         UILabel *mainLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 10, [[UIScreen mainScreen] bounds].size.width-90-25, 40)];
         mainLabel.font = [UIFont systemFontOfSize:16];
         mainLabel.tag = 1102;
+        mainLabel.textColor = [UIColor blackColor];
         mainLabel.backgroundColor = [UIColor clearColor];
         [cell addSubview:mainLabel];
         
         UILabel *subLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 50, [[UIScreen mainScreen] bounds].size.width-90-25, 30)];
         subLabel.font = [UIFont systemFontOfSize:16];
         subLabel.tag = 1103;
+        subLabel.textColor = [UIColor lightGrayColor];
         subLabel.backgroundColor = [UIColor clearColor];
         [cell addSubview:subLabel];
     }
