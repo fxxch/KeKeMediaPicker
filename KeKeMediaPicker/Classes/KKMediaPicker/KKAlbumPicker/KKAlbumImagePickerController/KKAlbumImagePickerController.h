@@ -7,11 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KKMediaPickerDefine.h"
-#import "KKAlbumImagePickerManager.h"
 #import "KKMediaPickerBaseNavigationController.h"
+#import "KKAlbumManager.h"
 
-@interface KKAlbumImagePickerController : KKMediaPickerBaseNavigationController
+@class KKAlbumAssetModel;
+
+@protocol KKAlbumImagePickerDelegate <NSObject,UINavigationControllerDelegate>
+@optional
+
+/// 选择图片之后，可自定义保存的路径，不过实现该方法（不自定义），内部会自动存储在一个地方
+/// @param fileName 文件名 eg: happy.jpg
+/// @param aExtentionName 文件扩展名 ex: jpg
+- (NSURL*)KKAlbumImagePicker_fileURLForSave:(NSString*)fileName
+                          fileExtentionName:(NSString*)aExtentionName;
+
+
+/// 对已经选择的图片进行压缩的时候，可自定义保存的路径，不过实现该方法（不自定义），内部会自动存储在一个地方
+/// @param fileName 文件名 eg: happy.jpg
+/// @param aExtentionName 文件扩展名 ex: jpg
+- (NSURL*)KKAlbumImagePicker_fileURLForCompress:(NSString*)fileName
+                              fileExtentionName:(NSString*)aExtentionName;
+
+- (void)KKAlbumImagePicker_didFinishedPickImages:(NSArray<KKAlbumAssetModel*>*)aImageArray;
+
+@end
+
+@interface KKAlbumImagePickerController : KKMediaPickerBaseNavigationController<KKAlbumImagePickerDelegate>
 
 
 /// 初始化

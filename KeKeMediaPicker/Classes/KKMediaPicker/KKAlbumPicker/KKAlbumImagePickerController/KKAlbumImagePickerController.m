@@ -8,9 +8,31 @@
 
 #import "KKAlbumImagePickerController.h"
 #import "KKAlbumImagePickerImageViewController.h"
-#import "KKAlbumManager.h"
+#import "KKAlbumImagePickerManager.h"
+#import "KKMediaPickerDefine.h"
+
+@interface KKAlbumImagePickerController ()
+
+@property (nonatomic , weak) id<KKAlbumImagePickerDelegate> delegate;
+
+@end
+
 
 @implementation KKAlbumImagePickerController
+@dynamic delegate;
+
+// .h中警告说delegate在父类已经声明过了，子类再声明也不会重新生成新的方法了。我们就在这里使用@dynamic告诉系统delegate的setter与getter方法由用户自己实现，不由系统自动生成
+#pragma mark ==================================================
+#pragma mark == delegate 重设
+#pragma mark ==================================================
+- (void)setDelegate:(id<KKAlbumImagePickerDelegate>)delegate{
+    super.delegate = delegate;
+}
+
+- (id<KKAlbumImagePickerDelegate>)delegate{
+    id curDelegate = super.delegate;
+    return curDelegate;
+}
 
 - (void)dealloc
 {
@@ -38,6 +60,7 @@
         [KKAlbumImagePickerManager defaultManager].mediaType = aMediaType;
         [KKAlbumImagePickerManager defaultManager].delegate = aDelegate;
         [[KKAlbumImagePickerManager defaultManager] clearAllObjects];
+        self.delegate = aDelegate;
         self.modalPresentationStyle = UIModalPresentationFullScreen;
     }
     return self;
