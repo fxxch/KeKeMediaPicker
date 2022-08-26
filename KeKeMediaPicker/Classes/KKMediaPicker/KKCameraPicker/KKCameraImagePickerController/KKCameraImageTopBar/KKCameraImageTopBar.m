@@ -9,6 +9,7 @@
 #import "KKCameraImageTopBar.h"
 #import "KKMediaPickerDefine.h"
 #import "UIWindow+KKMediaPicker.h"
+#import "KKMediaPickerLocalization.h"
 
 @implementation KKCameraImageTopBar
 
@@ -70,8 +71,7 @@
     self.doneButton.backgroundColor = [UIColor clearColor];
     self.doneButton.frame = CGRectMake(CGRectGetMaxX(self.cameraDeviceButton.frame)+space, self.frame.size.height-44, 60, 44);
     [self.doneButton addTarget:self action:@selector(doneButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.doneButton setTitle:KKMediaPicker_Common_Done forState:UIControlStateNormal];
-    [self.doneButton setTitle:KKMediaPicker_Common_Done forState:UIControlStateHighlighted];
+    [self.doneButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Done] forState:UIControlStateNormal];
     [self addSubview:self.doneButton];
 }
 

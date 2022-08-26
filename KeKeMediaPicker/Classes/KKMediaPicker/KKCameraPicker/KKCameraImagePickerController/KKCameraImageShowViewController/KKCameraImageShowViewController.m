@@ -80,17 +80,6 @@ KKCameraImageShowToolBarDelegate>
     self.toolBar = [[KKCameraImageShowToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+50), UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
     self.toolBar.delegate = self;
     [self.view addSubview:self.toolBar];
-    //判断是否是iphoneX
-    if ([UIWindow kkmp_currentKeyWindow].safeAreaInsets.bottom > 0.0) {
-        [[self.toolBar viewWithTag:2018070299] removeFromSuperview];
-        UIView *iPhoneXView = [[UIView alloc] initWithFrame:CGRectMake(0, self.toolBar.frame.size.height, self.toolBar.frame.size.width, UIWindow.kkmp_safeAreaBottomHeight)];
-        iPhoneXView.backgroundColor = [UIColor blackColor];
-        iPhoneXView.tag = 2018070299;
-        iPhoneXView.userInteractionEnabled = NO;
-        iPhoneXView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-        [self.toolBar addSubview:iPhoneXView];
-    }
-
     
     [self.toolBar setNumberOfPic:self.dataSource.count maxNumberOfPic:self.maxNumber];
 }

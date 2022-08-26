@@ -16,6 +16,8 @@
 #import "KKMediaPickerAuthorization.h"
 #import "UIWindow+KKMediaPicker.h"
 #import "NSString+KKMediaPicker.h"
+#import "NSBundle+KKMediaPicker.h"
+#import "KKMediaPickerLocalization.h"
 
 @interface KKAlbumImagePickerImageViewController ()
 <UICollectionViewDataSource,
@@ -49,20 +51,19 @@ KKAlbumImagePickerNavTitleBarDelegate>
     self.view.backgroundColor = [UIColor whiteColor];
     
     //左导航
-    CGSize size = [KKMediaPicker_Common_Cancel kkmp_sizeWithFont:[UIFont systemFontOfSize:17] maxWidth:CGFLOAT_MAX];
-    UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, size.width+10, 44)];
+    UIImage *image = [NSBundle kkmp_imageInBundle:@"KKAlbumManager.bundle" imageName:@"Cancel"];
+    UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [leftButton addTarget:self action:@selector(navigationControllerDismiss) forControlEvents:UIControlEventTouchUpInside];
     leftButton.exclusiveTouch = YES;//关闭多点
+    [leftButton setImage:image forState:UIControlStateNormal];
     leftButton.backgroundColor = [UIColor clearColor];
     [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    leftButton.titleLabel.font = [UIFont systemFontOfSize:17];
-    [leftButton setTitle:KKMediaPicker_Common_Cancel forState:UIControlStateNormal];
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     UIBarButtonItem *negativeSeperator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:negativeSeperator,leftItem, nil];
 
     //右导航
-    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width+10, 44)];
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
     UIBarButtonItem *negativeSeperatorRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSeperatorRight, rightItem, nil];
@@ -169,20 +170,10 @@ KKAlbumImagePickerNavTitleBarDelegate>
         [self.view addSubview:self.mainCollectionView];
 
         /*底部工具栏*/
-        self.toolBar = [[KKAlbumImageToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-UIWindow.kkmp_statusBarAndNavBarHeight-50, UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
+        self.toolBar = [[KKAlbumImageToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-UIWindow.kkmp_statusBarAndNavBarHeight-(UIWindow.kkmp_safeAreaBottomHeight+50), UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
         self.toolBar.delegate = self;
         [self.view addSubview:self.toolBar];
         [self.toolBar setNumberOfPic:0 maxNumberOfPic:[KKAlbumImagePickerManager defaultManager].numberOfPhotosNeedSelected];
-        //判断是否是iphoneX
-        if ([UIWindow kkmp_currentKeyWindow].safeAreaInsets.bottom > 0.0) {
-            [[self.toolBar viewWithTag:2018070299] removeFromSuperview];
-            UIView *iPhoneXView = [[UIView alloc] initWithFrame:CGRectMake(0, self.toolBar.frame.size.height, self.toolBar.frame.size.width, UIWindow.kkmp_safeAreaBottomHeight)];
-            iPhoneXView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
-            iPhoneXView.tag = 2018070299;
-            iPhoneXView.userInteractionEnabled = NO;
-            iPhoneXView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-            [self.toolBar addSubview:iPhoneXView];
-        }
     }
     else{
         //主图片
@@ -263,7 +254,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
     NSArray *array = notice.object;
     for (NSInteger i=0; i<[array count]; i++) {
         KKAlbumDirectoryModel *data = (KKAlbumDirectoryModel*)[array objectAtIndex:i];
-        if ([data.title isEqualToString:KKMediaPicker_Album_UserLibrary]) {
+        if (data.assetCollection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumUserLibrary) {
             self.directoryModel = data;
             [self.mainCollectionView reloadData];
             [self collectionViewScrollToBottom];
@@ -563,9 +554,15 @@ KKAlbumImagePickerNavTitleBarDelegate>
             NSInteger selectNumber = [[KKAlbumImagePickerManager defaultManager].allSource count];
             if (selectNumber >= maxNumber) {
   
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:KKMediaPicker_Album_MaxLimited message:nil preferredStyle:UIAlertControllerStyleAlert];
-                [alertController addAction:[UIAlertAction actionWithTitle:KKMediaPicker_Common_OK style:UIAlertActionStyleDefault handler:nil]];
-                [[UIWindow kkmp_currentKeyWindow].rootViewController presentViewController:alertController animated:true completion:nil];
+//                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Album_MaxLimited]
+//                                                                                         message:nil
+//                                                                                  preferredStyle:UIAlertControllerStyleAlert];
+//                
+//                [alertController addAction:[UIAlertAction actionWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_OK]
+//                                                                    style:UIAlertActionStyleDefault
+//                                                                  handler:nil]];
+//                
+//                [self.navigationController presentViewController:alertController animated:true completion:nil];
                 return;
             }
             [[KKAlbumImagePickerManager defaultManager] selectAssetModel:assetModel];

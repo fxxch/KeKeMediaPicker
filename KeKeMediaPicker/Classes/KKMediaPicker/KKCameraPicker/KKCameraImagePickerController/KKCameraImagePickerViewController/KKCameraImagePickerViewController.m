@@ -18,6 +18,7 @@
 #import "UIWindow+KKMediaPicker.h"
 #import "KKMediaPickerAuthorization.h"
 #import "UIImage+KKMediaPicker.h"
+#import "KKMediaPickerLocalization.h"
 
 @interface KKCameraImagePickerViewController ()
 <KKCameraImageTopBarDelegate,
@@ -113,19 +114,9 @@ AVCapturePhotoCaptureDelegate>
         [self.view addSubview:self.topBar];
         
         /*底部工具栏*/
-        self.toolBar = [[KKCameraImageToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-UIWindow.kkmp_safeAreaBottomHeight-60, UIWindow.kkmp_screenWidth, 60)];
+        self.toolBar = [[KKCameraImageToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+60), UIWindow.kkmp_screenWidth, UIWindow.kkmp_safeAreaBottomHeight+60)];
         self.toolBar.delegate = self;
         [self.view addSubview:self.toolBar];
-        //判断是否是iphoneX
-        if ([UIWindow kkmp_currentKeyWindow].safeAreaInsets.bottom > 0.0) {
-            [[self.toolBar viewWithTag:2018070299] removeFromSuperview];
-            UIView *iPhoneXView = [[UIView alloc] initWithFrame:CGRectMake(0, self.toolBar.frame.size.height, self.toolBar.frame.size.width, UIWindow.kkmp_safeAreaBottomHeight)];
-            iPhoneXView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
-            iPhoneXView.tag = 2018070299;
-            iPhoneXView.userInteractionEnabled = NO;
-            iPhoneXView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-            [self.toolBar addSubview:iPhoneXView];
-        }
         [self.toolBar setNumberOfPic:0 maxNumberOfPic:self.numberOfPhotosNeedSelected];
         
         [self initWaitingView];
@@ -282,9 +273,15 @@ AVCapturePhotoCaptureDelegate>
 - (void)KKCameraImageToolBar_TakePicButtonClicked:(KKCameraImageToolBar*)toolView{
     
     if ([self.imageInformationArray count]>=self.numberOfPhotosNeedSelected) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:KKMediaPicker_Album_MaxLimited message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:KKMediaPicker_Common_OK style:UIAlertActionStyleDefault handler:nil]];
-        [[UIWindow kkmp_currentKeyWindow].rootViewController presentViewController:alertController animated:true completion:nil];
+//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Album_MaxLimited]
+//                                                                                 message:nil
+//                                                                          preferredStyle:UIAlertControllerStyleAlert];
+//        
+//        [alertController addAction:[UIAlertAction actionWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_OK]
+//                                                            style:UIAlertActionStyleDefault
+//                                                          handler:nil]];
+//        [self.navigationController presentViewController:alertController animated:true completion:nil];
+        
         return;
     }
         

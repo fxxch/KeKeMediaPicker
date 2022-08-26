@@ -12,6 +12,7 @@
 #import "KKMediaPickerDefine.h"
 #import "KKMediaPickerAuthorization.h"
 #import "UIWindow+KKMediaPicker.h"
+#import "KKMediaPickerLocalization.h"
 
 @implementation KKAlbumImagePickerNavTitleBar
 
@@ -36,7 +37,7 @@
 }
 
 - (void)initUI{
-    NSString *title = KKMediaPicker_Album_Photo;
+    NSString *title = @"";
     CGSize size = [title kkmp_sizeWithFont:[UIFont systemFontOfSize:17] maxWidth:1000];
     CGFloat width = 10 + size.width + 10 + 20 + 5;
     
@@ -71,12 +72,21 @@
 
 - (void)backgroundViewClicked{
     if ([KKMediaPickerAuthorization isAlbumAuthorizedLimited]) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:KKMediaPicker_AuthorizedLimited_Album_AlertMessage message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:KKMediaPicker_Common_Cancel style:UIAlertActionStyleDefault handler:nil]];
-        [alertController addAction:[UIAlertAction actionWithTitle:KKMediaPicker_Authorized_Go style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_AuthorizedLimited_Album_AlertMessage]
+                                                                                 message:nil
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Cancel]
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:nil]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Authorized_Go]
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
             NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
             [[UIApplication sharedApplication] openURL:url options:[NSDictionary dictionary] completionHandler:nil];
         }]];
+        
         [[UIWindow kkmp_viewControllerOfView:self] presentViewController:alertController animated:true completion:nil];
     }
     else{
@@ -123,8 +133,8 @@
         self.hidden = NO;
         NSArray *array = notice.object;
         for (NSInteger i=0; i<[array count]; i++) {
-            KKAlbumDirectoryModel *data = (KKAlbumDirectoryModel*)[array objectAtIndex:i];
-            if ([data.title isEqualToString:KKMediaPicker_Album_UserLibrary]) {
+            KKAlbumDirectoryModel *data = (KKAlbumDirectoryModel*)[array objectAtIndex:i];            
+            if (data.assetCollection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumUserLibrary) {
                 [self reloadWithDirectoryModel:data];
                 break;
             }
@@ -153,7 +163,7 @@
     if ([KKMediaPickerAuthorization isAlbumAuthorizedLimited]) {
         self.hidden = NO;
 
-        NSString *title = KKMediaPicker_AuthorizedLimited_Album;
+        NSString *title = [KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_AuthorizedLimited_Album];
         CGSize size = [title kkmp_sizeWithFont:[UIFont systemFontOfSize:17] maxWidth:1000];
         CGFloat width = 10 + size.width + 10 + 20 + 5;
         

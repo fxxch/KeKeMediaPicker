@@ -13,6 +13,10 @@
 		114F7A7D28B60A90003DB692 /* UIImage+KKMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 114F7A7B28B60A90003DB692 /* UIImage+KKMediaPicker.h */; };
 		114F7A7E28B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */; };
 		114F7A7F28B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */; };
+		115AA0DD28B8D647008B7287 /* KKMediaPickerLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 115AA0DB28B8D647008B7287 /* KKMediaPickerLocalization.h */; };
+		115AA0DF28B8D647008B7287 /* KKMediaPickerLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 115AA0DC28B8D647008B7287 /* KKMediaPickerLocalization.m */; };
+		115AA0E128B8E3E2008B7287 /* KKMediaPickerLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 115AA0DC28B8D647008B7287 /* KKMediaPickerLocalization.m */; };
+		115AA0E228B8E782008B7287 /* KKMediaPickerLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 115AA0DC28B8D647008B7287 /* KKMediaPickerLocalization.m */; };
 		1166A07528AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11669FFE28AA252500C2EC7A /* KKCameraImageShowViewController.m */; };
 		1166A07628AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11669FFE28AA252500C2EC7A /* KKCameraImageShowViewController.m */; };
 		1166A07828AA252500C2EC7A /* KKCameraImageShowItemView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A00028AA252500C2EC7A /* KKCameraImageShowItemView.h */; };
@@ -285,6 +289,8 @@
 		110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KKMediaPicker.m"; sourceTree = "<group>"; };
 		114F7A7B28B60A90003DB692 /* UIImage+KKMediaPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+KKMediaPicker.h"; sourceTree = "<group>"; };
 		114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KKMediaPicker.m"; sourceTree = "<group>"; };
+		115AA0DB28B8D647008B7287 /* KKMediaPickerLocalization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerLocalization.h; sourceTree = "<group>"; };
+		115AA0DC28B8D647008B7287 /* KKMediaPickerLocalization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMediaPickerLocalization.m; sourceTree = "<group>"; };
 		11669FFE28AA252500C2EC7A /* KKCameraImageShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImageShowViewController.m; sourceTree = "<group>"; };
 		1166A00028AA252500C2EC7A /* KKCameraImageShowItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCameraImageShowItemView.h; sourceTree = "<group>"; };
 		1166A00128AA252500C2EC7A /* KKCameraImageShowItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCameraImageShowItemView.m; sourceTree = "<group>"; };
@@ -459,6 +465,15 @@
 				114F7A7C28B60A90003DB692 /* UIImage+KKMediaPicker.m */,
 			);
 			path = "UIImage+KKMediaPicker";
+			sourceTree = "<group>";
+		};
+		115AA0DA28B8D608008B7287 /* KKMediaPickerLocalization */ = {
+			isa = PBXGroup;
+			children = (
+				115AA0DB28B8D647008B7287 /* KKMediaPickerLocalization.h */,
+				115AA0DC28B8D647008B7287 /* KKMediaPickerLocalization.m */,
+			);
+			path = KKMediaPickerLocalization;
 			sourceTree = "<group>";
 		};
 		11669FFB28AA252500C2EC7A /* KKMediaPicker */ = {
@@ -883,6 +898,7 @@
 		11856CD628AB656D00EE4F62 /* KKMediaTool */ = {
 			isa = PBXGroup;
 			children = (
+				115AA0DA28B8D608008B7287 /* KKMediaPickerLocalization */,
 				114F7A7A28B60A6D003DB692 /* UIImage+KKMediaPicker */,
 				110D864628B1F62E00DE9FEF /* NSBundle+KKMediaPicker */,
 				11856CDA28AB9B4200EE4F62 /* NSString+KKMediaPicker */,
@@ -1141,6 +1157,7 @@
 				1166A10628AA252500C2EC7A /* KKCameraCaptureShowViewController.h in Headers */,
 				1166A07C28AA252500C2EC7A /* KKCameraImageShowViewController.h in Headers */,
 				1166A0F628AA252500C2EC7A /* KKCameraCaptureTopBar.h in Headers */,
+				115AA0DD28B8D647008B7287 /* KKMediaPickerLocalization.h in Headers */,
 				1166A0B728AA252500C2EC7A /* KKAlbumImagePickerManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1364,6 +1381,7 @@
 				11E04A0728B896A1007CB260 /* main.m in Sources */,
 				11E04A0628B8969D007CB260 /* AppDelegate.m in Sources */,
 				11E04A0828B896A4007CB260 /* HomeViewController.m in Sources */,
+				115AA0E228B8E782008B7287 /* KKMediaPickerLocalization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1388,6 +1406,7 @@
 				1166A10028AA252500C2EC7A /* KKCircle.m in Sources */,
 				1166A0CE28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */,
 				1166A08A28AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */,
+				115AA0DF28B8D647008B7287 /* KKMediaPickerLocalization.m in Sources */,
 				1166A11328AA252500C2EC7A /* KKAlbumAssetModelVideoPlayView.m in Sources */,
 				1166A0D228AA252500C2EC7A /* KKImageCropperViewController.m in Sources */,
 				1166A0AA28AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */,
@@ -1444,6 +1463,7 @@
 				1166A0FF28AA252500C2EC7A /* KKCircle.m in Sources */,
 				1166A0CD28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */,
 				1166A08928AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */,
+				115AA0E128B8E3E2008B7287 /* KKMediaPickerLocalization.m in Sources */,
 				1166A11228AA252500C2EC7A /* KKAlbumAssetModelVideoPlayView.m in Sources */,
 				1166A0D128AA252500C2EC7A /* KKImageCropperViewController.m in Sources */,
 				1166A0A928AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */,
@@ -1537,7 +1557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.10fw.com.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = 10fwDemo_Dev;
@@ -1580,7 +1600,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.10fw.com.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = 10fwDemo_AdHoc;
@@ -1618,7 +1638,7 @@
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACH_O_TYPE = mh_dylib;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = KK.KKRequest;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1660,7 +1680,7 @@
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACH_O_TYPE = mh_dylib;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = KK.KKRequest;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

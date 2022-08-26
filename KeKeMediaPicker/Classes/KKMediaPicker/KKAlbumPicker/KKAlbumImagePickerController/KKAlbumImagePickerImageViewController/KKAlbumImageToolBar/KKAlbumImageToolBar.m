@@ -12,6 +12,7 @@
 #import "KKMediaPickerDefine.h"
 #import "UIWindow+KKMediaPicker.h"
 #import "KKAlbumManager.h"
+#import "KKMediaPickerLocalization.h"
 
 #define KKAlbumImageToolBar_ButtonFont [UIFont boldSystemFontOfSize:14]
 #define KKAlbumImageToolBar_InfoFont [UIFont systemFontOfSize:12]
@@ -44,7 +45,7 @@
     self.previewButton = [[UIButton alloc] initWithFrame:CGRectMake(UIWindow.kkmp_screenWidth-15-60-15-60, 10, 60, 30)];
     [self.previewButton setBackgroundColor:KKMediaPicker_Clolor_1E95FF];
     self.previewButton.titleLabel.font = KKAlbumImageToolBar_ButtonFont;
-    [self.previewButton setTitle:KKMediaPicker_Album_Preview forState:UIControlStateNormal];
+    [self.previewButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Album_Preview] forState:UIControlStateNormal];
     self.previewButton.backgroundColor = [UIColor clearColor];
     self.previewButton.layer.cornerRadius = 15.0;
     self.previewButton.layer.masksToBounds = YES;
@@ -52,11 +53,11 @@
     [self addSubview:self.previewButton];
     self.previewButton.hidden = YES;
     
-    self.originButton = [[UIButton alloc] initWithFrame:CGRectMake((UIWindow.kkmp_screenWidth-90)/2.0, 10, 90, 30)];
+    self.originButton = [[UIButton alloc] initWithFrame:CGRectMake((UIWindow.kkmp_screenWidth-150)/2.0, 10, 150, 30)];
     [self.originButton setImage:[KKAlbumManager themeImageForName:@"UnSelected"] forState:UIControlStateNormal];
     [self.originButton setImage:[KKAlbumManager themeImageForName:@"SelectedH"] forState:UIControlStateSelected];
     self.originButton.titleLabel.font = KKAlbumImageToolBar_ButtonFont;
-    [self.originButton setTitle:KKMediaPicker_Album_Origin forState:UIControlStateNormal];
+    [self.originButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Album_Origin] forState:UIControlStateNormal];
     self.originButton.backgroundColor = [UIColor clearColor];
     [self.originButton addTarget:self action:@selector(originButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.originButton];
@@ -72,7 +73,7 @@
     self.okButton = [[UIButton alloc] initWithFrame:CGRectMake(UIWindow.kkmp_screenWidth-15-60, 10, 60, 30)];
     [self.okButton setBackgroundColor:KKMediaPicker_Clolor_1E95FF];
     self.okButton.titleLabel.font = KKAlbumImageToolBar_ButtonFont;
-    [self.okButton setTitle:KKMediaPicker_Common_Done forState:UIControlStateNormal];
+    [self.okButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Done] forState:UIControlStateNormal];
     self.okButton.backgroundColor = [UIColor clearColor];
     self.okButton.layer.cornerRadius = 15.0;
     self.okButton.layer.masksToBounds = YES;
@@ -126,7 +127,7 @@
 
         self.okButton.userInteractionEnabled = YES;
         self.okButton.alpha = 1.0;
-        NSString *okTitle = [NSString stringWithFormat:@"%@(%ld)",KKMediaPicker_Common_Done,(long)numberOfPic];
+        NSString *okTitle = [NSString stringWithFormat:@"%@(%ld)",[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Done],(long)numberOfPic];
         CGSize size = [okTitle kkmp_sizeWithFont:KKAlbumImageToolBar_ButtonFont maxWidth:1000];
         self.okButton.frame = CGRectMake(UIWindow.kkmp_screenWidth-15-(size.width)-30, 10, size.width+30, 30);
         [self.okButton setTitle:okTitle forState:UIControlStateNormal];
@@ -136,7 +137,7 @@
 
         self.okButton.userInteractionEnabled = NO;
         self.okButton.alpha = 0.3;
-        [self.okButton setTitle:KKMediaPicker_Common_Done forState:UIControlStateNormal];
+        [self.okButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Done] forState:UIControlStateNormal];
         self.okButton.frame = CGRectMake(UIWindow.kkmp_screenWidth-15-60, 10, 60, 30);
     }
     

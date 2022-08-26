@@ -11,6 +11,7 @@
 #import "NSString+KKMediaPicker.h"
 #import "KKMediaPickerDefine.h"
 #import "UIWindow+KKMediaPicker.h"
+#import "KKMediaPickerLocalization.h"
 
 @implementation KKCameraImageShowToolBar
 
@@ -34,7 +35,7 @@
     self.okButton = [[UIButton alloc] initWithFrame:CGRectMake(UIWindow.kkmp_screenWidth-15-60, 10, 60, 30)];
     self.okButton.backgroundColor = KKMediaPicker_Clolor_1E95FF;
     self.okButton.titleLabel.font = [UIFont boldSystemFontOfSize:12];
-    [self.okButton setTitle:KKMediaPicker_Common_Done forState:UIControlStateNormal];
+    [self.okButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Done] forState:UIControlStateNormal];
     self.okButton.backgroundColor = [UIColor clearColor];
     self.okButton.layer.cornerRadius = 15.0;
     self.okButton.layer.masksToBounds = YES;

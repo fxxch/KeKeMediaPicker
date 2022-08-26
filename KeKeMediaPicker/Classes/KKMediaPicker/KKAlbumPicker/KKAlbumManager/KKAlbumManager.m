@@ -431,87 +431,11 @@
 #pragma mark == 其他
 #pragma mark ==================================================
 + (NSString *)ablumTitleForPHAssetCollection:(PHAssetCollection *)aCollection{
-    
-    if (aCollection.assetCollectionType==PHAssetCollectionTypeAlbum) {
-        if ([aCollection.localizedTitle isEqualToString:@"My Photo Stream"]) {
-            return KKMediaPicker_Album_ImageStream;
-        }
-        else{
-            return aCollection.localizedTitle;
-        }
+    NSString *name = @"";
+    if (aCollection.localizedTitle) {
+        name = aCollection.localizedTitle;
     }
-
-    NSString *returnString = @"";
-    switch (aCollection.assetCollectionSubtype) {
-        case PHAssetCollectionSubtypeSmartAlbumUserLibrary:{
-            returnString = KKMediaPicker_Album_UserLibrary;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumPanoramas:{
-            returnString = KKMediaPicker_Album_Panoramas;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumVideos:{
-            returnString = KKMediaPicker_Album_Videos;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumFavorites:{
-            returnString = KKMediaPicker_Album_Favorites;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumTimelapses:{
-            returnString = KKMediaPicker_Album_Timelapses;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumRecentlyAdded:{
-            returnString = KKMediaPicker_Album_RecentlyAdded;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumBursts:{
-            returnString = KKMediaPicker_Album_Bursts;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumSlomoVideos:{
-            returnString = KKMediaPicker_Album_SlomoVideos;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumSelfPortraits:{
-            returnString = KKMediaPicker_Album_SelfPortraits;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumScreenshots:{
-            returnString = KKMediaPicker_Album_Screenshots;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumDepthEffect:{
-            returnString = KKMediaPicker_Album_DepthEffect;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumLivePhotos:{
-            returnString = KKMediaPicker_Album_LivePhotos;
-            break;
-        }
-        case PHAssetCollectionSubtypeSmartAlbumAnimated:{
-            returnString = KKMediaPicker_Album_Animated;
-            break;
-        }
-        default:
-            break;
-    }
-    
-    if (returnString==nil || returnString.length==0) {
-        if ([aCollection.localizedTitle isEqualToString:@"Recently Deleted"]) {
-            returnString = KKMediaPicker_Album_RecentlyDeleted;
-        }
-        else if ([aCollection.localizedTitle isEqualToString:@"All Photos"]) {
-            returnString = KKMediaPicker_Album_AllPhotos;
-        }
-        else{
-            returnString = KKMediaPicker_Album_DefaultName;
-        }
-    }
-    
-    return returnString;
+    return name;
 }
 
 /**

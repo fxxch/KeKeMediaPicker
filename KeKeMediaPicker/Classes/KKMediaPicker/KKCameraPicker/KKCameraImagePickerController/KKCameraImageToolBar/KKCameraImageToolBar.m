@@ -31,7 +31,7 @@
     backgroundView.userInteractionEnabled = YES;
     [self addSubview:backgroundView];
 
-    self.myImageButton = [[UIButton alloc] initWithFrame:CGRectMake(5, (self.frame.size.height-50)/2.0, 50, 50)];
+    self.myImageButton = [[UIButton alloc] initWithFrame:CGRectMake(5, (self.frame.size.height-UIWindow.kkmp_safeAreaBottomHeight-50)/2.0, 50, 50)];
     self.myImageButton.backgroundColor = [UIColor clearColor];
     [self.myImageButton addTarget:self action:@selector(imageButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.myImageButton];
@@ -39,7 +39,7 @@
     /*拍照*/
     self.takePicButton = [[UIButton alloc] init];
     self.takePicButton.backgroundColor = [UIColor clearColor];
-    self.takePicButton.frame = CGRectMake((self.frame.size.width-50)/2.0, (self.frame.size.height-50)/2.0, 50, 50);
+    self.takePicButton.frame = CGRectMake((self.frame.size.width-50)/2.0, (self.frame.size.height-UIWindow.kkmp_safeAreaBottomHeight-50)/2.0, 50, 50);
     [self.takePicButton addTarget:self action:@selector(takePicButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     UIImage *image02 = [KKAlbumManager themeImageForName:@"TakePicN"];
     [self.takePicButton setImage:image02 forState:UIControlStateNormal];
@@ -80,11 +80,11 @@
     
     CGSize size = [infoString kkmp_sizeWithFont:[UIFont systemFontOfSize:12] maxWidth:1000];
     
-    self.infoBoxView.frame = CGRectMake(((UIWindow*)[UIWindow kkmp_currentKeyWindow]).frame.size.width-5-25-10-size.width, (self.frame.size.height-30)/2.0, size.width+35, 30);
+    self.infoBoxView.frame = CGRectMake(((UIWindow*)[UIWindow kkmp_currentKeyWindow]).frame.size.width-5-25-10-size.width, (self.frame.size.height-UIWindow.kkmp_safeAreaBottomHeight-30)/2.0, size.width+35, 30);
     UIImage *image01 = [KKAlbumManager themeImageForName:@"RoundRectBox"];
     self.infoBoxView.image = [image01 stretchableImageWithLeftCapWidth:20 topCapHeight:20];
     
-    self.infoLabel.frame = CGRectMake(CGRectGetMinX(self.infoBoxView.frame)+25, (self.frame.size.height-30)/2.0, size.width, 30);
+    self.infoLabel.frame = CGRectMake(CGRectGetMinX(self.infoBoxView.frame)+25, (self.frame.size.height-UIWindow.kkmp_safeAreaBottomHeight-30)/2.0, size.width, 30);
     self.infoLabel.text = infoString;
     
 }
