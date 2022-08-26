@@ -124,7 +124,7 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
-    s.resources = "KKLibrary/Classes/**/*.{bundle,sqlite,caf,txt,plist}"  
+    s.resources = "KeKeMediaPicker/Classes/**/*.{bundle,sqlite,caf,txt,plist}"  
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
