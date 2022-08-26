@@ -86,7 +86,7 @@
         return bundle;
     }
     else {
-        NSString *bundlePath_pod = [[NSBundle mainBundle] pathForResource:@"Frameworks/KKMediaPicker.framework" ofType:nil];
+        NSString *bundlePath_pod = [[NSBundle mainBundle] pathForResource:@"Frameworks/KeKeMediaPicker.framework" ofType:nil];
         if (bundlePath_pod) {
             NSBundle *bundle = [NSBundle bundleWithPath:bundlePath_pod];
             return bundle;
