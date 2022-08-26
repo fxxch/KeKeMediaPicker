@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   #
 
     s.name         = "KeKeMediaPicker"
-    s.version      = "1.0.1"
+    s.version      = "1.0.2"
     s.summary      = "A marquee view used on iOS."
 
   # This description is used to generate tags and improve search results.
@@ -103,8 +103,8 @@ Pod::Spec.new do |s|
     # s.public_header_files = "KeKeMediaPicker/Classes/**/*.h",
     s.public_header_files = "KeKeMediaPicker/Classes/**/KKMediaPicker.h",
                             "KeKeMediaPicker/Classes/**/KKMediaPickerDefine.h",
-                            "KeKeMediaPicker/Classes/**/KKAlbumDirectoryModal.h",
-                            "KeKeMediaPicker/Classes/**/KKAlbumAssetModal.h",
+                            "KeKeMediaPicker/Classes/**/KKAlbumDirectoryModel.h",
+                            "KeKeMediaPicker/Classes/**/KKAlbumAssetModel.h",
                             "KeKeMediaPicker/Classes/**/KKAlbumManager.h",
                             "KeKeMediaPicker/Classes/**/KKMediaPickerBaseViewController.h",
                             "KeKeMediaPicker/Classes/**/KKMediaPickerBaseNavigationController.h",
