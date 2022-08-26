@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   #
 
     s.name         = "KeKeMediaPicker"
-    s.version      = "1.0.3"
+    s.version      = "1.0.4"
     s.summary      = "A marquee view used on iOS."
 
   # This description is used to generate tags and improve search results.
@@ -124,7 +124,7 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
-  # s.resources = "KKRequest/Classes/**/*.{bundle,sqlite,caf,txt,plist}"  
+    s.resources = "KKLibrary/Classes/**/*.{bundle,sqlite,caf,txt,plist}"  
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
