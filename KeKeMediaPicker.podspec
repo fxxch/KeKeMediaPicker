@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   #
 
     s.name         = "KeKeMediaPicker"
-    s.version      = "1.0.2"
+    s.version      = "1.0.3"
     s.summary      = "A marquee view used on iOS."
 
   # This description is used to generate tags and improve search results.

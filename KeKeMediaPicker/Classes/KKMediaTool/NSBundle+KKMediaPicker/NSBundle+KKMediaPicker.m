@@ -18,7 +18,7 @@
         bundleName = [bundleName stringByAppendingString:@".bundle"];
     }
     
-    NSString *bundleFilePath = [[NSBundle mainBundle] pathForResource:bundleName ofType:nil];
+    NSString *bundleFilePath = [[NSBundle kkmp_currentBundle] pathForResource:bundleName ofType:nil];
     if (bundleFilePath==nil) {
         return nil;
     }
@@ -76,6 +76,24 @@
             image = [UIImage imageWithContentsOfFile:filepath11];
         }
         return image;
+    }
+}
+
++ (nullable NSBundle*)kkmp_currentBundle{
+    NSString *bundlePath_copy = [[NSBundle mainBundle] pathForResource:@"Frameworks/KKMediaPickerFramework.framework" ofType:nil];
+    if (bundlePath_copy) {
+        NSBundle *bundle = [NSBundle bundleWithPath:bundlePath_copy];
+        return bundle;
+    }
+    else {
+        NSString *bundlePath_pod = [[NSBundle mainBundle] pathForResource:@"Frameworks/KKMediaPicker.framework" ofType:nil];
+        if (bundlePath_pod) {
+            NSBundle *bundle = [NSBundle bundleWithPath:bundlePath_pod];
+            return bundle;
+        }
+        else{
+            return [NSBundle mainBundle];
+        }
     }
 }
 
