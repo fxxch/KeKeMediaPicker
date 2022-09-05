@@ -9,7 +9,7 @@
 #import "KKAlbumImageShowViewController.h"
 #import "KKAlbumImageShowItemView.h"
 #import "KKAlbumImageShowNavBar.h"
-#import "KKAlbumImageShowToolBar.h"
+#import "KKAlbumPickerToolBar.h"
 #import "KKAlbumImageShowCollectionBar.h"
 //#import "IJSImagePickerController.h"
 //#import "IJSImageManagerController.h"
@@ -23,16 +23,17 @@ UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout,
 KKAlbumImageShowNavBarDelegate,
 KKAlbumImageShowItemViewDelegate,
-KKAlbumImageShowToolBarDelegate,
+KKAlbumPickerToolBarDelegate,
 KKAlbumImageShowCollectionBarDelegate>
 
 @property (nonatomic , strong) UICollectionView *mainCollectionView;
 @property (nonatomic , strong) KKAlbumImageShowNavBar *topBar;
-@property (nonatomic , strong) KKAlbumImageShowToolBar *toolBar;
+@property (nonatomic , strong) KKAlbumPickerToolBar *toolBar;
 @property (nonatomic , strong) KKAlbumImageShowCollectionBar *collectionBar;
 @property (nonatomic , strong) NSMutableArray *dataSource;
 @property (nonatomic , assign) NSInteger inIndex;
 @property (nonatomic , assign) BOOL haveInitScroll;
+@property (nonatomic , assign) BOOL isForPreview;
 
 @end
 
@@ -40,9 +41,12 @@ KKAlbumImageShowCollectionBarDelegate>
 
 /* 初始化 */
 - (instancetype)initWithArray:(NSArray*)aImageArray
-                  selectIndex:(NSInteger)aIndex{
+                  selectIndex:(NSInteger)aIndex
+                 isForPreview:(BOOL)aIsForPreview
+{
     self = [super init];
     if (self) {
+        self.isForPreview = aIsForPreview;
         self.inIndex = aIndex;
         self.dataSource = [[NSMutableArray alloc] init];
         [self.dataSource addObjectsFromArray:aImageArray];
@@ -92,8 +96,9 @@ KKAlbumImageShowCollectionBarDelegate>
     [self.collectionBar selectModel:model];
 
     /*底部工具栏*/
-    self.toolBar = [[KKAlbumImageShowToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+50), UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
+    self.toolBar = [[KKAlbumPickerToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+50), UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
     self.toolBar.delegate = self;
+    self.toolBar.countBoxButton.alpha = 0;
     [self.view addSubview:self.toolBar];
 
     [self.mainCollectionView setContentOffset:CGPointMake(UIWindow.kkmp_screenWidth*self.inIndex, 0)];
@@ -125,8 +130,7 @@ KKAlbumImageShowCollectionBarDelegate>
 
 }
 
-- (void)KKAlbumImageShowToolBar_EditButtonClicked:(KKAlbumImageShowToolBar*)toolView{
-
+- (void)KKAlbumPickerToolBar_EditButtonClicked:(KKAlbumPickerToolBar*)toolView{
 //    NSInteger index = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
 //    KKAlbumAssetModel *model = [self.dataSource objectAtIndex:index];
 //    UIImage *editImage = model.bigImageForShowing;
@@ -153,15 +157,15 @@ KKAlbumImageShowCollectionBarDelegate>
 //    [self.navigationController pushViewController:managerVc animated:NO];
 }
 
+- (void)KKAlbumPickerToolBar_DoneButtonClicked:(KKAlbumPickerToolBar*)toolView{
+    [[KKAlbumImagePickerManager defaultManager] finishedWithNavigationController:self.navigationController];
+}
+
 - (void)thirdEditImageFinished:(UIImage*)aImage{
     NSInteger nowIndex = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
     KKAlbumAssetModel *nowModel = [self.dataSource objectAtIndex:nowIndex];
     nowModel.img_EditeImage = aImage;
     [NSNotificationCenter.defaultCenter postNotificationName:NotificationName_KKAlbumAssetModelEditImageFinished object:nowModel];
-}
-
-- (void)KKAlbumImageShowToolBar_OKButtonClicked:(KKAlbumImageShowToolBar*)toolView{
-    [[KKAlbumImagePickerManager defaultManager] finishedWithNavigationController:self.navigationController];
 }
 
 - (void)KKAlbumImageShowCollectionBar_SelectModel:(KKAlbumAssetModel*)aModel{
@@ -325,33 +329,7 @@ KKAlbumImageShowCollectionBarDelegate>
 }
 
 - (void)Notification_KKAlbumImagePickerUnSelectModel:(NSNotification*)notice{
-    NSInteger index = self.mainCollectionView.contentOffset.x/UIWindow.kkmp_screenWidth;
-    KKAlbumAssetModel *modelT = [self.dataSource objectAtIndex:index];
-    if ([[KKAlbumImagePickerManager defaultManager] isSelectAssetModel:modelT]) {
-        [self.topBar setSelect:YES item:modelT];
-    }
-    else{
-        [self.topBar setSelect:NO item:modelT];
-    }
-    
-    [[KKAlbumImagePickerManager defaultManager] deselectAssetModel:modelT];
-    [self.dataSource removeObject:modelT];
-    if ([self.dataSource count]==0) {
-        [self.navigationController popViewControllerAnimated:YES];
-        return;
-    }
-    
-    if (index<[self.dataSource count]) {
-        [self.mainCollectionView reloadData];
-        [self.mainCollectionView setContentOffset:CGPointMake(UIWindow.kkmp_screenWidth*index, 0)];
-        self.topBar.titleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)(index+1),(long)self.dataSource.count];
-    }
-    else{
-        [self.mainCollectionView reloadData];
-        [self.mainCollectionView setContentOffset:CGPointMake(UIWindow.kkmp_screenWidth*([self.dataSource count]-1), 0)];
-        self.topBar.titleLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)([self.dataSource count]),(long)self.dataSource.count];
-    }
-    [self scrollViewDidEndDecelerating:self.mainCollectionView];
+
 }
 
 - (void)Notification_KKAlbumManagerDataSourceChanged:(NSNotification*)notice{

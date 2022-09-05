@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110486CF28C5AED300D432A4 /* UIButton+KKMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 110486CD28C5AED300D432A4 /* UIButton+KKMediaPicker.h */; };
+		110486D028C5AED300D432A4 /* UIButton+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 110486CE28C5AED300D432A4 /* UIButton+KKMediaPicker.m */; };
+		110486D128C5AED300D432A4 /* UIButton+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 110486CE28C5AED300D432A4 /* UIButton+KKMediaPicker.m */; };
+		110486D628C5D47500D432A4 /* KKMediaPickerCountBoxView.h in Headers */ = {isa = PBXBuildFile; fileRef = 110486D428C5D47500D432A4 /* KKMediaPickerCountBoxView.h */; };
+		110486D728C5D47500D432A4 /* KKMediaPickerCountBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 110486D528C5D47500D432A4 /* KKMediaPickerCountBoxView.m */; };
+		110486D828C5D47500D432A4 /* KKMediaPickerCountBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 110486D528C5D47500D432A4 /* KKMediaPickerCountBoxView.m */; };
+		110486DC28C5D6E300D432A4 /* KKAlbumPickerToolBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 110486DA28C5D6E300D432A4 /* KKAlbumPickerToolBar.h */; };
+		110486DD28C5D6E300D432A4 /* KKAlbumPickerToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 110486DB28C5D6E300D432A4 /* KKAlbumPickerToolBar.m */; };
+		110486DE28C5D6E300D432A4 /* KKAlbumPickerToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 110486DB28C5D6E300D432A4 /* KKAlbumPickerToolBar.m */; };
 		110D864928B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 110D864728B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h */; };
 		110D864A28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */; };
 		110D864B28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */; };
@@ -59,17 +68,11 @@
 		1166A0A928AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02528AA252500C2EC7A /* AlbumImageCollectionViewCell.m */; };
 		1166A0AA28AA252500C2EC7A /* AlbumImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02528AA252500C2EC7A /* AlbumImageCollectionViewCell.m */; };
 		1166A0AC28AA252500C2EC7A /* AlbumImageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A02628AA252500C2EC7A /* AlbumImageCollectionViewCell.h */; };
-		1166A0AD28AA252500C2EC7A /* KKAlbumImageToolBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A02828AA252500C2EC7A /* KKAlbumImageToolBar.h */; };
-		1166A0AE28AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */; };
-		1166A0AF28AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */; };
 		1166A0B128AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02A28AA252500C2EC7A /* KKAlbumImagePickerController.m */; };
 		1166A0B228AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02A28AA252500C2EC7A /* KKAlbumImagePickerController.m */; };
 		1166A0B428AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02C28AA252500C2EC7A /* KKAlbumImagePickerManager.m */; };
 		1166A0B528AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A02C28AA252500C2EC7A /* KKAlbumImagePickerManager.m */; };
 		1166A0B728AA252500C2EC7A /* KKAlbumImagePickerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A02D28AA252500C2EC7A /* KKAlbumImagePickerManager.h */; };
-		1166A0B828AA252500C2EC7A /* KKAlbumImageShowToolBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A03028AA252500C2EC7A /* KKAlbumImageShowToolBar.h */; };
-		1166A0B928AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */; };
-		1166A0BA28AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */; };
 		1166A0BC28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */; };
 		1166A0BD28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */; };
 		1166A0BF28AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1166A03528AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h */; };
@@ -153,9 +156,7 @@
 		1166A12728AA2A0200C2EC7A /* KKAlbumImagePickerDirectoryList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02128AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.h */; };
 		1166A12828AA2A0200C2EC7A /* KKAlbumImagePickerImageViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02328AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h */; };
 		1166A12928AA2A0200C2EC7A /* AlbumImageCollectionViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02628AA252500C2EC7A /* AlbumImageCollectionViewCell.h */; };
-		1166A12A28AA2A0200C2EC7A /* KKAlbumImageToolBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02828AA252500C2EC7A /* KKAlbumImageToolBar.h */; };
 		1166A12B28AA2A0200C2EC7A /* KKAlbumImagePickerManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A02D28AA252500C2EC7A /* KKAlbumImagePickerManager.h */; };
-		1166A12C28AA2A0200C2EC7A /* KKAlbumImageShowToolBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03028AA252500C2EC7A /* KKAlbumImageShowToolBar.h */; };
 		1166A12D28AA2A0200C2EC7A /* KKAlbumImageShowCollectionBarItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03528AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h */; };
 		1166A12E28AA2A0200C2EC7A /* KKAlbumImageShowCollectionBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03828AA252500C2EC7A /* KKAlbumImageShowCollectionBar.h */; };
 		1166A12F28AA2A0200C2EC7A /* KKAlbumImageShowItemView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1166A03B28AA252500C2EC7A /* KKAlbumImageShowItemView.h */; };
@@ -251,9 +252,7 @@
 				1166A12728AA2A0200C2EC7A /* KKAlbumImagePickerDirectoryList.h in CopyFiles */,
 				1166A12828AA2A0200C2EC7A /* KKAlbumImagePickerImageViewController.h in CopyFiles */,
 				1166A12928AA2A0200C2EC7A /* AlbumImageCollectionViewCell.h in CopyFiles */,
-				1166A12A28AA2A0200C2EC7A /* KKAlbumImageToolBar.h in CopyFiles */,
 				1166A12B28AA2A0200C2EC7A /* KKAlbumImagePickerManager.h in CopyFiles */,
-				1166A12C28AA2A0200C2EC7A /* KKAlbumImageShowToolBar.h in CopyFiles */,
 				1166A12D28AA2A0200C2EC7A /* KKAlbumImageShowCollectionBarItem.h in CopyFiles */,
 				1166A12E28AA2A0200C2EC7A /* KKAlbumImageShowCollectionBar.h in CopyFiles */,
 				1166A12F28AA2A0200C2EC7A /* KKAlbumImageShowItemView.h in CopyFiles */,
@@ -285,6 +284,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		110486CD28C5AED300D432A4 /* UIButton+KKMediaPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+KKMediaPicker.h"; sourceTree = "<group>"; };
+		110486CE28C5AED300D432A4 /* UIButton+KKMediaPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KKMediaPicker.m"; sourceTree = "<group>"; };
+		110486D428C5D47500D432A4 /* KKMediaPickerCountBoxView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMediaPickerCountBoxView.h; sourceTree = "<group>"; };
+		110486D528C5D47500D432A4 /* KKMediaPickerCountBoxView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMediaPickerCountBoxView.m; sourceTree = "<group>"; };
+		110486DA28C5D6E300D432A4 /* KKAlbumPickerToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKAlbumPickerToolBar.h; sourceTree = "<group>"; };
+		110486DB28C5D6E300D432A4 /* KKAlbumPickerToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKAlbumPickerToolBar.m; sourceTree = "<group>"; };
 		110D864728B1F65D00DE9FEF /* NSBundle+KKMediaPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KKMediaPicker.h"; sourceTree = "<group>"; };
 		110D864828B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KKMediaPicker.m"; sourceTree = "<group>"; };
 		114F7A7B28B60A90003DB692 /* UIImage+KKMediaPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+KKMediaPicker.h"; sourceTree = "<group>"; };
@@ -319,13 +324,9 @@
 		1166A02328AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImagePickerImageViewController.h; sourceTree = "<group>"; };
 		1166A02528AA252500C2EC7A /* AlbumImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumImageCollectionViewCell.m; sourceTree = "<group>"; };
 		1166A02628AA252500C2EC7A /* AlbumImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumImageCollectionViewCell.h; sourceTree = "<group>"; };
-		1166A02828AA252500C2EC7A /* KKAlbumImageToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageToolBar.h; sourceTree = "<group>"; };
-		1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageToolBar.m; sourceTree = "<group>"; };
 		1166A02A28AA252500C2EC7A /* KKAlbumImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImagePickerController.m; sourceTree = "<group>"; };
 		1166A02C28AA252500C2EC7A /* KKAlbumImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImagePickerManager.m; sourceTree = "<group>"; };
 		1166A02D28AA252500C2EC7A /* KKAlbumImagePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImagePickerManager.h; sourceTree = "<group>"; };
-		1166A03028AA252500C2EC7A /* KKAlbumImageShowToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageShowToolBar.h; sourceTree = "<group>"; };
-		1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowToolBar.m; sourceTree = "<group>"; };
 		1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowViewController.m; sourceTree = "<group>"; };
 		1166A03528AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAlbumImageShowCollectionBarItem.h; sourceTree = "<group>"; };
 		1166A03628AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlbumImageShowCollectionBarItem.m; sourceTree = "<group>"; };
@@ -449,6 +450,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110486CC28C5AEA500D432A4 /* UIButton+KKMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				110486CD28C5AED300D432A4 /* UIButton+KKMediaPicker.h */,
+				110486CE28C5AED300D432A4 /* UIButton+KKMediaPicker.m */,
+			);
+			path = "UIButton+KKMediaPicker";
+			sourceTree = "<group>";
+		};
+		110486D328C5D42A00D432A4 /* KKMediaPickerCountBoxView */ = {
+			isa = PBXGroup;
+			children = (
+				110486D428C5D47500D432A4 /* KKMediaPickerCountBoxView.h */,
+				110486D528C5D47500D432A4 /* KKMediaPickerCountBoxView.m */,
+			);
+			path = KKMediaPickerCountBoxView;
+			sourceTree = "<group>";
+		};
+		110486D928C5D6C600D432A4 /* KKAlbumPickerToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				110486DA28C5D6E300D432A4 /* KKAlbumPickerToolBar.h */,
+				110486DB28C5D6E300D432A4 /* KKAlbumPickerToolBar.m */,
+			);
+			path = KKAlbumPickerToolBar;
+			sourceTree = "<group>";
+		};
 		110D864628B1F62E00DE9FEF /* NSBundle+KKMediaPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,7 +636,6 @@
 				1166A01D28AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar */,
 				1166A02028AA252500C2EC7A /* KKAlbumImagePickerDirectoryList */,
 				1166A02428AA252500C2EC7A /* AlbumImageCollectionViewCell */,
-				1166A02728AA252500C2EC7A /* KKAlbumImageToolBar */,
 			);
 			path = KKAlbumImagePickerImageViewController;
 			sourceTree = "<group>";
@@ -640,15 +667,6 @@
 			path = AlbumImageCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		1166A02728AA252500C2EC7A /* KKAlbumImageToolBar */ = {
-			isa = PBXGroup;
-			children = (
-				1166A02828AA252500C2EC7A /* KKAlbumImageToolBar.h */,
-				1166A02928AA252500C2EC7A /* KKAlbumImageToolBar.m */,
-			);
-			path = KKAlbumImageToolBar;
-			sourceTree = "<group>";
-		};
 		1166A02B28AA252500C2EC7A /* KKAlbumImagePickerManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -661,7 +679,6 @@
 		1166A02E28AA252500C2EC7A /* KKAlbumImageShowViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1166A02F28AA252500C2EC7A /* KKAlbumImageShowToolBar */,
 				1166A03328AA252500C2EC7A /* KKAlbumImageShowCollectionBar */,
 				1166A03928AA252500C2EC7A /* KKAlbumImageShowItemView */,
 				1166A03D28AA252500C2EC7A /* KKAlbumImageShowNavBar */,
@@ -669,15 +686,6 @@
 				1166A03228AA252500C2EC7A /* KKAlbumImageShowViewController.m */,
 			);
 			path = KKAlbumImageShowViewController;
-			sourceTree = "<group>";
-		};
-		1166A02F28AA252500C2EC7A /* KKAlbumImageShowToolBar */ = {
-			isa = PBXGroup;
-			children = (
-				1166A03028AA252500C2EC7A /* KKAlbumImageShowToolBar.h */,
-				1166A03128AA252500C2EC7A /* KKAlbumImageShowToolBar.m */,
-			);
-			path = KKAlbumImageShowToolBar;
 			sourceTree = "<group>";
 		};
 		1166A03328AA252500C2EC7A /* KKAlbumImageShowCollectionBar */ = {
@@ -898,6 +906,8 @@
 		11856CD628AB656D00EE4F62 /* KKMediaTool */ = {
 			isa = PBXGroup;
 			children = (
+				110486D328C5D42A00D432A4 /* KKMediaPickerCountBoxView */,
+				110486CC28C5AEA500D432A4 /* UIButton+KKMediaPicker */,
 				115AA0DA28B8D608008B7287 /* KKMediaPickerLocalization */,
 				114F7A7A28B60A6D003DB692 /* UIImage+KKMediaPicker */,
 				110D864628B1F62E00DE9FEF /* NSBundle+KKMediaPicker */,
@@ -975,6 +985,7 @@
 		11E049E828B741D6007CB260 /* KKAlbumPicker */ = {
 			isa = PBXGroup;
 			children = (
+				110486D928C5D6C600D432A4 /* KKAlbumPickerToolBar */,
 				1166A04728AA252500C2EC7A /* KKAlbumManager */,
 				1166A01A28AA252500C2EC7A /* KKAlbumImagePickerController */,
 				1166A05128AA252500C2EC7A /* KKAlbumAssetModelPreviewController */,
@@ -1124,19 +1135,18 @@
 				1166A11028AA252500C2EC7A /* KKAlbumAssetModelVideoPlayBar.h in Headers */,
 				1166A0AC28AA252500C2EC7A /* AlbumImageCollectionViewCell.h in Headers */,
 				1166A0D728AA252500C2EC7A /* KKImageCropperView.h in Headers */,
+				110486CF28C5AED300D432A4 /* UIButton+KKMediaPicker.h in Headers */,
 				1166A07828AA252500C2EC7A /* KKCameraImageShowItemView.h in Headers */,
 				1166A0FB28AA252500C2EC7A /* KKCameraCaptureViewController.h in Headers */,
 				1166A08828AA252500C2EC7A /* KKCameraImageTopBar.h in Headers */,
 				1166A0D828AA252500C2EC7A /* KKImageCropperViewController.h in Headers */,
 				1166A0F228AA252500C2EC7A /* KKAlbumAssetModelPreviewController.h in Headers */,
-				1166A0AD28AA252500C2EC7A /* KKAlbumImageToolBar.h in Headers */,
 				1166A0A828AA252500C2EC7A /* KKAlbumImagePickerImageViewController.h in Headers */,
 				1166A10528AA252500C2EC7A /* KKCircle.h in Headers */,
 				1166A0C628AA252500C2EC7A /* KKAlbumImageShowCollectionBar.h in Headers */,
 				1166A0A028AA252500C2EC7A /* KKAlbumImagePickerNavTitleBar.h in Headers */,
 				1166A0ED28AA252500C2EC7A /* KKAlbumAssetModelPreviewItem.h in Headers */,
 				1166A0A428AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.h in Headers */,
-				1166A0B828AA252500C2EC7A /* KKAlbumImageShowToolBar.h in Headers */,
 				1166A0F128AA252500C2EC7A /* KKAlbumAssetModelPreviewView.h in Headers */,
 				1166A09328AA252500C2EC7A /* KKCameraImagePickerViewController.h in Headers */,
 				3A654496258CC1C800942E7E /* KKMediaPickerFramework.h in Headers */,
@@ -1152,9 +1162,11 @@
 				1166A1A728AA3EA400C2EC7A /* UIWindow+KKMediaPicker.h in Headers */,
 				1166A11528AA252500C2EC7A /* KKAlbumAssetModelVideoPlayView.h in Headers */,
 				1166A0CA28AA252500C2EC7A /* KKAlbumImageShowItemView.h in Headers */,
+				110486D628C5D47500D432A4 /* KKMediaPickerCountBoxView.h in Headers */,
 				1166A0CC28AA252500C2EC7A /* KKAlbumImageShowNavBar.h in Headers */,
 				1166A07D28AA252500C2EC7A /* KKCameraImageShowToolBar.h in Headers */,
 				1166A10628AA252500C2EC7A /* KKCameraCaptureShowViewController.h in Headers */,
+				110486DC28C5D6E300D432A4 /* KKAlbumPickerToolBar.h in Headers */,
 				1166A07C28AA252500C2EC7A /* KKCameraImageShowViewController.h in Headers */,
 				1166A0F628AA252500C2EC7A /* KKCameraCaptureTopBar.h in Headers */,
 				115AA0DD28B8D647008B7287 /* KKMediaPickerLocalization.h in Headers */,
@@ -1402,7 +1414,9 @@
 				1166A0C828AA252500C2EC7A /* KKAlbumImageShowItemView.m in Sources */,
 				1166A0C128AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m in Sources */,
 				1166A10328AA252500C2EC7A /* KKCircleProgress.m in Sources */,
+				110486D128C5AED300D432A4 /* UIButton+KKMediaPicker.m in Sources */,
 				1166A07628AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */,
+				110486DE28C5D6E300D432A4 /* KKAlbumPickerToolBar.m in Sources */,
 				1166A10028AA252500C2EC7A /* KKCircle.m in Sources */,
 				1166A0CE28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */,
 				1166A08A28AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */,
@@ -1416,13 +1430,13 @@
 				1166A07F28AA252500C2EC7A /* KKCameraImageShowToolBar.m in Sources */,
 				1166A14C28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */,
 				1166A1A528AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m in Sources */,
-				1166A0BA28AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */,
 				1166A10B28AA252500C2EC7A /* KKCameraCaptureViewController.m in Sources */,
 				1166A0EB28AA252500C2EC7A /* KKAlbumAssetModelPreviewItem.m in Sources */,
 				1166A0A628AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m in Sources */,
 				1166A0D528AA252500C2EC7A /* KKImageCropperView.m in Sources */,
 				11E049FC28B7BADC007CB260 /* KKCameraCapturePickerController.m in Sources */,
 				1166A0B528AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */,
+				110486D828C5D47500D432A4 /* KKMediaPickerCountBoxView.m in Sources */,
 				11E049EF28B76048007CB260 /* KKMediaPickerBaseViewController.m in Sources */,
 				114F7A7F28B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */,
 				1166A0E228AA252500C2EC7A /* KKAlbumDirectoryModel.m in Sources */,
@@ -1431,7 +1445,6 @@
 				11E049F628B76075007CB260 /* KKMediaPickerBaseNavigationController.m in Sources */,
 				1166A0F428AA252500C2EC7A /* KKCameraCaptureTopBar.m in Sources */,
 				1166A09128AA252500C2EC7A /* KKCameraWaitingView.m in Sources */,
-				1166A0AF28AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */,
 				1166A0BD28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */,
 				1166A0B228AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */,
 				110D864B28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */,
@@ -1459,7 +1472,9 @@
 				1166A0C728AA252500C2EC7A /* KKAlbumImageShowItemView.m in Sources */,
 				1166A0C028AA252500C2EC7A /* KKAlbumImageShowCollectionBarItem.m in Sources */,
 				1166A10228AA252500C2EC7A /* KKCircleProgress.m in Sources */,
+				110486D028C5AED300D432A4 /* UIButton+KKMediaPicker.m in Sources */,
 				1166A07528AA252500C2EC7A /* KKCameraImageShowViewController.m in Sources */,
+				110486DD28C5D6E300D432A4 /* KKAlbumPickerToolBar.m in Sources */,
 				1166A0FF28AA252500C2EC7A /* KKCircle.m in Sources */,
 				1166A0CD28AA252500C2EC7A /* KKAlbumImageShowNavBar.m in Sources */,
 				1166A08928AA252500C2EC7A /* KKCameraImagePickerController.m in Sources */,
@@ -1473,13 +1488,13 @@
 				1166A07E28AA252500C2EC7A /* KKCameraImageShowToolBar.m in Sources */,
 				1166A14B28AA315500C2EC7A /* KKMediaPickerAuthorization.m in Sources */,
 				1166A1A428AA3EA400C2EC7A /* UIWindow+KKMediaPicker.m in Sources */,
-				1166A0B928AA252500C2EC7A /* KKAlbumImageShowToolBar.m in Sources */,
 				1166A10A28AA252500C2EC7A /* KKCameraCaptureViewController.m in Sources */,
 				1166A0EA28AA252500C2EC7A /* KKAlbumAssetModelPreviewItem.m in Sources */,
 				1166A0A528AA252500C2EC7A /* KKAlbumImagePickerDirectoryList.m in Sources */,
 				1166A0D428AA252500C2EC7A /* KKImageCropperView.m in Sources */,
 				11E049FB28B7BADC007CB260 /* KKCameraCapturePickerController.m in Sources */,
 				1166A0B428AA252500C2EC7A /* KKAlbumImagePickerManager.m in Sources */,
+				110486D728C5D47500D432A4 /* KKMediaPickerCountBoxView.m in Sources */,
 				11E049EE28B76048007CB260 /* KKMediaPickerBaseViewController.m in Sources */,
 				114F7A7E28B60A90003DB692 /* UIImage+KKMediaPicker.m in Sources */,
 				1166A0E128AA252500C2EC7A /* KKAlbumDirectoryModel.m in Sources */,
@@ -1488,7 +1503,6 @@
 				11E049F528B76075007CB260 /* KKMediaPickerBaseNavigationController.m in Sources */,
 				1166A0F328AA252500C2EC7A /* KKCameraCaptureTopBar.m in Sources */,
 				1166A09028AA252500C2EC7A /* KKCameraWaitingView.m in Sources */,
-				1166A0AE28AA252500C2EC7A /* KKAlbumImageToolBar.m in Sources */,
 				1166A0BC28AA252500C2EC7A /* KKAlbumImageShowViewController.m in Sources */,
 				1166A0B128AA252500C2EC7A /* KKAlbumImagePickerController.m in Sources */,
 				110D864A28B1F65D00DE9FEF /* NSBundle+KKMediaPicker.m in Sources */,

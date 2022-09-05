@@ -31,7 +31,7 @@
     backgroundView.userInteractionEnabled = YES;
     [self addSubview:backgroundView];
 
-    self.myImageButton = [[UIButton alloc] initWithFrame:CGRectMake(5, (self.frame.size.height-UIWindow.kkmp_safeAreaBottomHeight-50)/2.0, 50, 50)];
+    self.myImageButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 50, 50)];
     self.myImageButton.backgroundColor = [UIColor clearColor];
     [self.myImageButton addTarget:self action:@selector(imageButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.myImageButton];
@@ -39,7 +39,7 @@
     /*拍照*/
     self.takePicButton = [[UIButton alloc] init];
     self.takePicButton.backgroundColor = [UIColor clearColor];
-    self.takePicButton.frame = CGRectMake((self.frame.size.width-50)/2.0, (self.frame.size.height-UIWindow.kkmp_safeAreaBottomHeight-50)/2.0, 50, 50);
+    self.takePicButton.frame = CGRectMake((self.frame.size.width-50)/2.0, 5, 50, 50);
     [self.takePicButton addTarget:self action:@selector(takePicButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     UIImage *image02 = [KKAlbumManager themeImageForName:@"TakePicN"];
     [self.takePicButton setImage:image02 forState:UIControlStateNormal];

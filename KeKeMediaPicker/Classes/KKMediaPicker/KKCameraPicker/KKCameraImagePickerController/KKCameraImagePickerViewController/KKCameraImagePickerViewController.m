@@ -102,24 +102,27 @@ AVCapturePhotoCaptureDelegate>
         self.cameraHelper = [[KKCameraHelper alloc] init];
         [self.cameraHelper startMotionManager];
 
-        [self initialSession];
-        
-        [self initPreviewImageView];
-        
-        [self initCameraShowView];
-        
         /*顶部*/
         self.topBar = [[KKCameraImageTopBar alloc] initWithFrame:CGRectMake(0, 0, UIWindow.kkmp_screenWidth, UIWindow.kkmp_statusBarAndNavBarHeight)];
         self.topBar.delegate = self;
         [self.view addSubview:self.topBar];
-        
+
         /*底部工具栏*/
         self.toolBar = [[KKCameraImageToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+60), UIWindow.kkmp_screenWidth, UIWindow.kkmp_safeAreaBottomHeight+60)];
         self.toolBar.delegate = self;
         [self.view addSubview:self.toolBar];
         [self.toolBar setNumberOfPic:0 maxNumberOfPic:self.numberOfPhotosNeedSelected];
+
+        [self initialSession];
         
+        [self initPreviewImageView];
+        
+        [self initCameraShowView];
+                
         [self initWaitingView];
+        
+        [self.view bringSubviewToFront:self.topBar];
+        [self.view bringSubviewToFront:self.toolBar];
     }
     else{
         /*顶部*/
@@ -162,16 +165,16 @@ AVCapturePhotoCaptureDelegate>
 }
 
 - (void)initPreviewImageView{
-    self.previewImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    self.previewImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.topBar.frame.size.height, UIWindow.kkmp_screenWidth, UIWindow.kkmp_screenHeight-self.toolBar.frame.size.height-self.topBar.frame.size.height)];
     self.previewImageView.backgroundColor = [UIColor clearColor];
-    self.previewImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.previewImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.previewImageView];
     self.previewImageView.clipsToBounds = YES;
     self.previewImageView.userInteractionEnabled = NO;
 }
 
 - (void)initCameraShowView{
-    self.cameraShowView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.cameraShowView = [[UIView alloc] initWithFrame:CGRectMake(0, self.topBar.frame.size.height, UIWindow.kkmp_screenWidth, UIWindow.kkmp_screenHeight-self.toolBar.frame.size.height-self.topBar.frame.size.height)];
     [self.view addSubview:self.cameraShowView];
     
     self.focusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
@@ -271,17 +274,7 @@ AVCapturePhotoCaptureDelegate>
 
 /*照相*/
 - (void)KKCameraImageToolBar_TakePicButtonClicked:(KKCameraImageToolBar*)toolView{
-    
     if ([self.imageInformationArray count]>=self.numberOfPhotosNeedSelected) {
-//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Album_MaxLimited]
-//                                                                                 message:nil
-//                                                                          preferredStyle:UIAlertControllerStyleAlert];
-//        
-//        [alertController addAction:[UIAlertAction actionWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_OK]
-//                                                            style:UIAlertActionStyleDefault
-//                                                          handler:nil]];
-//        [self.navigationController presentViewController:alertController animated:true completion:nil];
-        
         return;
     }
         

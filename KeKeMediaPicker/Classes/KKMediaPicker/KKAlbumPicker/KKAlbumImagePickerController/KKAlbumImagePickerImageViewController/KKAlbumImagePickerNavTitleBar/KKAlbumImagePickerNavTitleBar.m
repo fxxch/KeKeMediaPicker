@@ -76,7 +76,7 @@
                                                                                  message:nil
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         
-        [alertController addAction:[UIAlertAction actionWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Cancel]
+        [alertController addAction:[UIAlertAction actionWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Authorized_Cancel]
                                                             style:UIAlertActionStyleDefault
                                                           handler:nil]];
         
@@ -171,6 +171,10 @@
         self.titleLabel.frame = CGRectMake(0, 0, 10 + size.width + 10, self.backgroundView.frame.size.height);
         self.titleLabel.text = title;
         self.arrowButton.frame = CGRectMake(CGRectGetMaxX(self.titleLabel.frame), (self.backgroundView.frame.size.height-20)/2.0, 20, 20);
+        
+        if ([KKAlbumManager.defaultManager showNavigationBarWhenAuthorizedLimited]==NO) {
+            self.hidden = YES;
+        }
     }
 }
 

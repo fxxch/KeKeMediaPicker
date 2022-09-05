@@ -29,6 +29,7 @@
 
 /* 初始化 */
 - (instancetype)initWithArray:(NSArray*)aImageArray
-                  selectIndex:(NSInteger)aIndex;
+                  selectIndex:(NSInteger)aIndex
+                 isForPreview:(BOOL)aIsForPreview;
 
 @end

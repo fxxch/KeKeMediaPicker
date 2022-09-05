@@ -24,8 +24,6 @@
 @property(nonatomic,strong)UIButton *cameraDeviceButton;//摄像头方向（前置摄像头/后置摄像头）
 @property(nonatomic,assign)AVCaptureDevicePosition  cameraDevicePosition;//摄像头方向
 
-@property(nonatomic,strong)UIButton *doneButton;//确定
-
 @end
 
 

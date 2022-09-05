@@ -81,6 +81,11 @@ typedef void (^KKAlbumManager_LoadPHAssetFileSize_FinishedBlock)(
 
 + (KKAlbumManager *_Nonnull)defaultManager;
 
+
+/// 如果只授权了部分相册权限的时候，是否需要显示导航条，默认不显示。
+/// 如果要显示，将此值设为YES。导航条标题文字，以及点击之后的弹窗提示都只做了中文、英文国际化，其他语言未做国际化
+@property (nonatomic , assign) BOOL showNavigationBarWhenAuthorizedLimited;
+
 #pragma mark ==================================================
 #pragma mark == 遍历所有目录
 #pragma mark ==================================================

@@ -28,18 +28,13 @@
 - (void)initUI{
     
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
-    backgroundView.backgroundColor = [UIColor blackColor];
+    backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
     backgroundView.userInteractionEnabled = YES;
     [self addSubview:backgroundView];
     
-    self.okButton = [[UIButton alloc] initWithFrame:CGRectMake(UIWindow.kkmp_screenWidth-15-60, 10, 60, 30)];
-    self.okButton.backgroundColor = KKMediaPicker_Clolor_1E95FF;
-    self.okButton.titleLabel.font = [UIFont boldSystemFontOfSize:12];
-    [self.okButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Done] forState:UIControlStateNormal];
+    self.okButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-60, 5, 60, 30)];
+    [self.okButton setImage:[KKAlbumManager themeImageForName:@"Done"] forState:UIControlStateNormal];
     self.okButton.backgroundColor = [UIColor clearColor];
-    self.okButton.layer.cornerRadius = 15.0;
-    self.okButton.layer.masksToBounds = YES;
-    
     [self.okButton addTarget:self action:@selector(okButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.okButton];
     
@@ -76,12 +71,12 @@
     
     CGSize size = [infoString kkmp_sizeWithFont:[UIFont systemFontOfSize:12] maxWidth:1000];
     
-    self.infoBoxView.frame = CGRectMake(15, (self.frame.size.height-30)/2.0, size.width+35, 30);
+    self.infoBoxView.frame = CGRectMake(15, 10, size.width+35, 30);
     
     UIImage *image01 = [KKAlbumManager themeImageForName:@"RoundRectBox"];
     self.infoBoxView.image = [image01 stretchableImageWithLeftCapWidth:20 topCapHeight:20];
     
-    self.infoLabel.frame = CGRectMake(CGRectGetMinX(self.infoBoxView.frame)+25, (self.frame.size.height-30)/2.0, size.width, 30);
+    self.infoLabel.frame = CGRectMake(CGRectGetMinX(self.infoBoxView.frame)+25, (self.infoBoxView.frame.origin.y + (self.infoBoxView.frame.size.height-30)/2.0), size.width, 30);
     self.infoLabel.text = infoString;
     
 }

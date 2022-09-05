@@ -52,8 +52,21 @@ KKCameraImageShowToolBarDelegate>
     [super viewDidLoad];    
     self.view.backgroundColor = [UIColor blackColor];
     
+    /*顶部工具栏*/
+    self.topBar = [[KKCameraImageShowNavBar alloc] initWithFrame:CGRectMake(0, 0, UIWindow.kkmp_screenWidth, UIWindow.kkmp_statusBarAndNavBarHeight)];
+    self.topBar.delegate = self;
+    [self.view addSubview:self.topBar];
+    self.topBar.titleLabel.text = [NSString stringWithFormat:@"1/%ld",(long)self.dataSource.count];
+    
+    /*底部工具栏*/
+    self.toolBar = [[KKCameraImageShowToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+60), UIWindow.kkmp_screenWidth, UIWindow.kkmp_safeAreaBottomHeight+60)];
+    self.toolBar.delegate = self;
+    [self.view addSubview:self.toolBar];
+    
+    [self.toolBar setNumberOfPic:self.dataSource.count maxNumberOfPic:self.maxNumber];
+
     //主图片
-    CGRect collectionViewFrame= CGRectMake(0, 0, UIWindow.kkmp_screenWidth, UIWindow.kkmp_screenHeight-UIWindow.kkmp_statusBarHeight);
+    CGRect collectionViewFrame= CGRectMake(0, self.topBar.frame.size.height, UIWindow.kkmp_screenWidth, UIWindow.kkmp_screenHeight-self.toolBar.frame.size.height-self.topBar.frame.size.height);
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.minimumLineSpacing = 0;
@@ -69,19 +82,9 @@ KKCameraImageShowToolBarDelegate>
     [self.mainCollectionView registerClass:[KKCameraImageShowItemView class] forCellWithReuseIdentifier:KKCameraImageShowItemView_ID];
     self.mainCollectionView.pagingEnabled = YES;
     [self.view addSubview:self.mainCollectionView];
-
-    /*顶部工具栏*/
-    self.topBar = [[KKCameraImageShowNavBar alloc] initWithFrame:CGRectMake(0, 0, UIWindow.kkmp_screenWidth, UIWindow.kkmp_statusBarAndNavBarHeight)];
-    self.topBar.delegate = self;
-    [self.view addSubview:self.topBar];
-    self.topBar.titleLabel.text = [NSString stringWithFormat:@"1/%ld",(long)self.dataSource.count];
     
-    /*底部工具栏*/
-    self.toolBar = [[KKCameraImageShowToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-(UIWindow.kkmp_safeAreaBottomHeight+50), UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
-    self.toolBar.delegate = self;
-    [self.view addSubview:self.toolBar];
-    
-    [self.toolBar setNumberOfPic:self.dataSource.count maxNumberOfPic:self.maxNumber];
+    [self.view bringSubviewToFront:self.topBar];
+    [self.view bringSubviewToFront:self.toolBar];
 }
 
 - (void)KKCameraImageShowNavBar_LeftButtonClicked{
@@ -97,9 +100,7 @@ KKCameraImageShowToolBarDelegate>
     
     [self.dataSource removeObjectAtIndex:index];
     if (self.dataSource==nil || self.dataSource.count==0) {
-        [self.navigationController dismissViewControllerAnimated:YES completion:^{
-            
-        }];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else{
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];

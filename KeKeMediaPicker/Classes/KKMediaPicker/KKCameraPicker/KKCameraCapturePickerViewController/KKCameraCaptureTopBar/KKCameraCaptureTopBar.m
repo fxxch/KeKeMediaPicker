@@ -65,15 +65,6 @@
     [self addSubview:self.cameraDeviceButton];
 
     self.cameraDevicePosition = AVCaptureDevicePositionBack;
-
-
-    /*完成*/
-    self.doneButton = [[UIButton alloc] init];
-    self.doneButton.backgroundColor = [UIColor clearColor];
-    self.doneButton.frame = CGRectMake(CGRectGetMaxX(self.cameraDeviceButton.frame)+space, self.frame.size.height-44, 60, 44);
-    [self.doneButton addTarget:self action:@selector(doneButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.doneButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Done] forState:UIControlStateNormal];
-    [self addSubview:self.doneButton];
 }
 
 /*取消*/

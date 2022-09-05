@@ -89,7 +89,7 @@
 
 - (void)buttonCameraClicked{
     CGSize cropSize = CGSizeMake(UIWindow.kkmp_screenWidth-40, UIWindow.kkmp_screenWidth-40);
-    KKCameraImagePickerController *viewController = [[KKCameraImagePickerController alloc] initWithDelegate:self numberOfPhotosNeedSelected:1 cropEnable:YES cropSize:cropSize imageFileMaxSize:300];
+    KKCameraImagePickerController *viewController = [[KKCameraImagePickerController alloc] initWithDelegate:self numberOfPhotosNeedSelected:9 cropEnable:YES cropSize:cropSize imageFileMaxSize:300];
     [self.navigationController presentViewController:viewController animated:YES completion:^{
             
     }];

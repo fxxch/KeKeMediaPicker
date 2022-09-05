@@ -7,7 +7,7 @@
 //
 
 #import "KKAlbumImagePickerImageViewController.h"
-#import "KKAlbumImageToolBar.h"
+#import "KKAlbumPickerToolBar.h"
 #import "KKImageCropperViewController.h"
 #import "KKAlbumImageShowViewController.h"
 #import "KKAlbumImagePickerDirectoryList.h"
@@ -23,14 +23,14 @@
 <UICollectionViewDataSource,
 UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout,
-KKAlbumImageToolBarDelegate,
+KKAlbumPickerToolBarDelegate,
 AlbumImageCollectionViewCellDelegate,
 KKAlbumImageShowViewControllerDelegate,
 KKAlbumImagePickerDirectoryListDelegate,
 KKAlbumImagePickerNavTitleBarDelegate>
 
 @property (nonatomic , strong) UICollectionView *mainCollectionView;
-@property (nonatomic , strong) KKAlbumImageToolBar *toolBar;
+@property (nonatomic , strong) KKAlbumPickerToolBar *toolBar;
 @property (nonatomic , strong) KKAlbumImagePickerNavTitleBar *titleBar;
 @property (nonatomic , strong) KKAlbumImagePickerDirectoryList *directoryList;
 // 放置图像处理时候的等待View
@@ -170,7 +170,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
         [self.view addSubview:self.mainCollectionView];
 
         /*底部工具栏*/
-        self.toolBar = [[KKAlbumImageToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-UIWindow.kkmp_statusBarAndNavBarHeight-(UIWindow.kkmp_safeAreaBottomHeight+50), UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
+        self.toolBar = [[KKAlbumPickerToolBar alloc] initWithFrame:CGRectMake(0, UIWindow.kkmp_screenHeight-UIWindow.kkmp_statusBarAndNavBarHeight-(UIWindow.kkmp_safeAreaBottomHeight+50), UIWindow.kkmp_screenWidth, (UIWindow.kkmp_safeAreaBottomHeight+50))];
         self.toolBar.delegate = self;
         [self.view addSubview:self.toolBar];
         [self.toolBar setNumberOfPic:0 maxNumberOfPic:[KKAlbumImagePickerManager defaultManager].numberOfPhotosNeedSelected];
@@ -393,7 +393,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
         NSInteger index = [self.mainCollectionView indexPathForCell:aItemCell].row;
         
         //全屏展示
-        KKAlbumImageShowViewController *viewController = [[KKAlbumImageShowViewController alloc] initWithArray:self.directoryModel.assetsArray selectIndex:index];
+        KKAlbumImageShowViewController *viewController = [[KKAlbumImageShowViewController alloc] initWithArray:self.directoryModel.assetsArray selectIndex:index isForPreview:NO];
         viewController.delegate = self;
         [self.navigationController pushViewController:viewController animated:YES];
     }
@@ -447,15 +447,14 @@ KKAlbumImagePickerNavTitleBarDelegate>
 ////    }
 //}
 
-- (void)KKAlbumImageToolBar_PreviewButtonClicked:(KKAlbumImageToolBar*)toolView{
+- (void)KKAlbumPickerToolBar_CountBoxButtonClicked:(KKAlbumPickerToolBar*)toolView{
     //全屏展示
-    KKAlbumImageShowViewController *viewController = [[KKAlbumImageShowViewController alloc] initWithArray:[KKAlbumImagePickerManager defaultManager].allSource selectIndex:0];
+    KKAlbumImageShowViewController *viewController = [[KKAlbumImageShowViewController alloc] initWithArray:[KKAlbumImagePickerManager defaultManager].allSource selectIndex:0 isForPreview:YES];
     viewController.delegate = self;
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-
-- (void)KKAlbumImageToolBar_OKButtonClicked:(KKAlbumImageToolBar*)toolView{
+- (void)KKAlbumPickerToolBar_DoneButtonClicked:(KKAlbumPickerToolBar*)toolView{
     [self selectMultipleFinished];
 }
 
@@ -552,17 +551,7 @@ KKAlbumImagePickerNavTitleBarDelegate>
             /* 已经达到最大 */
             NSInteger maxNumber = [KKAlbumImagePickerManager defaultManager].numberOfPhotosNeedSelected;
             NSInteger selectNumber = [[KKAlbumImagePickerManager defaultManager].allSource count];
-            if (selectNumber >= maxNumber) {
-  
-//                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Album_MaxLimited]
-//                                                                                         message:nil
-//                                                                                  preferredStyle:UIAlertControllerStyleAlert];
-//                
-//                [alertController addAction:[UIAlertAction actionWithTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_OK]
-//                                                                    style:UIAlertActionStyleDefault
-//                                                                  handler:nil]];
-//                
-//                [self.navigationController presentViewController:alertController animated:true completion:nil];
+            if (selectNumber >= maxNumber) {  
                 return;
             }
             [[KKAlbumImagePickerManager defaultManager] selectAssetModel:assetModel];

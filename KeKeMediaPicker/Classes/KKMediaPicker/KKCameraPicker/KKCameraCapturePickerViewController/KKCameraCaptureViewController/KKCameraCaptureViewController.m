@@ -111,7 +111,6 @@ KKCameraCaptureShowDelegate>
         self.topBar = [[KKCameraCaptureTopBar alloc] initWithFrame:CGRectMake(0, 0, UIWindow.kkmp_screenWidth, UIWindow.kkmp_statusBarAndNavBarHeight)];
         self.topBar.delegate = self;
         [self.view addSubview:self.topBar];
-        self.topBar.doneButton.hidden = YES;
 
         [self initRecordButton];
     }
@@ -121,7 +120,6 @@ KKCameraCaptureShowDelegate>
         self.topBar.delegate = self;
         [self.view addSubview:self.topBar];
 
-        self.topBar.doneButton.hidden = YES;
         self.topBar.cameraDeviceButton.hidden = YES;
         self.topBar.cameraFlashModeButton.hidden = YES;
     }

@@ -27,8 +27,7 @@
     
     self.userInteractionEnabled = YES;
     UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
-    backgroundView.backgroundColor = [UIColor blackColor];
-    backgroundView.alpha = 0.25;
+    backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
     backgroundView.userInteractionEnabled = YES;
     [self addSubview:backgroundView];
     
@@ -70,8 +69,8 @@
     self.doneButton = [[UIButton alloc] init];
     self.doneButton.backgroundColor = [UIColor clearColor];
     self.doneButton.frame = CGRectMake(CGRectGetMaxX(self.cameraDeviceButton.frame)+space, self.frame.size.height-44, 60, 44);
+    [self.doneButton setImage:[KKAlbumManager themeImageForName:@"Done"] forState:UIControlStateNormal];
     [self.doneButton addTarget:self action:@selector(doneButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.doneButton setTitle:[KKMediaPickerLocalization localizationStringForKey:KKMediaPickerLocalKey_Common_Done] forState:UIControlStateNormal];
     [self addSubview:self.doneButton];
 }
 
